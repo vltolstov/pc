@@ -267,13 +267,24 @@ class PageController extends Controller
 
     public function destroy(Page $page)
     {
-        $page->delete();
+
         $page->contentSet->delete();
         $page->image->delete();
         $page->parametrSet->delete();
         $page->seoSet->delete();
         $page->slug->delete();
-        $page->category->delete();
+
+        $isCategory = Page::select('categories.id')
+            ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
+            ->where('pages.id', '=', $page->id)
+            ->first();
+
+        if($isCategory->id){
+            $page->category->delete();
+        }
+
+        $page->delete();
+
         return redirect()->route('admin');
     }
 
