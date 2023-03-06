@@ -7,11 +7,11 @@
 * */
 
 let params = document.querySelector('.params');
+let index = 0;
 const addParamsButton = document.querySelector('.add-params-button');
 
-
 if(params){
-    let index = params.childElementCount;
+    index = params.childElementCount;
     addParamsButton.addEventListener('click', addParamInput);
     params.addEventListener('click', delParam);
 }

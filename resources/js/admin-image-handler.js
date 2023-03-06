@@ -7,10 +7,11 @@
 * */
 
 const images = document.querySelector('.images');
+let lastIndex = 0;
 const addImagesButton = document.querySelector('.add-images-button');
 
 if(images){
-    let lastIndex = images.childElementCount;
+    lastIndex = images.childElementCount;
     addImagesButton.addEventListener('click', addImage);
     images.addEventListener('click', delImage);
 }
