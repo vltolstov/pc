@@ -135,6 +135,8 @@ class PageController extends Controller
             'category' => 'present',
             'parent_id' => 'present',
 
+            'active' => 'present',
+
         ]);
 
         if($request->file()) {
@@ -228,6 +230,8 @@ class PageController extends Controller
 
             'category' => 'present',
             'parent_id' => 'present',
+
+            'active' => 'present',
 
         ]);
 

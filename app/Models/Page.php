@@ -13,6 +13,7 @@ class Page extends Model
         'name',
         'page_type_id',
         'parent_id',
+        'active',
     ];
 
     public function pageType()

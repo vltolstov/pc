@@ -40,6 +40,13 @@
                         @endforeach
                     </select>
                 </div>
+                <label>Статус страницы</label>
+                <div class="bord">
+                    <select name="active">
+                        <option value="1">Вкл</option>
+                        <option value="0">Выкл</option>
+                    </select>
+                </div>
                 <label>Является категорией</label>
                 <div class="bord">
                     <select name="category">

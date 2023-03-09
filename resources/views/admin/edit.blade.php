@@ -33,6 +33,17 @@
                         @endforeach
                     </select>
                 </div>
+                <label>Статус страницы</label>
+                <div class="bord">
+                    <select name="active">
+                        @if($currentPage->active == 1)
+                            <option value="1">Вкл</option>
+                            <option value="0">Выкл</option>
+                        @else
+                            <option value="0">Выкл</option>
+                            <option value="1">Вкл</option>
+                        @endif
+                    </select>
                 <label>Является категорией</label>
                 <div class="bord">
                     <select name="category">
