@@ -44,6 +44,7 @@
                             <option value="1">Вкл</option>
                         @endif
                     </select>
+                </div>
                 <label>Является категорией</label>
                 <div class="bord">
                     <select name="category">
