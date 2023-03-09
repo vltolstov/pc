@@ -11,11 +11,8 @@
     <form action="{{route('page.store')}}" enctype="multipart/form-data" method="POST" name="create">
         @csrf
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <h2 class="admin-h2">Новая страница</h2>
-            </div>
-            <div class="col-lg-3">
-                <button type="submit" class="admin-button">Сохранить</button>
             </div>
         </div>
 
@@ -122,6 +119,11 @@
                 <label>Контент</label>
                 <div>
                     <textarea name="content" placeholder="Контент" id="content"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 save-button">
+                        <button type="submit" class="admin-button">Сохранить</button>
+                    </div>
                 </div>
             </div>
         </div>
