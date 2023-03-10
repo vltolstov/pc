@@ -143,6 +143,18 @@
     padding: 30px 0px;
 }
 
+.admin-main-menu ul li, .admin-sub-menu ul li {
+    padding: 2px 0px;
+}
+
+.admin-main-menu ul li a, .admin-sub-menu ul li a {
+    text-decoration: none;
+}
+
+.admin-main-menu ul li a:hover, .admin-sub-menu ul li a:hover{
+    text-decoration: underline;
+}
+
 .admin-sub-menu {
     padding: 30px 0px;
 }

@@ -154,7 +154,7 @@ class PageController extends Controller
         catch (QueryException $exception){
             return redirect(route('page.create'))->withErrors('Ошибки в форме');
         }
-        return redirect(route('admin'));
+        return redirect()->route('page.edit', $validationData['page_id']);
     }
 
     public function edit(Page $page)
@@ -259,6 +259,11 @@ class PageController extends Controller
         $validationData['params'] = ParametrSetController::ParametrDataProcessing($request);
         $page->parametrSet->update($validationData);
 
+
+
+        if($page->parent_id > 0){
+            return redirect()->route('page.edit', [$page->parent_id]);
+        }
         return redirect()->route('page.edit', [$page->id]);
 
     }
