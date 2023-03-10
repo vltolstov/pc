@@ -31,7 +31,7 @@ function mapProcessing () {
 
     let mapObject = document.querySelector('.map-svg');
 
-    if ('contentDocument' in mapObject) {
+    if (mapObject != null && 'contentDocument' in mapObject) {
 
         svgDocument = mapObject.contentDocument;
 
@@ -82,22 +82,25 @@ function addGeoHighlight(cityName, x, y) {
 
 window.addEventListener('load', mapProcessing);
 
-mapProjects.addEventListener('mouseover', function (event) {
-    let project = event.target;
-    if (!project) return;
+if(mapProjects){
+    mapProjects.addEventListener('mouseover', function (event) {
+        let project = event.target;
+        if (!project) return;
 
-    id = project.getAttribute('data-id');
-    if(id == null) return;
+        id = project.getAttribute('data-id');
+        if(id == null) return;
 
-    let cityName = project.getAttribute('data-city');
-    if(!cityName) return;
+        let cityName = project.getAttribute('data-city');
+        if(!cityName) return;
 
-    setTimeout(() => {
-        let x = project.offsetLeft + project.offsetWidth / 2;
-        let y = project.offsetTop - project.offsetHeight - 60;
+        setTimeout(() => {
+            let x = project.offsetLeft + project.offsetWidth / 2;
+            let y = project.offsetTop - project.offsetHeight - 60;
 
-        addGeoHighlight(cityName, x, y);
-    }, 300);
+            addGeoHighlight(cityName, x, y);
+        }, 300);
 
-});
+    });
+}
+
 

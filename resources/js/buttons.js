@@ -15,4 +15,7 @@ function offersTrigger(e) {
     offersOpenButton.remove();
 }
 
-offersOpenButton.addEventListener('click', offersTrigger);
+if(offersOpenButton){
+    offersOpenButton.addEventListener('click', offersTrigger);
+}
+
