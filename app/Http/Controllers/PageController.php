@@ -95,11 +95,6 @@ class PageController extends Controller
             ->where('parent_id', '=', '0')
             ->get();
 
-        //получение всего
-        $pages = Page::select('pages.id', 'pages.name')
-            ->orderBy('pages.id', 'ASC')
-            ->get();
-
         $categories = Category::select('*')
             ->join('pages', 'categories.page_id', '=', 'pages.id')
             ->get();
@@ -108,7 +103,6 @@ class PageController extends Controller
 
         return view('admin.index', [
             'createNew' => true,
-            'pages' => $pages,
             'menuPages' => $menuPages,
             'categories' => $categories,
             'pageTypes' => $pageTypes,
