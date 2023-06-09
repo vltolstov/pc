@@ -1,0 +1,73 @@
+@font-face {
+    font-family:'icons';
+    src: url('/public/fonts/icons.woff') format('woff'),
+    url('/public/fonts/icons.ttf')  format('truetype');
+    font-display: swap;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-exit:before {
+    display: inline-block;
+    content: "\e901";
+    font-size: 30px;
+    margin: 10px 10px 0px 0px;
+    color:#000;
+}
+
+.icon-exit:hover {
+    cursor: pointer;
+}
+
+.icon-edit:before {
+    display: inline-block;
+    content: "\e902";
+    margin: 4px 10px 4px 0px;
+    font-size: 24px;
+    padding-right: 25px;
+}
+.icon-copy:before {
+    display: inline-block;
+    content: "\e903";
+    margin: 4px 10px 4px 0px;
+    font-size: 24px;
+    padding-right: 25px;
+}
+.icon-play:before {
+    display: inline-block;
+    content: "\e904";
+    margin: 4px 10px 4px 0px;
+    font-size: 24px;
+    padding-right: 25px;
+}
+.icon-cost:before {
+    display: inline-block;
+    content: "\e905";
+    margin: 20px 0px 0px 13px;
+    font-size: 58px;
+    color: #e63c24;
+}
+.icon-service:before {
+    display: inline-block;
+    content: "\e906";
+    margin: 13px 0px 0px 17px;
+    font-size: 69px;
+    color: #e63c24;
+}
+.icon-guarantees:before {
+    display: inline-block;
+    content: "\e907";
+    margin: 15px 0px 0px 20px;
+    font-size: 70px;
+    color: #e63c24;
+}

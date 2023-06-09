@@ -1,0 +1,210 @@
+.form-wrap {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.auth-form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.admin-form label {
+    font-family: MontserratL;
+    font-size: 16px;
+}
+
+.form-header {
+    font-size: 24px;
+    font-family: MontserratL;
+    width: 100%;
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+}
+
+.bord {
+    padding: 11px 15px 11px 15px;
+    border: 1px solid rgba(0,0,0,.15);
+    margin-top: 5px;
+    margin-bottom: 17px;
+}
+
+.input-alert {
+    border: 1px solid rgba(255,0,0,.3);
+    background-color: rgba(255,0,0,.05);
+}
+
+.form-error {
+    border: 1px solid rgba(255,0,0,.3);
+    background-color: rgba(255,0,0,.05);
+}
+
+.imfa-alert, .email-alert, .phone-alert {
+    font-size: 14px;
+    font-family: MontserratL;
+    color: red;
+}
+
+.bord input {
+    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    width: 100%;
+    background: none;
+}
+
+.bord select {
+    background: none;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.admin-button {
+    background-color: #393939;
+    border: 1px solid #2d3748;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 12px 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.admin-button:hover {
+    background-color: #000;
+    border: 1px solid #000;
+}
+
+.add-images-button, .add-params-button {
+    font-family: MontserratL;
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 12px 0px;
+    text-align: center;
+}
+
+.add-images-button:hover, .add-params-button:hover {
+    color: #7f86b3;
+}
+
+.params-line {
+    padding: 11px 15px 11px 15px;
+    border: 1px solid rgba(0,0,0,.15);
+    margin-top: 5px;
+    margin-bottom: 17px;
+}
+
+.params-line input {
+    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    background: none;
+    margin: 5px 0px;
+}
+
+.param-labels {
+    font-family: MontserratL;
+    font-size: 14px;
+    color: #666;
+    padding: 0px 15px;
+    margin-top: 5px;
+    display: flex;
+}
+
+.del-button {
+    float: left;
+    background-color: #FFF;
+    font-family: MontserratL;
+    font-size: 12px;
+    color: #e63c24;
+    padding: 0px 20px 5px 0px;
+    cursor: pointer;
+}
+
+.del-button .icon-exit:before {
+    font-size: 16px;
+}
+
+.images input {
+    width: 80% !important;
+}
+
+.delCol {
+    width: 37px;
+}
+
+.delete-block, .save-button {
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.delete-button {
+    background-color: darkred;
+    border: 1px solid darkred;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 12px 40px;
+    text-align: center;
+}
+
+.admin-main-menu {
+    padding: 30px 0px;
+}
+
+.admin-sub-menu {
+    padding: 30px 0px;
+}
+
+.admin-sub-menu ul li {
+    font-size: 14px;
+}
+.admin-sub-menu ul li a {
+    text-decoration: none;
+}
+
+.admin-sub-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.admin-sub-menu img {
+    width: 20px;
+    vertical-align: bottom;
+}
+
+.admin-menu-header {
+    font-family: MontserratM;
+    font-size: 18px;
+    padding: 0px 0px 15px 0px;
+}
+
+.admin-h2 {
+    font-family: MontserratM;
+    font-size: 20px;
+    padding: 30px 0px 15px 0px;
+}
+
+.admin-head {
+    padding: 20px 0px;
+}
+.admin-logout {
+    text-align: right;
+}
+
+.admin-title {
+    font-family: MontserratM;
+    font-size: 24px;
+}
+
+.create-new {
+    font-family: MontserratL;
+    font-size: 14px !important;
+}
