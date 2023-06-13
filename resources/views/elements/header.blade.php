@@ -3,23 +3,27 @@
         <header>
             <div class="head-flex">
                 <div class="logo">
-                    <img src="/images/logo.png" height="64" alt="logo">
+                    @if($id == 1)
+                        <img src="{{$companyLogo}}" height="43" alt="logo">
+                    @else
+                        <a href="/"><img src="{{$companyLogo}}" height="43" alt="logo"></a>
+                    @endif
                 </div>
                 <div class="head-menu">
                     <ul>
-                        <li><a href="#">Раздел №1</a></li>
-                        <li><a href="#">Раздел №2</a></li>
-                        <li><a href="#">Раздел №3</a></li>
-                        <li><a href="#">Раздел №4</a></li>
-                        <li><a href="#">Рвздел №5</a></li>
+                        <li><a href="katalog">Каталог</a></li>
+                        <li><a href="proektirovanie-litejnyix-czexov">Проектирование</a></li>
+                        <li><a href="portfolio">Портфолио</a></li>
+                        <li><a href="o-kompanii">О компании</a></li>
+                        <li><a href="kontakty">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="head-contacts">
                     <div class="contacts-block">
-                        <p><a class="main-tel" href="tel:80000000000">8 000 000-00-00</a></p>
-                        <p><a class="mobile-tel" href="tel:70000000000">+7 000 000-00-00</a></p>
-                        <p><a class="head-mail" href="mailto:email@mail.ma">email@mail.ma</a></p>
-                        <p class="head-city">г. Новосибирск</p>
+                        <p><a class="main-tel" href="tel:{{Str::remove([' ', '-'], $phone)}}">{{$phone}}</a></p>
+                        <p><a class="mobile-tel" href="tel:{{Str::remove([' ', '-'], $mobilePhone)}}">{{$mobilePhone}}</a></p>
+                        <p><a class="head-mail" href="mailto:{{$email}}">{{$email}}</a></p>
+                        <p class="head-city">г. Москва</p>
                     </div>
                 </div>
             </div>
