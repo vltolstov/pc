@@ -18,8 +18,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content= "{{$baseUrl}}/{{$urn}}">
 
-    <meta name="yandex-verification" content="f0dd4d7d7d4b75ba" />
-
     @if(isset($images))
         @foreach($images as $image)
             <meta property="og:image" content="{{$baseUrl}}{{$image['800x600']}}">
