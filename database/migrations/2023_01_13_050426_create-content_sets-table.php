@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('content_sets', function (Blueprint $table) {
             $table->id();
             $table->integer('page_id')->unique()->nullable();
-            $table->string('introtext', 255)->nullable();
+            $table->text('introtext')->nullable();
             $table->text('content')->nullable();
             $table->timestamps();
         });
