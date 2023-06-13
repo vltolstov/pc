@@ -43,8 +43,12 @@
 <div class="body-flex">
     @include('.elements.header')
 
-    @section('index')
-    @show
+    @if($id != 1)
+        @include('.elements.breadcrumbs')
+    @else
+        @section('index')
+        @show
+    @endif
 
     @include('.elements.footer')
 </div>

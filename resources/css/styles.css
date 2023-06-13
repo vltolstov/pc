@@ -678,3 +678,23 @@
         margin: 0 auto;
         background: #fff;
     }
+    .breadcrumbs {
+        background: #d7d7d8;
+    }
+    .breadcrumbs-wrap {
+        padding: 64px 125px;
+    }
+    .breadcrumbs p {
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #404040;
+    }
+    .breadcrumbs p a {
+        font-family: MontserratL;
+        text-decoration: none;
+        color: #404040;
+    }
+    .breadcrumbs p a:hover {
+        text-decoration: underline;
+        color: #000;
+    }
