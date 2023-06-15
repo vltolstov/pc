@@ -43,6 +43,8 @@
 
     @if($id != 1)
         @include('.elements.breadcrumbs')
+        @section('content')
+        @show
     @else
         @section('index')
         @show

@@ -276,26 +276,35 @@
     .catalog-wrap {
         padding: 100px 125px;
     }
+    .categories {
+        background: #d7d7d8;
+    }
+    .categories-wrap {
+        padding: 0px 125px 100px 125px;
+    }
+    .category-headers {
+        padding: 0px 0px 0px 6px;
+    }
     .catalog-headers {
         padding: 0px 50px 0px 6px;
     }
     .news-headers {
         padding: 0px 0px 0px 6px;
     }
-    .catalog-headers h3, .news-headers h3 {
+    .catalog-headers h3, .news-headers h3, .category-headers h3 {
         font-family: MontserratL;
         font-size: 48px;
         color: #080808;
         padding: 0px 0px 20px 0px;
     }
-    .catalog-headers p, .news-headers p {
+    .catalog-headers p, .news-headers p, .category-headers p {
         font-family: MontserratL;
         font-size: 14px;
         color: #7a7a7a;
         text-transform: uppercase;
         padding: 0px 0px 50px 4px;
     }
-    .catalog-info {
+    .catalog-info, .category-info {
         font-family: MontserratL;
         font-size: 16px;
         line-height: 24px;
@@ -318,6 +327,25 @@
     }
     .catalog-button a:hover {
         background: #e63c24;
+    }
+    .category-offer-button {
+        padding: 50px 50px 0px 10px;
+    }
+    .category-offer-button p {
+        display: inline-block;
+        background: #e63c24;
+        color: #FFF;
+        font-family: MontserratM;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 195px;
+        text-align: center;
+        padding: 16px 45px;
+    }
+    .category-offer-button p:hover {
+        background: #080808;
+        cursor: pointer;
     }
     .catalog-item {
         text-align: center;
@@ -682,7 +710,7 @@
         background: #d7d7d8;
     }
     .breadcrumbs-wrap {
-        padding: 64px 125px;
+        padding: 64px 125px 64px 131px;
     }
     .breadcrumbs p {
         font-family: MontserratL;
