@@ -13,6 +13,7 @@ use App\Models\Slug;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\IntrotextController;
 
 class PageController extends Controller
 {
@@ -30,7 +31,7 @@ class PageController extends Controller
             'description' => $page->seoset->description,
             'keywords' => $page->seoset->keywords,
             'content' => $page->contentset->content,
-            'introtext' => $page->contentset->introtext,
+            'introtext' => IntrotextController::generateIntro($page->contentset->introtext, 2),
             'urn' => $page->slug->urn,
             'menuItems' => MenuController::generateMenu(),
         ]);
@@ -69,7 +70,7 @@ class PageController extends Controller
             'name' => $page->name,
             'title' => $page->title,
             'description' => $page->description,
-            'introtext' => $page->introtext,
+            'introtext' => IntrotextController::generateIntro($page->introtext, 2),
             'urn' => $page->urn,
             'keywords' => $page->keywords,
             'content' => $page->content,
