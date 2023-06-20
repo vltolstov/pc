@@ -57,22 +57,25 @@ class ImageController extends Controller
                     $imageObj['main'] = $imageData['fullPath'];
                     Storage::putFileAs($imageData['uploadFolder'], $image, $imageData['name']);
 
-                    $resizeImage = '';
-                    if($originalWidth > $originalHeight) {
-                        $newWidth = round($originalHeight / 3 * 4, 0);
-                        $resizeImage = Image::make($image)->crop($newWidth, $originalHeight, round(($originalWidth - $newWidth) / 2, 0), 0);
-                    } else {
-                        $newHeight = round($originalWidth / 4 * 3, 0);
-                        $resizeImage = Image::make($image)->crop($originalWidth, $newHeight, 0, round(($originalHeight - $newHeight) / 2, 0 ));
-                    }
-
                     foreach ($imageWidths as $width  => $resolution){
+                        $resizeImage = '';
+
+                        if($originalWidth > $originalHeight) {
+                            $newWidth = round($originalHeight / 3 * 4, 0);
+                            $background = Image::canvas($newWidth, $originalHeight);
+                            $resizeImage = $background->insert(Image::make($image), 'center');
+                        } else {
+                            $newHeight = round($originalWidth / 4 * 3, 0);
+                            $background = Image::canvas($newHeight, $originalWidth);
+                            $resizeImage = $background->insert(Image::make($image), 'center');
+                        }
+
                         $resizeImage->resize($width,null, function ($constraint){
                             $constraint->aspectRatio();
                         });
                         $resizeImage->insert('images/watermark-' . $width . '.png', 'center');
-                        $imageObj[$resolution] = $uploadFolder . '/' . $fileName . '-' . $resolution . '.jpg';
-                        Storage::put( $uploadFolder . '/' . $fileName . '-' . $resolution . '.jpg', $resizeImage->encode('jpg', 60));
+                        $imageObj[$resolution] = $uploadFolder . '/' . $fileName . '-' . $resolution . '.png';
+                        Storage::put( $uploadFolder . '/' . $fileName . '-' . $resolution . '.png', $resizeImage->encode('png', 60));
                     }
 
                     $imageArr['image-' . $index] = $imageObj;
