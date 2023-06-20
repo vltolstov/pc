@@ -25,7 +25,7 @@ class ImageController extends Controller
             foreach ($images->input('upload-images') as $item) {
                 $imageObj['main'] = $item;
                 foreach ($imageWidths as $key => $resolution){
-                    $imageObj[$resolution] = mb_substr($item, 0 , mb_strpos($item, '.')) . '-' . $resolution . '.jpg';
+                    $imageObj[$resolution] = mb_substr($item, 0 , mb_strpos($item, '.')) . '-' . $resolution . '.png';
                 }
                 $imageArr['image-' . $index] = $imageObj;
                 $index++;
