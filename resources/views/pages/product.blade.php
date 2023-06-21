@@ -24,7 +24,7 @@
         </div>
         <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 info-column-flex">
             <div class="content-intro">
-                <p>{{$introtext}}</p>
+                <p></p>
             </div>
             <div class="params-wrap">
                 @foreach($params as $param)

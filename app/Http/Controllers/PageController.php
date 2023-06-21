@@ -96,8 +96,9 @@ class PageController extends Controller
 
         $data['products'] = Page::join('slugs', 'pages.id','=','slugs.page_id')
             ->join('images', 'pages.id','=','images.page_id')
+            ->join('parametr_sets', 'pages.id','=','parametr_sets.page_id')
             ->join('seo_sets', 'pages.id','=','seo_sets.page_id')
-            ->select('pages.*', 'slugs.urn','seo_sets.title', 'images.image as images')
+            ->select('pages.*', 'slugs.urn','seo_sets.title', 'images.image as images', 'parametr_sets.params as params')
             ->where('parent_id', $page->id)
             ->where('page_type_id', 2)
             ->where('active', 1)
@@ -109,8 +110,12 @@ class PageController extends Controller
         } else {
             foreach ($data['products'] as $product){
                 $product['images'] = json_decode($product->images, true);
+                $product['params'] = json_decode($product->params, true);
             }
         }
+
+//        var_dump($data['products'][0]['params']);
+//        die;
 
         $data['menuItems'] = MenuController::generateMenu();
 

@@ -17,3 +17,21 @@ if(offersOpenButton){
     offersOpenButton.addEventListener('click', offersTrigger);
 }
 
+/*
+
+    Раскрытие таблицы продуктов в подкатегориях
+
+ */
+
+const productsWrap = document.querySelector('.products-wrap');
+const productsOpenButton = document.querySelector('.products-open-button');
+
+function productsTrigger(e) {
+    e.preventDefault();
+    productsWrap.classList.remove('products-wrap-close');
+    productsOpenButton.remove();
+}
+
+if(productsOpenButton){
+    productsOpenButton.addEventListener('click', productsTrigger);
+}

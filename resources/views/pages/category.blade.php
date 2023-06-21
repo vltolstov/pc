@@ -78,34 +78,48 @@
             </div>
         </div>
     </div>
+    <div class="products">
+        <div class="container">
+            <div class="row products-wrap products-wrap-close">
+                @isset($products)
+                    <table class="products-table">
+                        <tr>
+                            <th></th>
+                            <th>Модель</th>
+                            @foreach($products[0]->params as $param)
+                                @if($param['active'] == true)
+                                    <th class="param-name-cell">{{$param['name']}}</th>
+                                @endif
+                            @endforeach
+                        </tr>
+                        @foreach($products as $product)
+                            <tr>
+                                <td>
+                                    @if(isset($product->images))
+                                        <img src="{{$product['images']['image-1']['200x150']}}" alt="{{$name}}">
+                                    @else
+                                        <img src="/images/default-200x150.png" alt=" ">
+                                    @endif
+                                </td>
+                                <td><a href="{{$product->slug['urn']}}">{{$product->name}}</a></td>
+                                @foreach($product->params as $param)
+                                    @if($param['active'] == true)
+                                        <td>{{$param['value']}}</td>
+                                    @endif
+                                @endforeach
+                            </tr>
+                        @endforeach
+                    </table>
 
-    @isset($products)
-    <div class="products-block">
-        <div class="row">
-            @foreach($products as $product)
-                @if(isset($product->images))
-                    @foreach($product->images as $image)
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <a href="{{$product->slug['urn']}}" class="product-item" style="background-image: url('{{$image['200x150']}}')">
-                                <p class="product-name">{{$product->seoSet['title']}}</p>
-                                <p class="product-price mobile-off">Подробнее</p>
-                            </a>
-                        </div>
-                        @break
-                    @endforeach
-                @else
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a href="{{$product->slug['urn']}}" class="product-item" style="background-image: url('/images/default-200x150.png')">
-                            <p class="product-name">{{$product->seoSet['title']}}</p>
-                            <p class="product-price mobile-off">Подробнее</p>
-                        </a>
-                    </div>
-                @endif
-            @endforeach
+                @endisset
+                <div class="products-open-button">
+                    <p class="offers-link">Показать еще</p>
+                </div>
+            </div>
         </div>
     </div>
-    @endisset
     <div class="content">
         {!! $content !!}
     </div>
+
 @endsection

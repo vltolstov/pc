@@ -739,9 +739,11 @@
     }
     .products-wrap {
         padding: 0px 125px 100px 125px;
-        height: 280px;
         position: relative;
         overflow: hidden;
+    }
+    .products-wrap-close {
+        height: 280px;
     }
     .products-table {
         width: 100%;
