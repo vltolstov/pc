@@ -38,7 +38,7 @@
                 </a>
             </div>
             <div class="offers-open-button">
-                <a class="offers-link" href="#">Показать еще</a>
+                <p class="offers-link">Показать еще</p>
             </div>
         </div>
     </div>
