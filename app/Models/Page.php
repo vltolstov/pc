@@ -51,4 +51,9 @@ class Page extends Model
         return$this->hasOne(Category::class);
     }
 
+    public function complete_solution()
+    {
+        return$this->hasOne(CompleteSolution::class);
+    }
+
 }
