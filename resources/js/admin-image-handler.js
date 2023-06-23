@@ -7,6 +7,7 @@
 * */
 
 const images = document.querySelector('.images');
+const solutionImage = document.querySelector('.solution-image');
 let lastIndex = 0;
 const addImagesButton = document.querySelector('.add-images-button');
 
@@ -14,6 +15,10 @@ if(images){
     lastIndex = images.childElementCount;
     addImagesButton.addEventListener('click', addImage);
     images.addEventListener('click', delImage);
+}
+
+if(solutionImage){
+    solutionImage.addEventListener('click', delImage);
 }
 
 function addImage() {

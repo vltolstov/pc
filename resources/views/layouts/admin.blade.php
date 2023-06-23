@@ -29,7 +29,7 @@
 
 <script>
     tinymce.init({
-        selector: 'textarea',
+        selector: 'textarea.editor',
         plugins: 'image autolink lists media table code',
         toolbar: 'styleselect bold italic alignleft aligncenter alignright a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents code',
         toolbar_mode: 'floating',

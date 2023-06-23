@@ -49,11 +49,11 @@
                 <div class="bord">
                     <select name="category">
                         @if($isCategory)
-                            <option value="0">Нет</option>
                             <option value="1">Да</option>
+                            <option value="0">Нет</option>
                         @else
-                            <option value="1">Да</option>
                             <option value="0">Нет</option>
+                            <option value="1">Да</option>
                         @endif
                     </select>
                 </div>
@@ -178,11 +178,31 @@
                 @endif
 
                 <label>Контент</label>
-                <div class="cke-editor">
-                    <textarea name="content" placeholder="Контент" id="ckeditor">
-                        {{ $contentSet->content }}
-                    </textarea>
+                <div class="tiny-editor">
+                    <textarea name="content" placeholder="Контент" class="editor">{{ $contentSet->content }}</textarea>
                 </div>
+                @if($isCategory)
+                    <label>Комплексное решение</label>
+                    <div class="bord">
+                        <textarea name="solution_text" placeholder="Описание решения" class="complete-solution-text">@isset($solution->solution_text){{$solution->solution_text}}@endisset</textarea>
+                    </div>
+                    @if(isset($solution->solution_image))
+                        <div class="solution-image">
+                            <div class="bord">
+                                <div class="del-button"><span class="icon-exit"></span></div>
+                                <img src="{{$solution->solution_image}}" width="200px">
+                                <input type="hidden" name="solution_image" value="{{$solution->solution_image}}">
+                            </div>
+                        </div>
+                    @else
+                        <div class="solution-image">
+                            <div class="bord">
+                                <div class="del-button"><span class="icon-exit"></span></div>
+                                <input type="file" name="solution_image">
+                            </div>
+                        </div>
+                    @endif
+                @endif
                 <div class="row">
                     <div class="col-lg-12 save-button">
                         <button type="submit" class="admin-button">Сохранить</button>

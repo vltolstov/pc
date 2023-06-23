@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('page_id')->unique()->nullable();
             $table->text('solution_text')->nullable();
-            $table->json('solution_image')->nullable();
+            $table->string('solution_image', 255)->nullable();
             $table->timestamps();
         });
     }

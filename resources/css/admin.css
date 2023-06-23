@@ -208,3 +208,9 @@
     font-family: MontserratL;
     font-size: 14px !important;
 }
+.tiny-editor {
+    padding-bottom: 30px;
+}
+.complete-solution-text {
+    width: 100%;
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\CompleteSolution;
 use App\Models\ContentSet;
 use App\Models\Image;
 use App\Models\Page;
@@ -14,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\IntrotextController;
+use App\Http\Controllers\CompleteSolutionController;
 
 class PageController extends Controller
 {
@@ -227,13 +229,9 @@ class PageController extends Controller
             ->get();
 
         $isCategory = Page::select('categories.id')
-            ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
+            ->join('categories', 'pages.id', '=', 'categories.page_id')
             ->where('pages.id', '=', $page->id)
-            ->first();
-
-        if($isCategory->id !== null){
-            $isCategory = false;
-        }
+            ->exists();
 
         return view('admin.index', [
             'pages' => $pages,
@@ -247,6 +245,7 @@ class PageController extends Controller
             'slug' => $page->slug->urn,
             'images' => $images,
             'params' => $params,
+            'solution' => $page->completeSolution,
             'title' => 'Редактирование страницы'
         ]);
 
@@ -273,12 +272,16 @@ class PageController extends Controller
 
             'active' => 'present',
 
+            'solution_text' => 'nullable',
+            'solution_image' => 'nullable',
+
         ]);
+
+        $validationData['page_id'] = $page->id;
 
         $page->update($validationData);
         $page->contentSet->update($validationData);
         $page->seoSet->update($validationData);
-
 
         $isCategory = Page::select('categories.id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
@@ -288,22 +291,31 @@ class PageController extends Controller
             $page->category->delete($validationData);
         }
         elseif ($validationData['category'] && !$isCategory->id) {
-            $validationData['page_id'] = $page->id;
             Category::create($validationData);
         }
 
-
         if($request->input('upload-images') == null && !$request->file()){
             $validationData['image'] = null;
-            $page->image->update($validationData);
         }
         else {
             $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn']);
-            $page->image->update($validationData);
         }
+        $page->image->update($validationData);
 
         $validationData['params'] = ParametrSetController::ParametrDataProcessing($request);
         $page->parametrSet->update($validationData);
+
+        if($request->input('solution_image') == null && !$request->file()){
+            $validationData['solution_image'] = null;
+        }
+        else {
+            $validationData['solution_image'] = CompleteSolutionController::imageSolutionProcessing($request, $validationData['urn']);
+        }
+
+        CompleteSolution::updateOrCreate(
+            ['page_id' => $page->id],
+            ['solution_text' => $validationData['solution_text'], 'solution_image' => $validationData['solution_image']]
+        );
 
         if($page->parent_id > 0){
             return redirect()->route('page.edit', [$page->parent_id]);
@@ -320,6 +332,7 @@ class PageController extends Controller
         $page->parametrSet->delete();
         $page->seoSet->delete();
         $page->slug->delete();
+        $page->completeSolution->delete();
 
         $isCategory = Page::select('categories.id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')

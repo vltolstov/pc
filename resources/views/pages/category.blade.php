@@ -122,4 +122,7 @@
         {!! $content !!}
     </div>
 
+    @include('.elements.about')
+    @include('.elements.consultation')
+
 @endsection
