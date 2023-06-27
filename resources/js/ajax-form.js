@@ -1,8 +1,8 @@
-let overlay = document.querySelector('.overlay');
-let exitButton = document.querySelector('.exit-button');
-let requestButton = document.querySelector('.request-button');
+
+let body = document.querySelector('body');
 
 function formActivate() {
+    let overlay = document.querySelector('.overlay');
     overlay.classList.toggle('hide');
 }
 
@@ -75,14 +75,21 @@ function submitForm() {
 
 }
 
-if(requestButton){
-    requestButton.addEventListener('click', formActivate);
-}
-overlay.addEventListener('click', function (event) {
-    let target = event.target;
-    if(target.className == 'form-wrap'){
+body.addEventListener('click', function (event) {
+    if(event.target.parentElement.classList.contains('request-button'))
+    {
+        formActivate();
+    }
+    if(event.target.className == 'form-wrap'){
         formActivate();
     }
 });
-exitButton.addEventListener('click', formActivate);
-document.querySelector('.ajaxFormButton').addEventListener('click', submitForm);
+
+if(document.querySelector('.exit-button')) {
+    document.querySelector('.exit-button').addEventListener('click', formActivate);
+}
+
+if(document.querySelector('.ajaxFormButton')){
+    document.querySelector('.ajaxFormButton').addEventListener('click', submitForm);
+}
+
