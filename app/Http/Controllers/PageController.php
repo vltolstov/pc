@@ -49,6 +49,7 @@ class PageController extends Controller
             ->join('content_sets', 'pages.id','=','content_sets.page_id')
             ->join('parametr_sets', 'pages.id','=','parametr_sets.page_id')
             ->join('images', 'pages.id','=','images.page_id')
+            ->leftJoin('complete_solutions', 'pages.id','=','complete_solutions.page_id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
             ->where('urn', $slug)
             ->select('pages.*',
@@ -61,6 +62,8 @@ class PageController extends Controller
                 'parametr_sets.params',
                 'images.image',
                 'categories.id as category_id',
+                'complete_solutions.solution_text',
+                'complete_solutions.solution_image',
             )
             ->first();
 
@@ -78,6 +81,8 @@ class PageController extends Controller
             'content' => $page->content,
             'params' => json_decode($page->params, true),
             'images' => json_decode($page->image, true),
+            'solution_text' => IntrotextController::generateIntro($page->solution_text, 2),
+            'solution_image' => $page->solution_image,
         ];
 
         $data['categories'] = Page::join('slugs', 'pages.id','=','slugs.page_id')
@@ -115,9 +120,6 @@ class PageController extends Controller
                 $product['params'] = json_decode($product->params, true);
             }
         }
-
-//        var_dump($data['products'][0]['params']);
-//        die;
 
         $data['menuItems'] = MenuController::generateMenu();
 
@@ -177,10 +179,16 @@ class PageController extends Controller
 
             'active' => 'present',
 
+            'solution_text' => 'nullable',
+            'solution_image' => 'nullable',
+
         ]);
 
         if($request->file()) {
             $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn']);
+        }
+        if($request->input('solution_image') !== null && $request->file()){
+            $validationData['solution_image'] = CompleteSolutionController::imageSolutionProcessing($request, $validationData['urn']);
         }
 
         $validationData['params'] = ParametrSetController::ParametrDataProcessing($request);
@@ -195,6 +203,7 @@ class PageController extends Controller
 
             if($validationData['category']){
                 Category::create($validationData);
+                CompleteSolution::create($validationData);
             }
         }
         catch (QueryException $exception){
@@ -293,6 +302,21 @@ class PageController extends Controller
         elseif ($validationData['category'] && !$isCategory->id) {
             Category::create($validationData);
         }
+        if($validationData['category']){
+            if(!array_key_exists('solution_text', $validationData)) {
+                $validationData['solution_text'] = null;
+            }
+            if($request->input('solution_image') == null && !$request->file()){
+                $validationData['solution_image'] = null;
+            }
+            else {
+                $validationData['solution_image'] = CompleteSolutionController::imageSolutionProcessing($request, $validationData['urn']);
+            }
+            CompleteSolution::updateOrCreate(
+                ['page_id' => $page->id],
+                ['solution_text' => $validationData['solution_text'], 'solution_image' => $validationData['solution_image']]
+            );
+        }
 
         if($request->input('upload-images') == null && !$request->file()){
             $validationData['image'] = null;
@@ -305,17 +329,7 @@ class PageController extends Controller
         $validationData['params'] = ParametrSetController::ParametrDataProcessing($request);
         $page->parametrSet->update($validationData);
 
-        if($request->input('solution_image') == null && !$request->file()){
-            $validationData['solution_image'] = null;
-        }
-        else {
-            $validationData['solution_image'] = CompleteSolutionController::imageSolutionProcessing($request, $validationData['urn']);
-        }
 
-        CompleteSolution::updateOrCreate(
-            ['page_id' => $page->id],
-            ['solution_text' => $validationData['solution_text'], 'solution_image' => $validationData['solution_image']]
-        );
 
         if($page->parent_id > 0){
             return redirect()->route('page.edit', [$page->parent_id]);

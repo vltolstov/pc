@@ -118,6 +118,35 @@
             </div>
         </div>
     </div>
+
+    <div class="category-complete-solution">
+        <div class="container">
+            <div class="row complete-solution-wrap">
+                <div class="col-lg-12">
+                    <div class="solution-headers">
+                        <h3>Комплексные решения</h3>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="solution-headers">
+                        <p>Под ключ</p>
+                    </div>
+                    @foreach($solution_text as $paragraph)
+                        <p class="solution-info">{{$paragraph}}</p>
+                    @endforeach
+                    <div class="solution-button request-button">
+                        <p>Запросить комплексное решение</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="solution-image">
+                        <img src="{{ $solution_image }}" alt="{{$name}} - Комплексное решение">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="content">
         {!! $content !!}
     </div>

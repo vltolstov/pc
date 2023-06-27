@@ -124,8 +124,20 @@
                     </div>
                 </div>
                 <label>Контент</label>
-                <div>
-                    <textarea name="content" placeholder="Контент" id="content"></textarea>
+                <div class="tiny-editor">
+                    <textarea name="content" placeholder="Контент" class="editor"></textarea>
+                </div>
+                <div class="complete-solution">
+                    <label>Комплексное решение</label>
+                    <div class="bord">
+                        <textarea name="solution_text" placeholder="Описание решения" class="complete-solution-text"></textarea>
+                    </div>
+                    <div class="solution-image">
+                        <div class="bord">
+                            <div class="del-button"><span class="icon-exit"></span></div>
+                            <input type="file" name="solution_image">
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 save-button">

@@ -182,26 +182,28 @@
                     <textarea name="content" placeholder="Контент" class="editor">{{ $contentSet->content }}</textarea>
                 </div>
                 @if($isCategory)
-                    <label>Комплексное решение</label>
-                    <div class="bord">
-                        <textarea name="solution_text" placeholder="Описание решения" class="complete-solution-text">@isset($solution->solution_text){{$solution->solution_text}}@endisset</textarea>
+                    <div class="complete-solution">
+                        <label>Комплексное решение</label>
+                        <div class="bord">
+                            <textarea name="solution_text" placeholder="Описание решения" class="complete-solution-text">@isset($solution->solution_text){{$solution->solution_text}}@endisset</textarea>
+                        </div>
+                        @if(isset($solution->solution_image))
+                            <div class="solution-image">
+                                <div class="bord">
+                                    <div class="del-button"><span class="icon-exit"></span></div>
+                                    <img src="{{$solution->solution_image}}" width="200px">
+                                    <input type="hidden" name="solution_image" value="{{$solution->solution_image}}">
+                                </div>
+                            </div>
+                        @else
+                            <div class="solution-image">
+                                <div class="bord">
+                                    <div class="del-button"><span class="icon-exit"></span></div>
+                                    <input type="file" name="solution_image">
+                                </div>
+                            </div>
+                        @endif
                     </div>
-                    @if(isset($solution->solution_image))
-                        <div class="solution-image">
-                            <div class="bord">
-                                <div class="del-button"><span class="icon-exit"></span></div>
-                                <img src="{{$solution->solution_image}}" width="200px">
-                                <input type="hidden" name="solution_image" value="{{$solution->solution_image}}">
-                            </div>
-                        </div>
-                    @else
-                        <div class="solution-image">
-                            <div class="bord">
-                                <div class="del-button"><span class="icon-exit"></span></div>
-                                <input type="file" name="solution_image">
-                            </div>
-                        </div>
-                    @endif
                 @endif
                 <div class="row">
                     <div class="col-lg-12 save-button">

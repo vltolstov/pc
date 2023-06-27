@@ -6,3 +6,4 @@ import './admin-params-handler';
 import './buttons';
 import './map';
 import './ajax-form';
+import './admin-solution-switcher';
