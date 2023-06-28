@@ -3,8 +3,8 @@
         <div class="row advantages-wrap">
             <div class="col-lg-12">
                 <div class="advantages-headers">
-                    <h3>Преимущества работы с нами</h3>
-                    <p>Подзаголовок - однострочное описание</p>
+                    <h3>{{$advantagesHeader}}</h3>
+                    <p>{{$advantagesIntro}}</p>
                 </div>
             </div>
             <div class="col-lg-12">

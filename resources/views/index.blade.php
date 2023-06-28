@@ -7,7 +7,7 @@
     @include('.elements.map')
     @include('.elements.special-offer')
     @include('.elements.catalog')
-    @include('.elements.advantages')
+    @include('.elements.advantages', ['advantagesHeader' => 'Преимущества работы с нами', 'advantagesIntro' => 'превосходство в деталях'])
     @include('.elements.news')
     @include('.elements.about')
     @include('.elements.consultation')

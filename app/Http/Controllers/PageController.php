@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advantage;
 use App\Models\Category;
 use App\Models\CompleteSolution;
 use App\Models\ContentSet;
@@ -50,6 +51,7 @@ class PageController extends Controller
             ->join('parametr_sets', 'pages.id','=','parametr_sets.page_id')
             ->join('images', 'pages.id','=','images.page_id')
             ->leftJoin('complete_solutions', 'pages.id','=','complete_solutions.page_id')
+            ->leftJoin('advantages', 'pages.id', '=', 'advantages.page_id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
             ->where('urn', $slug)
             ->select('pages.*',
@@ -64,6 +66,7 @@ class PageController extends Controller
                 'categories.id as category_id',
                 'complete_solutions.solution_text',
                 'complete_solutions.solution_image',
+                'advantages.advantages',
             )
             ->first();
 
@@ -83,6 +86,7 @@ class PageController extends Controller
             'images' => json_decode($page->image, true),
             'solution_text' => IntrotextController::generateIntro($page->solution_text, 2),
             'solution_image' => $page->solution_image,
+            'advantages' => json_decode($page->advantages, true),
         ];
 
         $data['categories'] = Page::join('slugs', 'pages.id','=','slugs.page_id')
@@ -191,6 +195,7 @@ class PageController extends Controller
             $validationData['solution_image'] = CompleteSolutionController::imageSolutionProcessing($request, $validationData['urn']);
         }
 
+        $validationData['advantages'] = AdvantageController::AdvantageDataProcessing($request);
         $validationData['params'] = ParametrSetController::ParametrDataProcessing($request);
 
         try{
@@ -200,6 +205,7 @@ class PageController extends Controller
             Image::create($validationData);
             ParametrSet::create($validationData);
             SeoSet::create($validationData);
+            Advantage::create($validationData);
 
             if($validationData['category']){
                 Category::create($validationData);
@@ -216,12 +222,24 @@ class PageController extends Controller
     public function edit(Page $page)
     {
 
+        // наполнение null данными
+//        $pages = Page::select('*')
+//            ->get();
+//        foreach ($pages as $item){
+//            Advantage::create([
+//                'page_id' => $item->id,
+//                'advantages' => null,
+//            ]);
+//        }
+//        die;
+
         $menuPages = Page::select('*')
             ->where('parent_id', '=', '0')
             ->get();
 
         $images = json_decode($page->image->image, true);
         $params = json_decode($page->parametrSet->params, true);
+        $advantages = json_decode($page->advantage->advantages, true);
 
         $categories = Category::select('*')
             ->join('pages', 'categories.page_id', '=', 'pages.id')
@@ -255,6 +273,7 @@ class PageController extends Controller
             'images' => $images,
             'params' => $params,
             'solution' => $page->completeSolution,
+            'advantages' => $advantages,
             'title' => 'Редактирование страницы'
         ]);
 
@@ -329,7 +348,8 @@ class PageController extends Controller
         $validationData['params'] = ParametrSetController::ParametrDataProcessing($request);
         $page->parametrSet->update($validationData);
 
-
+        $validationData['advantages'] = AdvantageController::AdvantageDataProcessing($request);
+        $page->advantage->update($validationData);
 
         if($page->parent_id > 0){
             return redirect()->route('page.edit', [$page->parent_id]);
@@ -346,12 +366,16 @@ class PageController extends Controller
         $page->parametrSet->delete();
         $page->seoSet->delete();
         $page->slug->delete();
-        $page->completeSolution->delete();
+        $page->advantage->delete();
 
         $isCategory = Page::select('categories.id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
             ->where('pages.id', '=', $page->id)
             ->first();
+
+        if($page->completeSolution !== null){
+            $page->completeSolution->delete();
+        }
 
         if($isCategory->id){
             $page->category->delete();

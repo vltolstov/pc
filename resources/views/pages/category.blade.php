@@ -151,6 +151,10 @@
         {!! $content !!}
     </div>
 
+    @isset($advantages)
+        @include('.elements.advantages', ['advantagesHeader' => 'Преимущества', 'advantagesIntro' => 'превосходство в деталях'])
+    @endisset
+
     @include('.elements.about')
     @include('.elements.consultation')
 

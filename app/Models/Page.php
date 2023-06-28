@@ -56,4 +56,9 @@ class Page extends Model
         return$this->hasOne(CompleteSolution::class);
     }
 
+    public function advantage()
+    {
+        return$this->hasOne(Advantage::class);
+    }
+
 }

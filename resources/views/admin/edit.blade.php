@@ -205,6 +205,33 @@
                         @endif
                     </div>
                 @endif
+                @if(isset($advantages))
+                    <div class="advantages-adm-block">
+                        <label>Преимущества</label>
+                        @foreach($advantages as $advantage)
+                            <div class="bord">
+                                <input type="text" name="advantage-header-{{$loop->index + 1}}" placeholder="Заголовок №1" value="{{$advantage['advantage-header']}}">
+                                <input type="text" name="advantage-info-{{$loop->index + 1}}" placeholder="Описание" value="{{$advantage['advantage-info']}}">
+                            </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <div class="advantages-adm-block">
+                        <label>Преимущества</label>
+                        <div class="bord">
+                            <input type="text" name="advantage-header-1" placeholder="Заголовок №1" value="{{ old('advantage-header-1') }}">
+                            <input type="text" name="advantage-info-1" placeholder="Описание" value="{{ old('advantage-info-1') }}">
+                        </div>
+                        <div class="bord">
+                            <input type="text" name="advantage-header-2" placeholder="Заголовок №2" value="{{ old('advantage-header-2') }}">
+                            <input type="text" name="advantage-info-2" placeholder="Описание" value="{{ old('advantage-info-2') }}">
+                        </div>
+                        <div class="bord">
+                            <input type="text" name="advantage-header-3" placeholder="Заголовок №3" value="{{ old('advantage-header-3') }}">
+                            <input type="text" name="advantage-info-3" placeholder="Описание" value="{{ old('advantage-info-3') }}">
+                        </div>
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-lg-12 save-button">
                         <button type="submit" class="admin-button">Сохранить</button>

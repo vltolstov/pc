@@ -139,6 +139,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="advantages-adm-block">
+                    <label>Преимущества</label>
+                    <div class="bord">
+                        <input type="text" name="advantage-header-1" placeholder="Заголовок №1" value="">
+                        <input type="text" name="advantage-info-1" placeholder="Описание" value="">
+                    </div>
+                    <div class="bord">
+                        <input type="text" name="advantage-header-2" placeholder="Заголовок №2" value="">
+                        <input type="text" name="advantage-info-2" placeholder="Описание" value="">
+                    </div>
+                    <div class="bord">
+                        <input type="text" name="advantage-header-3" placeholder="Заголовок №3" value="">
+                        <input type="text" name="advantage-info-3" placeholder="Описание" value="">
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12 save-button">
                         <button type="submit" class="admin-button">Сохранить</button>
