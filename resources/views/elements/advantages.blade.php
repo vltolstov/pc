@@ -17,9 +17,8 @@
                                 </div>
                             </div>
                             <div class="advantage-text-wrap">
-                                <h4>Заголовок</h4>
-                                <p>Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                                    и реализации дальнейших направлений развития.</p>
+                                <h4>{{$advantages[0]['advantage-header']}}</h4>
+                                <p>{{$advantages[0]['advantage-info']}}</p>
                             </div>
                         </div>
                     </div>
@@ -31,9 +30,8 @@
                                 </div>
                             </div>
                             <div class="advantage-text-wrap">
-                                <h4>Заголовок</h4>
-                                <p>Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                                    и реализации дальнейших направлений развития.</p>
+                                <h4>{{$advantages[1]['advantage-header']}}</h4>
+                                <p>{{$advantages[1]['advantage-info']}}</p>
                             </div>
                         </div>
                     </div>
@@ -45,8 +43,8 @@
                                 </div>
                             </div>
                             <div class="advantage-text-wrap">
-                                <h4>Заголовок</h4>
-                                <p>Повседневная практика показывает, что консультация с широки</p>
+                                <h4>{{$advantages[2]['advantage-header']}}</h4>
+                                <p>{{$advantages[2]['advantage-info']}}</p>
                             </div>
                         </div>
                     </div>

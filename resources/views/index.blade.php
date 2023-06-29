@@ -7,7 +7,9 @@
     @include('.elements.map')
     @include('.elements.special-offer')
     @include('.elements.catalog')
-    @include('.elements.advantages', ['advantagesHeader' => 'Преимущества работы с нами', 'advantagesIntro' => 'превосходство в деталях'])
+    @isset($advantages)
+        @include('.elements.advantages', ['advantagesHeader' => 'Преимущества работы с нами', 'advantagesIntro' => 'превосходство в деталях'])
+    @endisset
     @include('.elements.news')
     @include('.elements.about')
     @include('.elements.consultation')
