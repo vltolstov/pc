@@ -11,27 +11,32 @@ class IntrotextController extends Controller
 
     static function generateIntro($text, $quantity)
     {
-        $sentences = explode('. ', $text);
-        $paragraph = '';
-        $result = [];
 
-        for($i = 1; $i <= count($sentences); $i++){
+        if($text !== null){
+            $sentences = explode('. ', $text);
+            $paragraph = '';
+            $result = [];
 
-            $paragraph .= $sentences[$i - 1] . '. ';
+            for($i = 1; $i <= count($sentences); $i++){
 
-            if ($i % $quantity == 0) {
-                $result[] = $paragraph;
-                $paragraph = '';
+                $paragraph .= $sentences[$i - 1] . '. ';
+
+                if ($i % $quantity == 0) {
+                    $result[] = $paragraph;
+                    $paragraph = '';
+                }
             }
+
+            if($paragraph !== '') {
+                $result[] = $paragraph;
+            }
+
+            $result[count($result) - 1] = substr($result[count($result) - 1], 0, -2);
+
+            return $result;
         }
 
-        if($paragraph !== '') {
-            $result[] = $paragraph;
-        }
-
-        $result[count($result) - 1] = substr($result[count($result) - 1], 0, -2);
-
-        return $result;
+        return null;
 
     }
 

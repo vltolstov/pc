@@ -119,6 +119,7 @@
         </div>
     </div>
 
+    @isset($solution_text)
     <div class="category-complete-solution">
         <div class="container">
             <div class="row complete-solution-wrap">
@@ -146,6 +147,7 @@
             </div>
         </div>
     </div>
+    @endisset
 
     <div class="content">
         {!! $content !!}
