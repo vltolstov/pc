@@ -10,6 +10,7 @@ use App\Models\Image;
 use App\Models\Page;
 use App\Models\PageType;
 use App\Models\ParametrSet;
+use App\Models\RelatedPage;
 use App\Models\SeoSet;
 use App\Models\Slug;
 use Illuminate\Http\Request;
@@ -53,6 +54,7 @@ class PageController extends Controller
             ->leftJoin('complete_solutions', 'pages.id','=','complete_solutions.page_id')
             ->leftJoin('advantages', 'pages.id', '=', 'advantages.page_id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
+            ->leftJoin('related_pages', 'pages.id', '=', 'related_pages.page_id')
             ->where('urn', $slug)
             ->select('pages.*',
                 'slugs.urn',
@@ -67,6 +69,8 @@ class PageController extends Controller
                 'complete_solutions.solution_text',
                 'complete_solutions.solution_image',
                 'advantages.advantages',
+                'related_pages.related_page_id',
+                'related_pages.related_page_text',
             )
             ->first();
 
@@ -88,6 +92,15 @@ class PageController extends Controller
             'solution_image' => $page->solution_image,
             'advantages' => json_decode($page->advantages, true),
         ];
+
+        $relatedPage = Page::where('id', $page->related_page_id)
+            ->first();
+        if($relatedPage !== null){
+            $data['related_page_text'] = IntrotextController::generateIntro($page->related_page_text, 2);
+            $data['related_page_name'] = $relatedPage->name;
+            $data['related_page_images'] = json_decode($relatedPage->image->image, true);
+            $data['related_page_urn'] = $relatedPage->slug->urn;
+        }
 
         $data['categories'] = Page::join('slugs', 'pages.id','=','slugs.page_id')
             ->join('images', 'pages.id','=','images.page_id')
@@ -186,6 +199,9 @@ class PageController extends Controller
             'solution_text' => 'nullable',
             'solution_image' => 'nullable',
 
+            'related_page_id' => 'nullable',
+            'related_page_text' => 'nullable',
+
         ]);
 
         if($request->file()) {
@@ -195,8 +211,8 @@ class PageController extends Controller
             $validationData['solution_image'] = CompleteSolutionController::imageSolutionProcessing($request, $validationData['urn']);
         }
 
-        $validationData['advantages'] = AdvantageController::AdvantageDataProcessing($request);
         $validationData['params'] = ParametrSetController::ParametrDataProcessing($request);
+        $validationData['advantages'] = AdvantageController::AdvantageDataProcessing($request);
 
         try{
             $validationData['page_id'] = Page::create($validationData)->id;
@@ -206,6 +222,7 @@ class PageController extends Controller
             ParametrSet::create($validationData);
             SeoSet::create($validationData);
             Advantage::create($validationData);
+            RelatedPage::create($validationData);
 
             if($validationData['category']){
                 Category::create($validationData);
@@ -222,13 +239,14 @@ class PageController extends Controller
     public function edit(Page $page)
     {
 
-        // наполнение null данными
+//         наполнение null данными
 //        $pages = Page::select('*')
 //            ->get();
 //        foreach ($pages as $item){
-//            Advantage::create([
+//            RelatedPage::create([
 //                'page_id' => $item->id,
-//                'advantages' => null,
+//                'related_page_id' => null,
+//                'related_page_text' => null,
 //            ]);
 //        }
 //        die;
@@ -274,6 +292,7 @@ class PageController extends Controller
             'params' => $params,
             'solution' => $page->completeSolution,
             'advantages' => $advantages,
+            'relatedPage' => $page->relatedPage,
             'title' => 'Редактирование страницы'
         ]);
 
@@ -302,6 +321,9 @@ class PageController extends Controller
 
             'solution_text' => 'nullable',
             'solution_image' => 'nullable',
+
+            'related_page_id' => 'nullable',
+            'related_page_text' => 'nullable',
 
         ]);
 
@@ -351,6 +373,8 @@ class PageController extends Controller
         $validationData['advantages'] = AdvantageController::AdvantageDataProcessing($request);
         $page->advantage->update($validationData);
 
+        $page->relatedPage->update($validationData);
+
         if($page->parent_id > 0){
             return redirect()->route('page.edit', [$page->parent_id]);
         }
@@ -367,6 +391,7 @@ class PageController extends Controller
         $page->seoSet->delete();
         $page->slug->delete();
         $page->advantage->delete();
+        $page->relatedPage->delete();
 
         $isCategory = Page::select('categories.id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')

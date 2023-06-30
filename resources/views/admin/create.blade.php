@@ -154,6 +154,18 @@
                         <input type="text" name="advantage-info-3" placeholder="Описание" value="">
                     </div>
                 </div>
+                <label>Сопутствующее оборудование</label>
+                <div class="bord">
+                    <select name="related_page_id">
+                        <option value="">Нет</option>
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="bord">
+                    <textarea name="related_page_text" placeholder="Описание сопутствующей страницы" class="related-page-text"></textarea>
+                </div>
                 <div class="row">
                     <div class="col-lg-12 save-button">
                         <button type="submit" class="admin-button">Сохранить</button>

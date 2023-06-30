@@ -61,4 +61,9 @@ class Page extends Model
         return$this->hasOne(Advantage::class);
     }
 
+    public function relatedPage()
+    {
+        return$this->hasOne(RelatedPage::class);
+    }
+
 }
