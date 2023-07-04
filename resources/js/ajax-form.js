@@ -1,5 +1,6 @@
 
 let body = document.querySelector('body');
+let title = '';
 
 function formActivate() {
     let overlay = document.querySelector('.overlay');
@@ -23,12 +24,12 @@ function submitForm() {
     }
 
     let name = document.querySelector("input[name='name']").value;
-    let title = document.querySelector("input[name='title']").value;
     let imfa = document.querySelector("input[name='imfa']").value;
     let email = document.querySelector("input[name='email']").value;
     let phone = document.querySelector("input[name='phone']").value;
     let comment = document.querySelector("input[name='сomment']").value;
     let token = document.querySelector("meta[name='csrf-token']").content;
+
 
     fetch('/sending', {
         method: 'POST',
@@ -78,6 +79,7 @@ function submitForm() {
 body.addEventListener('click', function (event) {
     if(event.target.parentElement.classList.contains('request-button'))
     {
+        title = event.target.parentElement.dataset.title;
         formActivate();
     }
     if(event.target.className == 'form-wrap'){
