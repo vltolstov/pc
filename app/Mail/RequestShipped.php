@@ -44,11 +44,11 @@ class RequestShipped extends Mailable
     public function envelope()
     {
         return new Envelope(
-        from: new Address('noreply@sumkiplus.ru', 'СумкиПлюс'),
+        from: new Address('noreply@test.test', 'Название компании'),
         replyTo: [
             new Address($this->clientEmail, $this->productName),
         ],
-        subject: 'Запрос с сайта СумкиПлюс'
+        subject: 'Запрос с сайта'
         );
     }
 
