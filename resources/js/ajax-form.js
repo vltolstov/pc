@@ -52,8 +52,9 @@ function submitForm() {
             if(json.success === 'ok'){
                 formActivate();
                 document.querySelector('.modal-form').reset();
-                requestButton.innerHTML = '<p>Запрос успешно отправлен</p>';
-                requestButton.classList.add('modal-result');
+                // здесь дописать всплывашку об успешном выполнении
+                // requestButton.innerHTML = '<p>Запрос успешно отправлен</p>';
+                // requestButton.classList.add('modal-result');
             }
             let errorMessages = document.querySelectorAll('.error-message');
             if(errorMessages.length > 0){

@@ -95,7 +95,7 @@
         font-family: MontserratM;
         font-size: 16px;
         text-transform: uppercase;
-        padding-top: 20px;
+        padding: 20px 15px 0px 0px;
     }
     .offer-price {
         font-family: MontserratM;
@@ -259,16 +259,16 @@
         width: 100%;
         text-align: center;
     }
-    .special-offer-button a {
+    .special-offer-button p {
         display: inline-block;
         background: #e63c24;
         font-family: MontserratR;
         font-size: 18px;
         color: #FFF;
-        text-decoration: none;
         padding: 15px 45px;
+        cursor: pointer;
     }
-    .special-offer-button a:hover {
+    .special-offer-button p:hover {
         background-color: #080808;
     }
     .catalog {
@@ -624,18 +624,18 @@
         text-transform: uppercase;
         padding: 0px 0px 50px 4px !important;
     }
-    .consultation-button a {
+    .consultation-button p {
         display: inline-block;
         background: #e63c24;
         font-family: MontserratR;
         font-size: 18px;
         color: #FFF;
         text-align: center;
-        text-decoration: none;
         text-transform: uppercase;
         padding: 15px 45px;
+        cursor: pointer;
     }
-    .consultation-button a:hover {
+    .consultation-button p:hover {
         background: #FFF;
         color: #000;
     }

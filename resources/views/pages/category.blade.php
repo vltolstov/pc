@@ -23,7 +23,7 @@
                             <p class="category-info">{{$paragraph}}</p>
                         @endforeach
                     @endisset
-                    <div class="category-offer-button request-button">
+                    <div class="category-offer-button request-button" data-title="Заспрос {{$title}}">
                         <p>Отправить запрос</p>
                     </div>
                 </div>
@@ -78,46 +78,45 @@
             </div>
         </div>
     </div>
+    @isset($products)
     <div class="products">
         <div class="container">
             <div class="row products-wrap products-wrap-close">
-                @isset($products)
-                    <table class="products-table">
+                <table class="products-table">
+                    <tr>
+                        <th></th>
+                        <th>Модель</th>
+                        @foreach($products[0]->params as $param)
+                            @if($param['active'] == true)
+                                <th class="param-name-cell">{{$param['name']}}</th>
+                            @endif
+                        @endforeach
+                    </tr>
+                    @foreach($products as $product)
                         <tr>
-                            <th></th>
-                            <th>Модель</th>
-                            @foreach($products[0]->params as $param)
+                            <td>
+                                @if(isset($product->images))
+                                    <img src="{{$product['images']['image-1']['200x150']}}" alt="{{$name}}">
+                                @else
+                                    <img src="/images/default-200x150.png" alt=" ">
+                                @endif
+                            </td>
+                            <td><a href="{{$product->slug['urn']}}">{{$product->name}}</a></td>
+                            @foreach($product->params as $param)
                                 @if($param['active'] == true)
-                                    <th class="param-name-cell">{{$param['name']}}</th>
+                                    <td>{{$param['value']}}</td>
                                 @endif
                             @endforeach
                         </tr>
-                        @foreach($products as $product)
-                            <tr>
-                                <td>
-                                    @if(isset($product->images))
-                                        <img src="{{$product['images']['image-1']['200x150']}}" alt="{{$name}}">
-                                    @else
-                                        <img src="/images/default-200x150.png" alt=" ">
-                                    @endif
-                                </td>
-                                <td><a href="{{$product->slug['urn']}}">{{$product->name}}</a></td>
-                                @foreach($product->params as $param)
-                                    @if($param['active'] == true)
-                                        <td>{{$param['value']}}</td>
-                                    @endif
-                                @endforeach
-                            </tr>
-                        @endforeach
-                    </table>
-
-                @endisset
+                    @endforeach
+                </table>
                 <div class="products-open-button">
                     <p class="offers-link">Показать еще</p>
                 </div>
             </div>
         </div>
     </div>
+    @endisset
 
     @isset($solution_text)
     <div class="category-complete-solution">
@@ -135,7 +134,7 @@
                     @foreach($solution_text as $paragraph)
                         <p class="solution-info">{{$paragraph}}</p>
                     @endforeach
-                    <div class="solution-button request-button">
+                    <div class="solution-button request-button" data-title="Запрос комплексного решения: {{$title}}">
                         <p>Запросить комплексное решение</p>
                     </div>
                 </div>
@@ -149,12 +148,16 @@
     </div>
     @endisset
 
-    <div class="content">
-        {!! $content !!}
-    </div>
+    @isset($content)
+        @include('.elements.content')
+    @endisset
 
     @isset($advantages)
         @include('.elements.advantages', ['advantagesHeader' => 'Преимущества', 'advantagesIntro' => 'превосходство в деталях'])
+    @endisset
+
+    @isset($specialOffer)
+        @include('.elements.special-offer')
     @endisset
 
     @isset($related_page_text)

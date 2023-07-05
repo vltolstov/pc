@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Advantage;
 use App\Models\Category;
 use App\Models\CompleteSolution;
+use App\Models\Config;
 use App\Models\ContentSet;
 use App\Models\Image;
+use App\Models\Offer;
 use App\Models\Page;
 use App\Models\PageType;
 use App\Models\ParametrSet;
@@ -27,6 +29,27 @@ class PageController extends Controller
 
         $page = Page::find(1);
 
+        $offers = Page::select('*')
+            ->leftJoin('offers', 'pages.id', '=', 'offers.page_id')
+            ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->leftJoin('images', 'pages.id', '=', 'images.page_id')
+            ->whereNotNull('offer_category_id')
+            ->limit(12)
+            ->inRandomOrder()
+            ->get();
+
+        $specialOffer = Page::select('*')
+            ->leftJoin('offers', 'pages.id', '=', 'offers.page_id')
+            ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->leftJoin('content_sets', 'pages.id', '=', 'content_sets.page_id')
+            ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->leftJoin('images', 'pages.id', '=', 'images.page_id')
+            ->whereNotNull('offer_category_id')
+            ->inRandomOrder()
+            ->first();
+        $specialOffer->introtext = IntrotextController::generateIntro($specialOffer->introtext, 2);
+
         return view('index', [
             'id' => $page->id,
             'parent_id' => $page->parent_id,
@@ -38,6 +61,8 @@ class PageController extends Controller
             'introtext' => IntrotextController::generateIntro($page->contentset->introtext, 2),
             'urn' => $page->slug->urn,
             'menuItems' => MenuController::generateMenu(),
+            'offers' => $offers,
+            'specialOffer' => $specialOffer,
         ]);
 
     }
@@ -102,13 +127,33 @@ class PageController extends Controller
             $data['related_page_urn'] = $relatedPage->slug->urn;
         }
 
+        $specialOffer = Page::select('*')
+            ->leftJoin('offers', 'pages.id', '=', 'offers.page_id')
+            ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->leftJoin('content_sets', 'pages.id', '=', 'content_sets.page_id')
+            ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->leftJoin('images', 'pages.id', '=', 'images.page_id')
+            ->where('offer_category_id', $page->parent_id)
+            ->orWhere('offer_category_id', $page->id)
+            ->inRandomOrder()
+            ->first();
+
+        if(isset($specialOffer)){
+            if(isset($specialOffer->introtext)){
+                $specialOffer->introtext = IntrotextController::generateIntro($specialOffer->introtext, 2);
+            } else {
+                $specialOffer->introtext = IntrotextController::generateIntro(DB::table('configs')->where('name', 'defaultIntro')->value('value'), 1);
+            }
+            $data['specialOffer'] = $specialOffer;
+        }
+
         $data['categories'] = Page::join('slugs', 'pages.id','=','slugs.page_id')
             ->join('images', 'pages.id','=','images.page_id')
             ->join('categories', 'pages.id', '=', 'categories.page_id')
             ->select('pages.*', 'slugs.urn', 'images.image as images')
             ->where('parent_id', $page->id)
             ->where('active', 1)
-            ->orderBy('name', 'asc')
+            ->orderBy('pages.name', 'asc')
             ->get();
         if (!isset($data['categories'][0])){
             $data['categories'] = null;
@@ -202,6 +247,9 @@ class PageController extends Controller
             'related_page_id' => 'nullable',
             'related_page_text' => 'nullable',
 
+            'offer_category_id' => 'nullable',
+            'offer_price' => 'nullable',
+
         ]);
 
         if($request->file()) {
@@ -223,6 +271,7 @@ class PageController extends Controller
             SeoSet::create($validationData);
             Advantage::create($validationData);
             RelatedPage::create($validationData);
+            Offer::create($validationData);
 
             if($validationData['category']){
                 Category::create($validationData);
@@ -243,10 +292,10 @@ class PageController extends Controller
 //        $pages = Page::select('*')
 //            ->get();
 //        foreach ($pages as $item){
-//            RelatedPage::create([
+//            Offer::create([
 //                'page_id' => $item->id,
-//                'related_page_id' => null,
-//                'related_page_text' => null,
+//                'offer_category_id' => null,
+//                'offer_rice' => null,
 //            ]);
 //        }
 //        die;
@@ -293,6 +342,7 @@ class PageController extends Controller
             'solution' => $page->completeSolution,
             'advantages' => $advantages,
             'relatedPage' => $page->relatedPage,
+            'offer' => $page->offer,
             'title' => 'Редактирование страницы'
         ]);
 
@@ -324,6 +374,9 @@ class PageController extends Controller
 
             'related_page_id' => 'nullable',
             'related_page_text' => 'nullable',
+
+            'offer_category_id' => 'nullable',
+            'offer_price' => 'nullable',
 
         ]);
 
@@ -374,6 +427,7 @@ class PageController extends Controller
         $page->advantage->update($validationData);
 
         $page->relatedPage->update($validationData);
+        $page->offer->update($validationData);
 
         if($page->parent_id > 0){
             return redirect()->route('page.edit', [$page->parent_id]);
@@ -392,6 +446,7 @@ class PageController extends Controller
         $page->slug->delete();
         $page->advantage->delete();
         $page->relatedPage->delete();
+        $page->offer->delete();
 
         $isCategory = Page::select('categories.id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')

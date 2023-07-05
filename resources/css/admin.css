@@ -211,6 +211,6 @@
 .tiny-editor {
     padding-bottom: 30px;
 }
-.complete-solution-text, .related-page-text {
+.complete-solution-text, .related-page-text, .introtext {
     width: 100%;
 }

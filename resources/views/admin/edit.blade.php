@@ -102,7 +102,7 @@
                 </div>
                 <label>Интро</label>
                 <div class="bord">
-                    <input type="text" name="introtext" placeholder="Интро" value="{{ $contentSet->introtext }}">
+                    <textarea name="introtext" placeholder="Интро" class="introtext">{{ $contentSet->introtext }}</textarea>
                 </div>
 
                 <label>Параметры</label>
@@ -244,6 +244,20 @@
                     </div>
                     <div class="bord">
                         <textarea name="related_page_text" placeholder="Описание сопутствующей страницы" class="related-page-text">{{$relatedPage->related_page_text}}</textarea>
+                    </div>
+                @endif
+                @if(isset($offer))
+                    <label>Параметры специального предложения</label>
+                    <div class="bord">
+                        <select name="offer_category_id">
+                            <option value="">Нет</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}" @if($offer->offer_category_id == $category->id) selected @endif>{{$category->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="bord">
+                        <input type="number" name="offer_price" placeholder="Цена" value="{{$offer->offer_price}}">
                     </div>
                 @endif
                 <div class="row">

@@ -28,7 +28,7 @@ class Page extends Model
 
     public function image()
     {
-        return$this->hasOne(Image::class);
+        return $this->hasOne(Image::class);
     }
 
     public function seoSet()
@@ -43,27 +43,32 @@ class Page extends Model
 
     public function contentSet()
     {
-        return$this->hasOne(ContentSet::class);
+        return $this->hasOne(ContentSet::class);
     }
 
     public function category()
     {
-        return$this->hasOne(Category::class);
+        return $this->hasOne(Category::class);
     }
 
     public function completeSolution()
     {
-        return$this->hasOne(CompleteSolution::class);
+        return $this->hasOne(CompleteSolution::class);
     }
 
     public function advantage()
     {
-        return$this->hasOne(Advantage::class);
+        return $this->hasOne(Advantage::class);
     }
 
     public function relatedPage()
     {
-        return$this->hasOne(RelatedPage::class);
+        return $this->hasOne(RelatedPage::class);
+    }
+
+    public function offer()
+    {
+        return $this->hasOne(Offer::class);
     }
 
 }

@@ -166,6 +166,18 @@
                 <div class="bord">
                     <textarea name="related_page_text" placeholder="Описание сопутствующей страницы" class="related-page-text"></textarea>
                 </div>
+                <label>Параметры специального предложения</label>
+                <div class="bord">
+                    <select name="offer_category_id">
+                        <option value="">Нет</option>
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="bord">
+                    <input type="number" name="offer_price" placeholder="Цена" value="">
+                </div>
                 <div class="row">
                     <div class="col-lg-12 save-button">
                         <button type="submit" class="admin-button">Сохранить</button>

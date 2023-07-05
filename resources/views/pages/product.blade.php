@@ -27,18 +27,20 @@
                 <p></p>
             </div>
             <div class="params-wrap">
-                @foreach($params as $param)
-                    @if($param['hide'] !== true)
-                        <div class="row">
-                            <div class="param-name col-lg-6 col-md-8 col-sm-6 col-xs-10">
-                                {{$param['name']}}
+                @if(isset($params))
+                    @foreach($params as $param)
+                        @if($param['hide'] !== true)
+                            <div class="row">
+                                <div class="param-name col-lg-6 col-md-8 col-sm-6 col-xs-10">
+                                    {{$param['name']}}
+                                </div>
+                                <div class="param-value col-lg-6 col-md-4 col-sm-6 col-xs-2">
+                                    {{$param['value']}}
+                                </div>
                             </div>
-                            <div class="param-value col-lg-6 col-md-4 col-sm-6 col-xs-2">
-                                {{$param['value']}}
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
+                @endif
             </div>
             <div class="request-button-wrap">
                 <div class="request-button">

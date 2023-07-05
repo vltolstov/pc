@@ -3,27 +3,31 @@
         <div class="row special-offer-wrap">
             <div class="col-lg-12">
                 <div class="special-offer-headers">
-                    <h3>Специальное предложение</h3>
-                    <p>Подзаголовок - однострочное описание</p>
+                    <h3>Специальные предложения и акции</h3>
+                    <p>Оборудование по низким ценам</p>
                 </div>
                 <div class="row special-offer-flex">
                     <div class="special-offer-info col-lg-4 order-3">
-                        <p class="special-offer-name">Заголовок продукта на несколько строк</p>
-                        <p class="special-offer-price">000000 руб.<br><span>в наличии</span></p>
+                        <p class="special-offer-name">{{$specialOffer->name}}</p>
+                        <p class="special-offer-price">{{$specialOffer->offer_price}} руб.<br><span>в наличии</span></p>
                     </div>
                     <div class="special-offer-text col-lg-4 order-2">
-                        <p>Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                            и реализации дальнейших направлений развития.</p>
-                        <p>Идейные соображения высшего порядка, а также
-                            постоянное информационно-пропагандистское обеспечение нашей деятельности играет важную роль
-                            в формировании существенных финансовых и административных условий.</p>
+                        @isset($specialOffer->introtext)
+                            @foreach($specialOffer->introtext as $paragraph)
+                                <p>{{$paragraph}}</p>
+                            @endforeach
+                        @endisset
                     </div>
                     <div class="special-offer-image col-lg-4 order-1">
-                        <img src="/images/default-800x600.png" alt=" ">
+                        @if(isset($specialOffer->image))
+                            <img src="{{json_decode($specialOffer->image, true)['image-1']['200x150']}}" alt="{{$title}}">
+                        @else
+                            <img src="/images/default-800x600.png" alt=" ">
+                        @endif
                     </div>
                 </div>
-                <div class="special-offer-button">
-                    <a href="#">Кнопка заказа / запроса информации</a>
+                <div class="special-offer-button request-button" data-title="Запрос специального предложения: {{$specialOffer->name}}">
+                    <p>Запросить спецификацию и счет</p>
                 </div>
             </div>
         </div>
