@@ -676,19 +676,19 @@
         color: #000;
     }
     .footer-button {
-        padding: 90px 0px 130px 0px;
+        padding: 90px 0px 80px 0px;
     }
-    .footer-button a {
+    .footer-button p {
         display: inline-block;
         background: #e63c24;
         font-family: MontserratR;
         font-size: 18px;
         color: #FFF;
-        text-decoration: none;
         text-transform: uppercase;
         padding: 15px 45px;
+        cursor: pointer;
     }
-    .footer-button a:hover {
+    .footer-button p:hover {
         background: #000;
     }
     .footer-map {

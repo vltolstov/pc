@@ -3,40 +3,38 @@
         <div class="col-lg-6">
             <div class="footer-left">
                 <h3>Контакты</h3>
-                <p class="footer-post-header">Новосибирск, Улица 00, 00</p>
+                <p class="footer-post-header">{{$postAddress}}</p>
                 <div class="row">
                     <div class="col-lg-6">
                         <p class="footer-mini-header">Станция метро</p>
-                        <p class="footer-info">Красный проспект</p>
+                        <p class="footer-info">{{$metro}}</p>
                     </div>
                     <div class="col-lg-6">
                         <p class="footer-mini-header">Режим работы</p>
-                        <p class="footer-info">Пн-Пт: 09:00-18:00</p>
+                        <p class="footer-info">{{$workTime}}</p>
                     </div>
                     <div class="col-lg-6">
                         <p class="footer-mini-header">E-Mail</p>
-                        <p class="footer-info">email@email.email</p>
+                        <p class="footer-info"><a href="mailto:{{$email}}">{{$email}}</a></p>
                     </div>
                     <div class="col-lg-6">
                         <p class="footer-mini-header">Телефон</p>
-                        <p class="footer-info">8-000-000-00-00</p>
+                        <p class="footer-info">{{$phone}}</p>
                     </div>
                 </div>
-                <div class="footer-button">
-                    <a href="#">Написать сообщение</a>
+                <div class="footer-button request-button" data-title="Сообщение с сайта">
+                    <p>Написать сообщение</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="footer-map">
-
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9fe861dc8205928f4318a2dcfa1f4c077fe13708d5a3322ec2609a8cbcc3f58e&amp;width=968&amp;height=653&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
         </div>
     </div>
     <div class="footer-line">
-        <p>Подробно расскажем о наших услугах, видах работ, и типовых проектах,
-            рассчитаем стоимость и подготовим индивидуальное предложение! Подробно расскажем о наших услугах, видах работ, и типовых проектах,
-            рассчитаем стоимость и подготовим индивидуальное предложение! Подробно расскажем о наших услугах, видах работ, и типовых проектах,
-            рассчитаем стоимость и подготовим индивидуальное предложение!</p>
+        <p>ООО “Поликаст” 2022. Все материалы сайта защищены авторскими правами. Копирование и использование на других ресурсах запрещено.
+            * Вся информация представленная на сайте носит информационный характер и не является публичной офертой. По вопросам наличия оборудования и актуальным ценам вы можете обратится в отдел продаж по номеру 8 (800) 2222-600 или отправив заявку на почту e@policast.ru</p>
     </div>
 </div>
