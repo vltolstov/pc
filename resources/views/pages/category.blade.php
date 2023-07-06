@@ -7,7 +7,7 @@
             <div class="row categories-wrap">
                 <div class="col-lg-12">
                     <div class="category-headers">
-                        <h3>{{$title}}</h3>
+                        <h1>{{$title}}</h1>
                         @isset($params)
                             @foreach($params as $param)
                                 @if($param['name'] == 'categoryMiniHeader')
@@ -23,7 +23,7 @@
                             <p class="category-info">{{$paragraph}}</p>
                         @endforeach
                     @endisset
-                    <div class="category-offer-button request-button" data-title="Заспрос {{$title}}">
+                    <div class="category-offer-button request-button" data-title="Запрос {{$title}}">
                         <p>Отправить запрос</p>
                     </div>
                 </div>
