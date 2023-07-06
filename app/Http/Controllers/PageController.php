@@ -82,6 +82,7 @@ class PageController extends Controller
             'offers' => $offers,
             'specialOffer' => $specialOffer,
             'categories' => $categories,
+            'advantages' => json_decode($page->advantage->advantages, true),
         ]);
 
     }
