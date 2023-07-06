@@ -48,7 +48,13 @@ class PageController extends Controller
             ->whereNotNull('offer_category_id')
             ->inRandomOrder()
             ->first();
-        $specialOffer->introtext = IntrotextController::generateIntro($specialOffer->introtext, 2);
+        if(isset($specialOffer)){
+            if(isset($specialOffer->introtext)){
+                $specialOffer->introtext = IntrotextController::generateIntro($specialOffer->introtext, 2);
+            } else {
+                $specialOffer->introtext = IntrotextController::generateIntro(DB::table('configs')->where('name', 'defaultIntro')->value('value'), 1);
+            }
+        }
 
         return view('index', [
             'id' => $page->id,
