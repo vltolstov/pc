@@ -56,6 +56,18 @@ class PageController extends Controller
             }
         }
 
+        $categories = Page::join('slugs', 'pages.id','=','slugs.page_id')
+            ->join('images', 'pages.id','=','images.page_id')
+            ->join('categories', 'pages.id', '=', 'categories.page_id')
+            ->select('pages.*', 'slugs.urn', 'images.image as images')
+            ->whereIn('pages.id', [34,18,42,41,40,39,38,26,23,13,14,15])
+            ->where('active', 1)
+            ->orderBy('pages.name', 'asc')
+            ->get();
+        foreach ($categories as $category){
+            $category['images'] = json_decode($category->images, true);
+        }
+
         return view('index', [
             'id' => $page->id,
             'parent_id' => $page->parent_id,
@@ -69,6 +81,7 @@ class PageController extends Controller
             'menuItems' => MenuController::generateMenu(),
             'offers' => $offers,
             'specialOffer' => $specialOffer,
+            'categories' => $categories,
         ]);
 
     }
