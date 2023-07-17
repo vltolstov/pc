@@ -85,7 +85,7 @@ class PageController extends Controller
             ->select('pages.*', 'slugs.urn', 'images.image as images')
             ->whereIn('pages.id', [34,18,42,41,40,39,38,26,23,13,14,15])
             ->where('active', 1)
-            ->orderBy('pages.name', 'asc')
+            ->orderBy('pages.created_at', 'asc')
             ->get();
         foreach ($categories as $category){
             $category['images'] = json_decode($category->images, true);
@@ -198,7 +198,7 @@ class PageController extends Controller
             ->select('pages.*', 'slugs.urn', 'images.image as images')
             ->where('parent_id', $page->id)
             ->where('active', 1)
-            ->orderBy('pages.name', 'asc')
+            ->orderBy('pages.created_at', 'asc')
             ->get();
         if (!isset($data['categories'][0])){
             $data['categories'] = null;
