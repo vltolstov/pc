@@ -11,55 +11,41 @@
         <div class="row news-wrap">
             <div class="col-lg-12">
                 <div class="row flex">
+
                     <div class="col-lg-4">
                         <div class="news-block">
                             <div class="news-header news-special">
-                                <a href="#">Заголовок новости на две строки для проверки переноса</a>
+                                <a href="{{$priorityNews->urn}}">{{$priorityNews->title}}</a>
                             </div>
                             <div class="news-text">
-                                <p>Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                                    и реализации дальнейших направлений развития. Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                                    и реализации дальнейших направлений развития.</p>
+                                <p>{{$priorityNews->introtext}}</p>
                             </div>
                             <div class="news-date">
-                                <p>00.00.0000</p>
+                                <p>{{$priorityNews->updated_at->format('d.m.Y')}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="news-block">
-                            <div class="news-header">
-                                <a href="#">Заголовок новости на две строки для проверки переноса</a>
-                            </div>
-                            <div class="news-text">
-                                <p>Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                                    и реализации дальнейших направлений развития. Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                                    и реализации дальнейших направлений развития.</p>
-                            </div>
-                            <div class="news-date">
-                                <p>00.00.0000</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="news-block">
-                            <div class="news-header">
-                                <a href="#">Заголовок новости на две строки для проверки переноса</a>
-                            </div>
-                            <div class="news-text">
-                                <p>Повседневная практика показывает, что консультация с широким активом способствует подготовки
-                                    и реализации дальнейших направлений развития.</p>
-                            </div>
-                            <div class="news-date">
-                                <p>00.00.0000</p>
+
+                    @foreach($news as $item)
+                        <div class="col-lg-4">
+                            <div class="news-block">
+                                <div class="news-header">
+                                    <a href="{{$item->urn}}">{{$item->title}}</a>
+                                </div>
+                                <div class="news-text">
+                                    <p>{{$item->introtext}}</p>
+                                </div>
+                                <div class="news-date">
+                                    <p>{{$item->updated_at->format('d.m.Y')}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
         <div class="news-button">
-            <a href="#">Показать еще</a>
+            <a href="/novosti">Показать еще</a>
         </div>
     </div>
 </div>

@@ -56,6 +56,29 @@ class PageController extends Controller
             }
         }
 
+        $priorityNews = Page::select('pages.*', 'slugs.urn', 'seo_sets.title', 'content_sets.introtext')
+            ->leftJoin('content_sets', 'pages.id', '=', 'content_sets.page_id')
+            ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->leftjoin('parametr_sets', 'pages.id','=','parametr_sets.page_id')
+            ->where('parent_id', 10)
+            ->where('active', 1)
+            ->whereNotNull('parametr_sets.params')
+            ->orderBy('pages.updated_at', 'desc')
+            ->first();
+
+        $news = Page::select('pages.*', 'slugs.urn', 'seo_sets.title', 'content_sets.introtext')
+            ->leftJoin('content_sets', 'pages.id', '=', 'content_sets.page_id')
+            ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->leftjoin('parametr_sets', 'pages.id','=','parametr_sets.page_id')
+            ->where('parent_id', 10)
+            ->where('active', 1)
+            ->whereNull('parametr_sets.params')
+            ->limit(2)
+            ->orderBy('pages.updated_at', 'asc')
+            ->get();
+
         $categories = Page::join('slugs', 'pages.id','=','slugs.page_id')
             ->join('images', 'pages.id','=','images.page_id')
             ->join('categories', 'pages.id', '=', 'categories.page_id')
@@ -83,6 +106,8 @@ class PageController extends Controller
             'specialOffer' => $specialOffer,
             'categories' => $categories,
             'advantages' => json_decode($page->advantage->advantages, true),
+            'priorityNews' => $priorityNews,
+            'news' => $news,
         ]);
 
     }
