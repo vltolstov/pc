@@ -29,6 +29,18 @@ class PageController extends Controller
 
         $page = Page::find(1);
 
+        $slides = Page::select('pages.*', 'seo_sets.title', 'content_sets.content', 'images.image as images', 'parametr_sets.params')
+            ->leftJoin('content_sets', 'pages.id', '=', 'content_sets.page_id')
+            ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->leftjoin('parametr_sets', 'pages.id','=','parametr_sets.page_id')
+            ->join('images', 'pages.id','=','images.page_id')
+            ->where('parent_id', 67)
+            ->where('active', 1)
+            ->limit(1)
+            ->inRandomOrder()
+//            ->orderBy('pages.updated_at', 'desc')
+            ->get();
+
         $offers = Page::select('*')
             ->leftJoin('offers', 'pages.id', '=', 'offers.page_id')
             ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
@@ -87,6 +99,7 @@ class PageController extends Controller
             ->where('active', 1)
             ->orderBy('pages.created_at', 'asc')
             ->get();
+
         foreach ($categories as $category){
             $category['images'] = json_decode($category->images, true);
         }
@@ -101,13 +114,13 @@ class PageController extends Controller
             'content' => $page->contentset->content,
             'introtext' => IntrotextController::generateIntro($page->contentset->introtext, 2),
             'urn' => $page->slug->urn,
-            'menuItems' => MenuController::generateMenu(),
             'offers' => $offers,
             'specialOffer' => $specialOffer,
             'categories' => $categories,
             'advantages' => json_decode($page->advantage->advantages, true),
             'priorityNews' => $priorityNews,
             'news' => $news,
+            'slides' => $slides,
         ]);
 
     }
@@ -227,8 +240,6 @@ class PageController extends Controller
                 $product['params'] = json_decode($product->params, true);
             }
         }
-
-        $data['menuItems'] = MenuController::generateMenu();
 
         if($page->category_id){
             return view('pages.category', $data);

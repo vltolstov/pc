@@ -2,7 +2,8 @@
     padding-right: 0;
     padding-left: 0;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    height: 100%;
 }
 
 .row {

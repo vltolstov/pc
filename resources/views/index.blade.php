@@ -2,7 +2,9 @@
 
 @section('index')
 
-    @include('.elements.slider')
+    @isset($slides)
+        @include('.elements.slider')
+    @endisset
     @include('.elements.offers')
     @include('.elements.map')
     @include('.elements.special-offer')
