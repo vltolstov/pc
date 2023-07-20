@@ -87,7 +87,13 @@
                         </div>
                     </div>
                 @endif
-
+                <label>Добавить водяной знак на новые изображения</label>
+                <div class="bord">
+                    <select name="watermark">
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option>
+                    </select>
+                </div>
                 <label>Заголовок</label>
                 <div class="bord">
                     <input type="text" name="title" placeholder="Заголовок" value="{{ $seoSet->title }}" maxlength="70">

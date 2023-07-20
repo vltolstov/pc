@@ -309,7 +309,11 @@ class PageController extends Controller
         ]);
 
         if($request->file()) {
-            $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn']);
+            if($request->input('watermark')){
+                $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn']);
+            } else {
+                $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn'], false);
+            }
         }
         if($request->input('solution_image') !== null && $request->file()){
             $validationData['solution_image'] = CompleteSolutionController::imageSolutionProcessing($request, $validationData['urn']);
@@ -472,7 +476,11 @@ class PageController extends Controller
             $validationData['image'] = null;
         }
         else {
-            $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn']);
+            if($request->input('watermark')){
+                $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn']);
+            } else {
+                $validationData['image'] = ImageController::imageDataProcessing($request, $validationData['urn'], false);
+            }
         }
         $page->image->update($validationData);
 
