@@ -176,6 +176,8 @@ class PageController extends Controller
             'advantages' => json_decode($page->advantages, true),
         ];
 
+        $data['menuItems'] = MenuController::generateMenu();
+
         $relatedPage = Page::where('id', $page->related_page_id)
             ->first();
         if($relatedPage !== null){
