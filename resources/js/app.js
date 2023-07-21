@@ -7,4 +7,4 @@ import './buttons';
 import './map';
 import './ajax-form';
 import './admin-solution-switcher';
-// import './toast';
+import './slider';

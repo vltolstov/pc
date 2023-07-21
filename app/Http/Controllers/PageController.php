@@ -36,9 +36,8 @@ class PageController extends Controller
             ->join('images', 'pages.id','=','images.page_id')
             ->where('parent_id', 67)
             ->where('active', 1)
-            ->limit(1)
-            ->inRandomOrder()
-//            ->orderBy('pages.updated_at', 'desc')
+            ->limit(3)
+            ->orderBy('pages.updated_at', 'asc')
             ->get();
 
         $offers = Page::select('*')

@@ -913,11 +913,21 @@
     .related-page-image img {
         width: 90%;
     }
+    .slider {
+        /*display: block;*/
+        /*overflow: hidden;*/
+        height: 650px;
+    }
     .slider-wrap {
         width: 100%;
         height: 650px;
         background-size: cover;
         background-position: center;
+        display: none;
+        -webkit-animation: fade-in 1s linear; /* Safari 4+ */
+        -moz-animation: fade-in 1s linear; /* Fx 5+ */
+        -o-animation: fade-in 1s linear; /* Opera 12+ */
+        animation: fade-in 1s linear; /* IE 10+, Fx 29+ */
     }
     .slide-top-right {
         display: flex;
