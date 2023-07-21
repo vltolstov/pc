@@ -982,3 +982,48 @@
         padding: 10px 40px 10px 40px;
         margin: 10px 0px;
     }
+
+    .child-pages {
+        border-top:1px solid #f3f3f3;
+    }
+    .child-pages-wrap {
+        padding: 0px 95px 0px 95px;
+    }
+    .child-page-block {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        padding: 50px 30px;
+    }
+    .child-page-image {
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    .child-page-header a {
+        display: inline-block;
+        font-family: MontserratM;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .child-page-header a:hover {
+        text-decoration: underline;
+    }
+    .child-page-text {
+        flex: 1 1 auto;
+        padding-top: 30px;
+    }
+    .child-page-text p {
+        padding: 0px;
+        font-family: MontserratL;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .child-page-date p {
+        bottom: 0px;
+        font-family: MontserratL;
+        font-size: 12px;
+        color: #ababab;
+    }

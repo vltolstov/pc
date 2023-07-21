@@ -2,82 +2,81 @@
 
 @section('content')
 
-    <div class="categories">
-        <div class="container">
-            <div class="row categories-wrap">
-                <div class="col-lg-12">
-                    <div class="category-headers">
-                        <h1>{{$title}}</h1>
-                        @isset($params)
-                            @foreach($params as $param)
-                                @if($param['name'] == 'categoryMiniHeader')
-                                    <p>{{$param['value']}}</p>
-                                @endif
+    @if(!isset($pages) || $pages->currentPage() <= 1)
+        <div class="categories">
+            <div class="container">
+                <div class="row categories-wrap">
+                    <div class="col-lg-12">
+                        <div class="category-headers">
+                            <h1>{{$title}}</h1>
+                            @isset($params)
+                                @foreach($params as $param)
+                                    @if($param['name'] == 'categoryMiniHeader')
+                                        <p>{{$param['value']}}</p>
+                                    @endif
+                                @endforeach
+                            @endisset
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        @isset($introtext)
+                            @foreach($introtext as $paragraph)
+                                <p class="category-info">{{$paragraph}}</p>
                             @endforeach
                         @endisset
+                        <div class="category-offer-button request-button" data-title="Запрос {{$title}}">
+                            <p>Отправить запрос</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-5">
-                    @isset($introtext)
-                        @foreach($introtext as $paragraph)
-                            <p class="category-info">{{$paragraph}}</p>
-                        @endforeach
-                    @endisset
-                    <div class="category-offer-button request-button" data-title="Запрос {{$title}}">
-                        <p>Отправить запрос</p>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="row">
-                        @isset($categories)
-                            @foreach($categories as $category)
-                                <div class="col-lg-4">
-                                    <div class="catalog-item">
-                                        @if(isset($category->images))
-                                            @foreach($category->images as $image)
+                    <div class="col-lg-7">
+                        <div class="row">
+                            @isset($categories)
+                                @foreach($categories as $category)
+                                    <div class="col-lg-4">
+                                        <div class="catalog-item">
+                                            @if(isset($category->images))
+                                                @foreach($category->images as $image)
+                                                    <a href="/{{$category->slug['urn']}}">
+                                                        <div class="catalog-icon">
+                                                            <img src="{{$image['200x150']}}">
+                                                        </div>
+                                                        <p>{{$category['name']}}</p>
+                                                    </a>
+                                                    @break
+                                                @endforeach
+                                            @else
                                                 <a href="/{{$category->slug['urn']}}">
                                                     <div class="catalog-icon">
-                                                        <img src="{{$image['200x150']}}">
+                                                        <img src="/images/default-200x150.png">
                                                     </div>
                                                     <p>{{$category['name']}}</p>
                                                 </a>
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endisset
+                            @empty($categories)
+                                <div class="col-lg-12">
+                                    <div class="category-image">
+                                        @if(isset($images))
+                                            @foreach($images as $image)
+                                                <a href="{{$image['1200x900']}}" class="glightbox">
+                                                    <img src="{{$image['800x600']}}" alt="{{$title}}">
+                                                </a>
                                                 @break
                                             @endforeach
-                                        @else
-                                            <a href="/{{$category->slug['urn']}}">
-                                                <div class="catalog-icon">
-                                                    <img src="/images/default-200x150.png">
-                                                </div>
-                                                <p>{{$category['name']}}</p>
-                                            </a>
                                         @endif
                                     </div>
                                 </div>
-                            @endforeach
-                        @endisset
-                        @empty($categories)
-                            <div class="col-lg-12">
-                                <div class="category-image">
-                                    @if(isset($images))
-                                        @foreach($images as $image)
-                                            <a href="{{$image['1200x900']}}" class="glightbox">
-                                                <img src="{{$image['800x600']}}" alt="{{$title}}">
-                                            </a>
-                                            @break
-                                        @endforeach
-                                    @else
-                                        <a href="/images/default-1200x900.png" class="glightbox">
-                                            <img src="/images/default-800x600.png" alt=" ">
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        @endempty
+                            @endempty
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
+
     @isset($products)
     <div class="products">
         <div class="container">
@@ -194,6 +193,40 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    @endisset
+
+    @isset($pages)
+    <div class="child-pages">
+        <div class="container">
+            <div class="row child-pages-wrap">
+                <div class="col-lg-12">
+                    <div class="row flex">
+                        @foreach($pages as $item)
+                            <div class="col-lg-4">
+                                <div class="child-page-block">
+                                    @if(isset($item->images))
+                                        <div class="child-page-image" style="background-image: url('{{json_decode($item->images, true)['image-1']['400x300']}}')"></div>
+                                    @else
+                                        <div class="child-page-image" style="background-image: url('/images/default-400x300.png')"></div>
+                                    @endif
+                                    <div class="child-page-header">
+                                        <a href="{{$item->urn}}">{{$item->title}}</a>
+                                    </div>
+                                    <div class="child-page-text">
+                                        <p>{{$item->introtext}}</p>
+                                    </div>
+                                    <div class="child-page-date">
+                                        <p>{{$item->updated_at->format('d.m.Y')}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            {{$pages->links()}}
         </div>
     </div>
     @endisset

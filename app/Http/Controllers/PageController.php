@@ -128,12 +128,12 @@ class PageController extends Controller
     {
 
         $page = DB::table('pages')
-            ->join('slugs','pages.id','=','slugs.page_id')
-            ->join('seo_sets', 'pages.id','=','seo_sets.page_id')
-            ->join('content_sets', 'pages.id','=','content_sets.page_id')
-            ->join('parametr_sets', 'pages.id','=','parametr_sets.page_id')
-            ->join('images', 'pages.id','=','images.page_id')
-            ->leftJoin('complete_solutions', 'pages.id','=','complete_solutions.page_id')
+            ->join('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->join('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->join('content_sets', 'pages.id', '=', 'content_sets.page_id')
+            ->join('parametr_sets', 'pages.id', '=', 'parametr_sets.page_id')
+            ->join('images', 'pages.id', '=', 'images.page_id')
+            ->leftJoin('complete_solutions', 'pages.id', '=', 'complete_solutions.page_id')
             ->leftJoin('advantages', 'pages.id', '=', 'advantages.page_id')
             ->leftJoin('categories', 'pages.id', '=', 'categories.page_id')
             ->leftJoin('related_pages', 'pages.id', '=', 'related_pages.page_id')
@@ -153,10 +153,10 @@ class PageController extends Controller
                 'advantages.advantages',
                 'related_pages.related_page_id',
                 'related_pages.related_page_text',
-            )
+                )
             ->first();
 
-        if($page == null) return abort(404);
+        if ($page == null) return abort(404);
 
         $data = [
             'id' => $page->id,
@@ -179,7 +179,7 @@ class PageController extends Controller
 
         $relatedPage = Page::where('id', $page->related_page_id)
             ->first();
-        if($relatedPage !== null){
+        if ($relatedPage !== null) {
             $data['related_page_text'] = IntrotextController::generateIntro($page->related_page_text, 2);
             $data['related_page_name'] = $relatedPage->name;
             $data['related_page_images'] = json_decode($relatedPage->image->image, true);
@@ -197,8 +197,8 @@ class PageController extends Controller
             ->inRandomOrder()
             ->first();
 
-        if(isset($specialOffer)){
-            if(isset($specialOffer->introtext)){
+        if (isset($specialOffer)) {
+            if (isset($specialOffer->introtext)) {
                 $specialOffer->introtext = IntrotextController::generateIntro($specialOffer->introtext, 2);
             } else {
                 $specialOffer->introtext = IntrotextController::generateIntro(DB::table('configs')->where('name', 'defaultIntro')->value('value'), 1);
@@ -206,40 +206,52 @@ class PageController extends Controller
             $data['specialOffer'] = $specialOffer;
         }
 
-        $data['categories'] = Page::join('slugs', 'pages.id','=','slugs.page_id')
-            ->join('images', 'pages.id','=','images.page_id')
+        $data['categories'] = Page::join('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->join('images', 'pages.id', '=', 'images.page_id')
             ->join('categories', 'pages.id', '=', 'categories.page_id')
             ->select('pages.*', 'slugs.urn', 'images.image as images')
             ->where('parent_id', $page->id)
             ->where('active', 1)
             ->orderBy('pages.created_at', 'asc')
             ->get();
-        if (!isset($data['categories'][0])){
+        if (!isset($data['categories'][0])) {
             $data['categories'] = null;
         } else {
-            foreach ($data['categories'] as $category){
+            foreach ($data['categories'] as $category) {
                 $category['images'] = json_decode($category->images, true);
             }
         }
 
-        $data['products'] = Page::join('slugs', 'pages.id','=','slugs.page_id')
-            ->join('images', 'pages.id','=','images.page_id')
-            ->join('parametr_sets', 'pages.id','=','parametr_sets.page_id')
-            ->join('seo_sets', 'pages.id','=','seo_sets.page_id')
-            ->select('pages.*', 'slugs.urn','seo_sets.title', 'images.image as images', 'parametr_sets.params as params')
+        $data['products'] = Page::join('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->join('images', 'pages.id', '=', 'images.page_id')
+            ->join('parametr_sets', 'pages.id', '=', 'parametr_sets.page_id')
+            ->join('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->select('pages.*', 'slugs.urn', 'seo_sets.title', 'images.image as images', 'parametr_sets.params as params')
             ->where('parent_id', $page->id)
             ->where('page_type_id', 2)
             ->where('active', 1)
             ->orderBy('name', 'asc')
             ->get();
 
-        if (!isset($data['products'][0])){
+        if (!isset($data['products'][0])) {
             $data['products'] = null;
         } else {
-            foreach ($data['products'] as $product){
+            foreach ($data['products'] as $product) {
                 $product['images'] = json_decode($product->images, true);
                 $product['params'] = json_decode($product->params, true);
             }
+        }
+
+        if($page->id == 10 || $page->id == 11 || $page->id == 55) {
+            $data['pages'] = Page::select('pages.*', 'slugs.urn', 'seo_sets.title', 'content_sets.introtext', 'images.image as images')
+                ->leftJoin('content_sets', 'pages.id', '=', 'content_sets.page_id')
+                ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+                ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+                ->leftJoin('images', 'pages.id', '=', 'images.page_id')
+                ->where('parent_id', $page->id)
+                ->where('active', 1)
+                ->orderBy('pages.created_at', 'desc')
+                ->simplePaginate(1);
         }
 
         if($page->category_id){
