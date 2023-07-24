@@ -251,7 +251,7 @@ class PageController extends Controller
                 ->where('parent_id', $page->id)
                 ->where('active', 1)
                 ->orderBy('pages.created_at', 'desc')
-                ->simplePaginate(1);
+                ->simplePaginate(12);
         }
 
         if($page->category_id){

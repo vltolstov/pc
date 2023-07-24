@@ -1,0 +1,25 @@
+.paginatation-block {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-item {
+    padding: 10px 20px;
+    font-family: Montserrat;
+    font-size: 24px;
+    margin: 5px;
+}
+
+.pagination-inactive-item {
+    color: #ababab;
+}
+
+.pagination-active-item {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pagination-active-item:hover {
+    color: #FFF;
+    background: #e63c24;
+}
