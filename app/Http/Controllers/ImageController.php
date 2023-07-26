@@ -66,7 +66,7 @@ class ImageController extends Controller
                             $resizeImage = $background->insert(Image::make($image), 'center');
                         } else {
                             $newHeight = round($originalWidth / 4 * 3, 0);
-                            $background = Image::canvas($newHeight, $originalWidth);
+                            $background = Image::canvas($originalWidth, $newHeight);
                             $resizeImage = $background->insert(Image::make($image), 'center');
                         }
 
