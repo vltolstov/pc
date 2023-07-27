@@ -147,6 +147,40 @@
     </div>
     @endisset
 
+    @isset($pages)
+        <div class="child-pages">
+            <div class="container">
+                <div class="row child-pages-wrap">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            @foreach($pages as $item)
+                                <div class="col-lg-4">
+                                    <div class="child-page-block">
+                                        @if(isset($item->images))
+                                            <div class="child-page-image" style="background-image: url('{{json_decode($item->images, true)['image-1']['400x300']}}')"></div>
+                                        @else
+                                            <div class="child-page-image" style="background-image: url('/images/default-400x300.png')"></div>
+                                        @endif
+                                        <div class="child-page-header">
+                                            <a href="{{$item->urn}}">{{$item->title}}</a>
+                                        </div>
+                                        <div class="child-page-text">
+                                            <p>{{$item->introtext}}</p>
+                                        </div>
+                                        <div class="child-page-date">
+                                            <p>{{$item->updated_at->format('d.m.Y')}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                {{$pages->links()}}
+            </div>
+        </div>
+    @endisset
+
     @isset($content)
         @include('.elements.content')
     @endisset
@@ -193,40 +227,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    @endisset
-
-    @isset($pages)
-    <div class="child-pages">
-        <div class="container">
-            <div class="row child-pages-wrap">
-                <div class="col-lg-12">
-                    <div class="row flex">
-                        @foreach($pages as $item)
-                            <div class="col-lg-4">
-                                <div class="child-page-block">
-                                    @if(isset($item->images))
-                                        <div class="child-page-image" style="background-image: url('{{json_decode($item->images, true)['image-1']['400x300']}}')"></div>
-                                    @else
-                                        <div class="child-page-image" style="background-image: url('/images/default-400x300.png')"></div>
-                                    @endif
-                                    <div class="child-page-header">
-                                        <a href="{{$item->urn}}">{{$item->title}}</a>
-                                    </div>
-                                    <div class="child-page-text">
-                                        <p>{{$item->introtext}}</p>
-                                    </div>
-                                    <div class="child-page-date">
-                                        <p>{{$item->updated_at->format('d.m.Y')}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            {{$pages->links()}}
         </div>
     </div>
     @endisset
