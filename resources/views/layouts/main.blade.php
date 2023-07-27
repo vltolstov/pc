@@ -38,6 +38,9 @@
 
 </head>
 <body>
+
+@include('.elements.main-menu')
+
 <div class="body-flex">
     @include('.elements.header')
 

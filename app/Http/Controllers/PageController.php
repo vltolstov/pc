@@ -99,6 +99,16 @@ class PageController extends Controller
             ->orderBy('pages.created_at', 'asc')
             ->get();
 
+        $projects = Page::select('*')
+            ->join('images', 'pages.id','=','images.page_id')
+            ->join('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->join('parametr_sets', 'pages.id', '=', 'parametr_sets.page_id')
+            ->where('parent_id', 11)
+            ->where('active', 1)
+            ->limit(7)
+            ->inRandomOrder()
+            ->get();
+
         foreach ($categories as $category){
             $category['images'] = json_decode($category->images, true);
         }
@@ -120,6 +130,8 @@ class PageController extends Controller
             'priorityNews' => $priorityNews,
             'news' => $news,
             'slides' => $slides,
+            'projects' => $projects,
+            'mainMenu' => MenuController::generateMainMenu(),
         ]);
 
     }
@@ -173,6 +185,7 @@ class PageController extends Controller
             'solution_text' => IntrotextController::generateIntro($page->solution_text, 2),
             'solution_image' => $page->solution_image,
             'advantages' => json_decode($page->advantages, true),
+            'mainMenu' => MenuController::generateMainMenu(),
         ];
 
         $data['menuItems'] = MenuController::generateMenu();
