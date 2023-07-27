@@ -161,8 +161,8 @@
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-        height: 124px;
-        flex-grow: 1;
+        height: 123px;
+        flex-grow: 1;git s
         background-size: 165px;
         background-position: 0px 0px;
         background-repeat: no-repeat;
@@ -914,8 +914,6 @@
         width: 90%;
     }
     .slider {
-        /*display: block;*/
-        /*overflow: hidden;*/
         height: 650px;
     }
     .slider-wrap {
