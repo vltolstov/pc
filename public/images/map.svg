@@ -47,7 +47,7 @@ viewBox="0 0 1500 714"
   <circle id="perm" cx="429.87" cy="401.14" r="4.5"/>
   <circle id="izhevsk" cx="402.4" cy="387.88" r="4.5"/>
   <circle id="kirov" cx="394.45" cy="348.95" r="4.5"/>
-  <circle id="nizhnij-novgorod" cx="322.23" cy="342.18" r="4.5"/>
+  <circle id="niznii-novgorod" cx="322.23" cy="342.18" r="4.5"/>
   <circle id="saransk" cx="303" cy="363.85" r="4.5"/>
   <circle id="penza" cx="289.73" cy="380.1" r="4.5"/>
   <circle id="saratov" cx="287.29" cy="404.75" r="4.5"/>
@@ -107,7 +107,7 @@ viewBox="0 0 1500 714"
   <polygon id="ulan-ude-poly" points="834.2,645.42 886.84,638.5 939.48,645.42 939.8,671.82 834.52,671.82 "/>
   <text id="ulan-ude-text" x="855.92" y="662.43">г. Улан-Удэ</text>
   <polygon id="irkutsk-poly" points="811.64,627.52 864.28,620.6 916.91,627.52 917.23,653.91 811.96,653.91 "/>
-  <text id="irkutsk-text" x="750" y="357">г. Иркутск</text>
+  <text id="irkutsk-text" x="835" y="643">г. Иркутск</text>
   <polygon id="angarsk-poly" points="791.73,620.34 844.37,613.42 897.01,620.34 897.33,646.73 792.05,646.73 "/>
   <text id="angarsk-text" x="817.12" y="637.34">г. Ангарск</text>
   <polygon id="bratsk-poly" points="806.24,527.15 845.52,520.23 884.8,527.15 885.04,553.54 806.48,553.54 "/>
@@ -214,8 +214,8 @@ viewBox="0 0 1500 714"
   <text id="belgorod-text" x="177.53" y="373.22">г. Белгород</text>
   <polygon id="lipeck-poly" points="206.63,349.95 245.68,343.03 284.72,349.95 284.96,376.34 206.87,376.34 "/>
   <text id="lipeck-text" x="219.94" y="366.95">г. Липецк</text>
-  <polygon id="nizhnij-novgorod-poly" points="259,353.6 322.2,346.68 385.39,353.6 385.78,379.99 259.39,379.99 "/>
-  <text id="nizhnij-novgorod-text" x="267.93" y="370.6">г. Нижний Новгород</text>
+  <polygon id="niznii-novgorod-poly" points="259,353.6 322.2,346.68 385.39,353.6 385.78,379.99 259.39,379.99 "/>
+  <text id="niznii-novgorod-text" x="267.93" y="370.6">г. Нижний Новгород</text>
   <polygon id="vladimir-poly" points="225.44,342.76 278.08,335.84 330.72,342.76 331.04,369.16 225.76,369.16 "/>
   <text id="vladimir-text" x="244.92" y="359.77">г. Владимир</text>
   <polygon id="kursk-poly" points="171.66,330.65 206.55,323.74 241.44,330.65 241.65,357.05 171.87,357.05 "/>
