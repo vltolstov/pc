@@ -1,0 +1,83 @@
+.content {
+    padding: 50px 125px 50px 125px;
+    overflow: hidden;
+}
+
+.content h2 {
+    font-family: MontserratL;
+    font-size: 36px;
+    color: #000;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.content h3 {
+    font-family: MontserratL;
+    font-size: 36px;
+    color: #000;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.content h4 {
+    font-family: MontserratL;
+    font-size: 16px;
+    color: #000;
+    padding-bottom: 15px;
+    padding-top: 20px;
+}
+
+.content p {
+    font-family: MontserratL;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.content ul {
+    padding-bottom: 20px;
+}
+
+.content ul li {
+    font-family: MontserratL;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0px 0px 16px 20px;
+    background: url(/img/li.png) 0px 5px no-repeat;
+}
+
+.justifyleft {
+    float: left;
+    padding: 5px 50px 50px 0px;
+}
+
+.justifyright {
+    float: right;
+    padding: 5px 0px 50px 50px;
+}
+
+.st {
+    width: 100%;
+}
+
+.st th {
+    text-align: center;
+    color: #505050;
+    font-size: 0.750em;
+    background: #dcdcdc;
+    font-weight: normal;
+    padding: 14px;
+    border-bottom: 1px solid #f9f9f9;
+    border-right: 1px solid #f9f9f9;
+}
+
+.st td {
+    text-align: center;
+    color: #505050;
+    font-size: 0.750em;
+    background: #ececec;
+    padding: 14px;
+    border-bottom: 1px solid #f9f9f9;
+    border-right: 1px solid #f9f9f9;
+}
