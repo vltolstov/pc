@@ -8,3 +8,4 @@ import './map';
 import './ajax-form';
 import './admin-solution-switcher';
 import './slider';
+import './main-menu';

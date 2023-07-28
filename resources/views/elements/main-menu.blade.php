@@ -1,5 +1,5 @@
-<div class="main-menu">
-    <div class="container">
+<div class="main-menu hide">
+    <div class="container main-menu-container">
         <div class="main-menu-catalog hide">
             <div class="row">
                 <div class="col-lg-3">
@@ -46,7 +46,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="main-menu-portfolio">
+        <div class="main-menu-portfolio hide">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="main-menu-portfolio-left">
@@ -158,5 +158,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="main-menu-exit-button">
+        <span class="icon-exit"></span>
     </div>
 </div>

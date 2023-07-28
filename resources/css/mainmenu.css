@@ -1,9 +1,12 @@
 .main-menu {
+    height: 100%;
     position: absolute;
     top: 108px;
     z-index: 102;
     width: 100%;
     background: #FFF;
+    padding-bottom: 100px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
 }
 
 .main-menu-catalog, .main-menu-engineering, .main-menu-portfolio, .main-menu-company {
@@ -286,4 +289,13 @@
     background-position: 90% center;
     background-size: auto;
     background-repeat: no-repeat;
+}
+
+.main-menu-exit-button {
+    position: absolute;
+    z-index: 110;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
 }
