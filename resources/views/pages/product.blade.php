@@ -31,19 +31,21 @@
                                 @endisset
                             </div>
                         </div>
-                        <div class="gallery">
-                            <div class="row">
-                                @foreach($images as $image)
-                                    @if (!$loop->first)
-                                        <div class="col-lg-3 gallery-item">
-                                            <a href="{{$image['1200x900']}}" class="glightbox">
-                                                <img src="{{$image['200x150']}}" alt="{{$title}}">
-                                            </a>
-                                        </div>
-                                    @endif
-                                @endforeach
+                        @isset($images)
+                            <div class="gallery">
+                                <div class="row">
+                                    @foreach($images as $image)
+                                        @if (!$loop->first)
+                                            <div class="col-lg-3 gallery-item">
+                                                <a href="{{$image['1200x900']}}" class="glightbox">
+                                                    <img src="{{$image['200x150']}}" alt="{{$title}}">
+                                                </a>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
+                        @endisset
                     </div>
                     <div class="col-lg-6">
                         <div class="row">
