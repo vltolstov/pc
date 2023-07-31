@@ -1,55 +1,151 @@
-@extends('.layouts.main')
+@extends('layouts.main')
 
 @section('content')
-    <div class="content-block">
-        @include('.elements.breadcrumbs')
-        <div class="content-header">
-            <h1>{{$title}}</h1>
-        </div>
-    </div>
-    <div class="row main-info-flex">
-        <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
-            @if(isset($images))
-                @foreach($images as $image)
-                    <div class="main-image">
-                        <a href="{{$image['1200x900']}}" class="glightbox"><img src="{{$image['400x300']}}" alt="{{$title}}"></a>
+
+    @if(!isset($pages) || $pages->currentPage() <= 1)
+        <div class="categories">
+            <div class="container">
+                <div class="row categories-wrap">
+                    <div class="col-lg-12">
+                        <div class="category-headers">
+                            <h1>{{$title}}</h1>
+                        </div>
                     </div>
-                    @break
-                @endforeach
-            @else
-                <div class="main-image">
-                    <img src="/images/default-400x300.png" alt=" ">
-                </div>
-            @endif
-        </div>
-        <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 info-column-flex">
-            <div class="content-intro">
-                <p></p>
-            </div>
-            <div class="params-wrap">
-                @if(isset($params))
-                    @foreach($params as $param)
-                        @if($param['hide'] !== true)
+                    <div class="col-lg-6">
+                        @isset($introtext)
+                            @foreach($introtext as $paragraph)
+                                <p class="category-info">{{$paragraph}}</p>
+                            @endforeach
+                        @endisset
+                        <div class="product-param-table">
                             <div class="row">
-                                <div class="param-name col-lg-6 col-md-8 col-sm-6 col-xs-10">
-                                    {{$param['name']}}
-                                </div>
-                                <div class="param-value col-lg-6 col-md-4 col-sm-6 col-xs-2">
-                                    {{$param['value']}}
-                                </div>
+                                @isset($params)
+                                    @foreach($params as $param)
+                                        <div class="col-lg-6">
+                                            <div class="product-param-item">{{$param['name']}}</div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="product-param-item">{{$param['value']}}</div>
+                                        </div>
+                                    @endforeach
+                                @endisset
                             </div>
-                        @endif
-                    @endforeach
-                @endif
-            </div>
-            <div class="request-button-wrap">
-                <div class="request-button">
-                    <p class="modal-form-button">Отправить запрос по цене и наличию</p>
+                        </div>
+                        <div class="gallery">
+                            <div class="row">
+                                @foreach($images as $image)
+                                    @if (!$loop->first)
+                                        <div class="col-lg-3 gallery-item">
+                                            <a href="{{$image['1200x900']}}" class="glightbox">
+                                                <img src="{{$image['200x150']}}" alt="{{$title}}">
+                                            </a>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            @empty($categories)
+                                <div class="col-lg-12">
+                                    <div class="category-image">
+                                        @if(isset($images))
+                                            @foreach($images as $image)
+                                                <a href="{{$image['1200x900']}}" class="glightbox">
+                                                    <img src="{{$image['800x600']}}" alt="{{$title}}">
+                                                </a>
+                                                @break
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                            @endempty
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="category-offer-button request-button" data-title="Запрос {{$title}}">
+                            <p>Отправить запрос</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="content">
-        {!! $content !!}
-    </div>
+    @endif
+
+    @isset($solution_text)
+        <div class="category-complete-solution">
+            <div class="container">
+                <div class="row complete-solution-wrap">
+                    <div class="col-lg-12">
+                        <div class="solution-headers">
+                            <h2>Комплексные решения</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="solution-headers">
+                            <p>Под ключ</p>
+                        </div>
+                        @foreach($solution_text as $paragraph)
+                            <p class="solution-info">{{$paragraph}}</p>
+                        @endforeach
+                        <div class="solution-button request-button" data-title="Запрос комплексного решения: {{$title}}">
+                            <p>Запросить комплексное решение</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="solution-image">
+                            <img src="{{ $solution_image }}" alt="{{$name}} - Комплексное решение">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endisset
+
+    @isset($content)
+        @include('.elements.content')
+    @endisset
+
+    @isset($related_page_text)
+        <div class="related-block">
+            <div class="container">
+                <div class="row related-block-wrap">
+                    <div class="col-lg-12">
+                        <div class="related-block-headers">
+                            <h3>Сопутствующее оборудование</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="related-block-headers">
+                            <p>{{$related_page_name}}</p>
+                        </div>
+                        @foreach($related_page_text as $paragraph)
+                            <p class="related-page-info">{{$paragraph}}</p>
+                        @endforeach
+
+                        <div class="related-block-button">
+                            <a href="/{{$related_page_urn}}">Посмотреть</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="related-page-image">
+                            @if(isset($related_page_images))
+                                @foreach($related_page_images as $image)
+                                    <img src="{{$image['800x600']}}" alt="{{$related_page_name}}">
+                                    @break
+                                @endforeach
+                            @else
+                                <img src="/images/default-800x600.png" alt=" ">
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endisset
+
+    @include('.elements.about')
+    @include('.elements.consultation')
+
 @endsection
