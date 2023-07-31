@@ -768,6 +768,9 @@
     .products-table tr:hover td {
         background: #e8e8e8;
     }
+    .product-image-cell {
+        width: 120px;
+    }
     .products-table img {
         height: 70px;
         vertical-align: middle;

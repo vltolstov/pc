@@ -85,15 +85,17 @@
                     <tr>
                         <th></th>
                         <th>Модель</th>
-                        @foreach($products[0]->params as $param)
-                            @if($param['active'] == true)
-                                <th class="param-name-cell">{{$param['name']}}</th>
-                            @endif
-                        @endforeach
+                        @isset($products[0]->params)
+                            @foreach($products[0]->params as $param)
+                                @if($param['active'] == true)
+                                    <th class="param-name-cell">{{$param['name']}}</th>
+                                @endif
+                            @endforeach
+                        @endisset
                     </tr>
                     @foreach($products as $product)
                         <tr>
-                            <td>
+                            <td class="product-image-cell">
                                 @if(isset($product->images))
                                     <img src="{{$product['images']['image-1']['200x150']}}" alt="{{$name}}">
                                 @else
@@ -101,11 +103,13 @@
                                 @endif
                             </td>
                             <td><a href="{{$product->slug['urn']}}">{{$product->name}}</a></td>
-                            @foreach($product->params as $param)
-                                @if($param['active'] == true)
-                                    <td>{{$param['value']}}</td>
-                                @endif
-                            @endforeach
+                            @isset($product->params)
+                                @foreach($product->params as $param)
+                                    @if($param['active'] == true)
+                                        <td>{{$param['value']}}</td>
+                                    @endif
+                                @endforeach
+                            @endisset
                         </tr>
                     @endforeach
                 </table>
