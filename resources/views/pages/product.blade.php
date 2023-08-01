@@ -18,18 +18,16 @@
                             @endforeach
                         @endisset
                         <div class="product-param-table">
-                            <div class="row">
+                            <table>
                                 @isset($params)
                                     @foreach($params as $param)
-                                        <div class="col-lg-6">
-                                            <div class="product-param-item">{{$param['name']}}</div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="product-param-item">{{$param['value']}}</div>
-                                        </div>
+                                        <tr>
+                                            <td class="product-param-name">{{$param['name']}}</td>
+                                            <td class="product-param-value">{{$param['value']}}</td>
+                                        </tr>
                                     @endforeach
                                 @endisset
-                            </div>
+                            </table>
                         </div>
                         @isset($images)
                             <div class="gallery">

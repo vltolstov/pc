@@ -1041,11 +1041,18 @@
     .product-param-table {
         padding: 20px 10px;
     }
-    .product-param-item {
+    .product-param-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .product-param-name, .product-param-value {
         background: #e1e1e1;
         border-bottom: 1px solid #d7d7d8;
         font-family: MontserratL;
         font-size: 16px;
         color: #000;
         padding: 15px 20px;
+    }
+    .product-param-value {
+        text-align: center;
     }

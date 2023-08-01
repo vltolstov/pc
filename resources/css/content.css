@@ -1,5 +1,5 @@
 .content {
-    padding: 50px 125px 50px 125px;
+    padding: 50px 125px 50px 131px;
     overflow: hidden;
 }
 
@@ -21,7 +21,7 @@
 
 .content h4 {
     font-family: MontserratL;
-    font-size: 16px;
+    font-size: 24px;
     color: #000;
     padding-bottom: 15px;
     padding-top: 20px;
@@ -35,16 +35,28 @@
     padding-bottom: 20px;
 }
 
-.content ul {
+.content ul, .content ol {
     padding-bottom: 20px;
 }
 
+.content ol {
+    padding-left: 28px;
+}
+
 .content ul li {
+    list-style: none;
     font-family: MontserratL;
     font-size: 16px;
     line-height: 24px;
     padding: 0px 0px 16px 20px;
-    background: url(/img/li.png) 0px 5px no-repeat;
+    background: url(/images/li.png) 0px 5px no-repeat;
+}
+
+.content ol li {
+    font-family: MontserratL;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0px 0px 16px 20px;
 }
 
 .justifyleft {
@@ -81,3 +93,20 @@
     border-bottom: 1px solid #f9f9f9;
     border-right: 1px solid #f9f9f9;
 }
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content table td {
+    background: #f9f9f9;
+    border-bottom: 1px solid #ececec;
+    font-family: MontserratL;
+    font-size: 16px;
+    color: #000;
+    padding: 15px 20px;
+}
+
+
+
