@@ -97,6 +97,7 @@
 .content table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 50px;
 }
 
 .content table td {
