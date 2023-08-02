@@ -243,7 +243,7 @@ class PageController extends Controller
             ->where('parent_id', $page->id)
             ->where('page_type_id', 2)
             ->where('active', 1)
-            ->orderBy('name', 'asc')
+            ->orderBy('created_at', 'asc')
             ->get();
 
         if (!isset($data['products'][0])) {
