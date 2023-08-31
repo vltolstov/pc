@@ -75,7 +75,7 @@ class PageController extends Controller
             ->where('parent_id', 10)
             ->where('active', 1)
             ->whereNotNull('parametr_sets.params')
-            ->orderBy('pages.updated_at', 'desc')
+            ->orderBy('pages.created_at', 'desc')
             ->first();
 
         $news = Page::select('pages.*', 'slugs.urn', 'seo_sets.title', 'content_sets.introtext')
@@ -87,7 +87,7 @@ class PageController extends Controller
             ->where('active', 1)
             ->whereNull('parametr_sets.params')
             ->limit(2)
-            ->orderBy('pages.updated_at', 'asc')
+            ->orderBy('pages.created_at', 'desc')
             ->get();
 
         $categories = Page::join('slugs', 'pages.id','=','slugs.page_id')
@@ -96,7 +96,7 @@ class PageController extends Controller
             ->select('pages.*', 'slugs.urn', 'images.image as images')
             ->whereIn('pages.id', [34,18,42,41,40,39,38,26,23,13,14,15])
             ->where('active', 1)
-            ->orderBy('pages.created_at', 'asc')
+            ->orderBy('pages.updated_at', 'desc')
             ->get();
 
         $projects = Page::select('*')
