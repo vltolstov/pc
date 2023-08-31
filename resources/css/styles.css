@@ -776,6 +776,7 @@
         vertical-align: middle;
     }
     .products-table a {
+        font-family: MontserratL;
         text-decoration: none;
     }
     .products-table a:hover {
