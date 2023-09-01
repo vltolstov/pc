@@ -70,14 +70,15 @@ function addGeoHighlight(cityName, x, y) {
 
     let cordY = Number(city.getAttribute('cy')) + 10;
 
-    let line = svgDocument.getElementById('line');
-    line.setAttribute('stroke', '#FFF');
-    line.setAttribute("stroke-width", 2);
-    line.setAttribute("x1", city.getAttribute('cx'));
-    line.setAttribute("y1", cordY);
-    line.setAttribute("x2", x);
-    line.setAttribute("y2", y);
-
+    if(window.innerWidth > 1450){
+        let line = svgDocument.getElementById('line');
+        line.setAttribute('stroke', '#FFF');
+        line.setAttribute("stroke-width", 2);
+        line.setAttribute("x1", city.getAttribute('cx'));
+        line.setAttribute("y1", cordY);
+        line.setAttribute("x2", x);
+        line.setAttribute("y2", document.querySelector('.map-svg').clientHeight);
+    }
 }
 
 window.addEventListener('load', mapProcessing);
@@ -95,7 +96,7 @@ if(mapProjects){
 
         setTimeout(() => {
             let x = project.offsetLeft + project.offsetWidth / 2;
-            let y = project.offsetTop - project.offsetHeight - 60;
+            let y = project.offsetTop - project.offsetHeight;
 
             addGeoHighlight(cityName, x, y);
         }, 300);
