@@ -1,23 +1,23 @@
 <div class="footer">
     <div class="row footer-flex">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
             <div class="footer-left">
                 <h3>Контакты</h3>
                 <p class="footer-post-header">{{$postAddress}}</p>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <p class="footer-mini-header">Станция метро</p>
                         <p class="footer-info">{{$metro}}</p>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <p class="footer-mini-header">Режим работы</p>
                         <p class="footer-info">{{$workTime}}</p>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <p class="footer-mini-header">E-Mail</p>
                         <p class="footer-info"><a href="mailto:{{$email}}">{{$email}}</a></p>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <p class="footer-mini-header">Телефон</p>
                         <p class="footer-info">{{$phone}}</p>
                     </div>
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
             <div class="footer-map">
                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9fe861dc8205928f4318a2dcfa1f4c077fe13708d5a3322ec2609a8cbcc3f58e&amp;width=968&amp;height=653&amp;lang=ru_RU&amp;scroll=false"></script>
             </div>

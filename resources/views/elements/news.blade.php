@@ -1,7 +1,7 @@
 <div class="news">
     <div class="container">
         <div class="row news-headers-wrap">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12">
                 <div class="news-headers">
                     <h3>Новости</h3>
                     <p>Самое важное</p>
@@ -9,10 +9,10 @@
             </div>
         </div>
         <div class="row news-wrap">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12">
                 <div class="row flex">
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <div class="news-block">
                             <div class="news-header news-special">
                                 <a href="{{$priorityNews->urn}}">{{$priorityNews->title}}</a>
@@ -27,7 +27,7 @@
                     </div>
 
                     @foreach($news as $item)
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 col-md-4">
                             <div class="news-block">
                                 <div class="news-header">
                                     <a href="{{$item->urn}}">{{$item->title}}</a>

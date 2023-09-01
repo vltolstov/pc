@@ -26,11 +26,16 @@
     }
 }
 
+@media (min-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+}
+
 @media (min-width: 1500px) {
     .container {
-        width: 1500px;
+        width: 1483px;
     }
-
 }
 
 .container-fluid {

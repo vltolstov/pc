@@ -1,6 +1,23 @@
-.content {
-    padding: 50px 125px 50px 131px;
-    overflow: hidden;
+@media (min-width: 300px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+    .content {
+        padding: 50px 56px;
+        overflow: hidden;
+    }
+}
+@media (min-width: 1500px) {
+    .content {
+        padding: 50px 125px 50px 131px;
+        overflow: hidden;
+    }
 }
 
 .content h2 {

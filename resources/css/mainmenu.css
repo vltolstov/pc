@@ -1,301 +1,615 @@
-.main-menu {
-    height: 100%;
-    position: absolute;
-    top: 108px;
-    z-index: 102;
-    width: 100%;
-    background: #FFF;
-    padding-bottom: 100px;
-    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
-}
-
-.main-menu-catalog, .main-menu-engineering, .main-menu-portfolio, .main-menu-company {
-    padding: 54px 45px;
-    margin: 0 auto;
-}
-.left-submenu {
-    padding: 25px;
-}
-
-.right-submenu-flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
-}
-
-.right-submenu {
-    display: flex;
-    padding: 25px;
-    width: 28.606%;
-    flex-direction: column;
-}
-
-.left-submenu a {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: MontserratL;
-    font-size: 16px;
-    padding: 24px 35px 22px 35px;
-    background: #f9f9f9;
-    color: #000;
-    text-decoration: none;
-    width: auto;
-}
-.left-submenu a:hover {
-    background: #e63c24;
-    color: #FFF;
-}
-
-.right-submenu-header {
-    font-family: Montserrat;
-    font-size: 16px;
-    color:#7f7f7f;
-    text-transform: uppercase;
-    padding-bottom: 23px;
-    text-decoration: none;
-}
-
-.right-submenu-header:hover {
-    color: #000;
-}
-
-.right-submenu-items {
-    display: flex;
-    flex-direction: column;
-}
-
-.right-submenu-items a {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: MontserratL;
-    font-size: 16px;
-    padding: 24px 35px 22px 35px;
-    background: #f9f9f9;
-    color: #000;
-    text-decoration: none;
-    width: auto;
-    margin-bottom: 1px;
-}
-
-.right-submenu-items a:hover {
-    background: #e63c24;
-    color: #FFF;
-}
-
-.engineering-flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
-}
-
-.engineering-flex a {
-    font-family: MontserratL;
-    font-size: 16px;
-    background: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 7px 25px;
-    padding: 0px 160px 0px 35px;
-    text-decoration: none;
-    color: #000;
-    height: 108px;
-    background-position: top right;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.engineering-flex a:hover {
-    background-color: #e63c24;
-    color: #FFF;
-}
-
-.main-menu-portfolio-left {
-    padding: 25px;
-}
-
-.main-menu-portfolio-header {
-    font-family: MontserratL;
-    font-size: 24px;
-    color: #e63c24;
-    padding-bottom: 20px;
-}
-
-.main-menu-portfolio-intro {
-    font-family: MontserratL;
-    font-size: 14px;
-    color: #000;
-    padding-bottom: 36px;
-}
-
-.main-menu-portfolio-link {
-    display: block;
-    font-family: MontserratL;
-    font-size: 14px;
-    color: #e63c24;
-    text-decoration: none;
-    margin-bottom: 58px;
-}
-
-.main-menu-portfolio-link:hover {
-    text-decoration: underline;
-}
-
-.portfolio-cities {
-    overflow: auto;
-}
-
-.portfolio-cities li {
-    list-style: none;
-    font-family: MontserratL;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #000;
-    float: left;
-    width: 50%;
-}
-
-.main-menu-projects-block {
-    padding: 21px;
-}
-
-.main-menu-project-image {
-    padding: 4px;
-    opacity: 0.3;
-}
-
-.main-menu-project-image img {
-    width: 100%;
-}
-
-.main-menu-projects-link {
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-}
-
-.main-menu-projects-link a {
-    display: inline-block;
-    font-family: Montserrat;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #FFF;
-    background: #e63c24;
-    padding: 20px 30px;
-    text-decoration: none;
-}
-
-.main-menu-projects-link a:hover {
-    background: #000;
-}
-
-.main-menu-company-block {
-    padding: 25px;
-}
-
-.main-menu-company-header {
-    font-family: MontserratL;
-    font-size: 24px;
-    color: #e63c24;
-    padding-bottom: 20px;
-}
-
-.main-menu-company-intro {
-    font-family: MontserratL;
-    font-size: 14px;
-    color: #000;
-    padding-bottom: 36px;
-}
-
-.main-menu-company-link {
-    display: block;
-    font-family: MontserratL;
-    font-size: 14px;
-    color: #e63c24;
-    text-decoration: none;
-    margin-bottom: 58px;
-}
-
-.main-menu-company-link:hover {
-    text-decoration: underline;
-}
-
-.main-menu-company-mini-header {
-    font-family: MontserratL;
-    font-size: 12px;
-    color: #7a7a7a;
-    text-transform: uppercase;
-    padding-bottom: 15px;
-}
-
-.main-menu-sert {
-    height: 40px;
-    margin-bottom: 25px;
-}
-
-.main-menu-sert img {
-    height: 100%;
-}
-
-.main-menu-news, .main-menu-review {
-    display: flex;
-    padding-bottom: 16px;
-    height: 30px;
-}
-
-.main-menu-news-date, .main-menu-review-date {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: Montserrat;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 500;
-    background: #d7d7d8;
-    padding: 0px 10px;
-}
-
-.main-menu-news-header, .main-menu-review-header {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: Montserrat;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 0px 10px;
-}
-
-.main-menu-subinfo {
+@media (min-width: 300px) {
 
 }
+@media (min-width: 768px) {
 
-.main-menu-subinfo a {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: auto;
-    background: #f8f8f8;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 500;
-    text-decoration: none;
-    height: 103px;
-    margin-bottom: 4px;
-    padding: 0px 0px 0px 33px;
-    background-position: 90% center;
-    background-size: auto;
-    background-repeat: no-repeat;
 }
+@media (min-width: 992px) {
 
-.main-menu-exit-button {
-    position: absolute;
-    z-index: 110;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
+}
+@media (min-width: 1200px) {
+    .main-menu {
+        height: 100%;
+        position: absolute;
+        top: 108px;
+        z-index: 102;
+        width: 100%;
+        background: #FFF;
+        padding-bottom: 200px;
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
+    }
+
+    .main-menu-catalog, .main-menu-engineering, .main-menu-portfolio, .main-menu-company {
+        padding: 54px 45px;
+        margin: 0 auto;
+    }
+    .left-submenu {
+        padding: 25px;
+    }
+
+    .right-submenu-flex {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+    }
+
+    .right-submenu {
+        display: flex;
+        padding: 25px;
+        width: 26.606%;
+        flex-direction: column;
+    }
+
+    .left-submenu a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: MontserratL;
+        font-size: 14px;
+        padding: 24px 35px 22px 35px;
+        background: #f9f9f9;
+        color: #000;
+        text-decoration: none;
+        width: auto;
+    }
+    .left-submenu a:hover {
+        background: #e63c24;
+        color: #FFF;
+    }
+
+    .right-submenu-header {
+        font-family: Montserrat;
+        font-size: 14px;
+        color:#7f7f7f;
+        text-transform: uppercase;
+        padding-bottom: 23px;
+        text-decoration: none;
+    }
+
+    .right-submenu-header:hover {
+        color: #000;
+    }
+
+    .right-submenu-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-submenu-items a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: MontserratL;
+        font-size: 14px;
+        padding: 24px 35px 22px 35px;
+        background: #f9f9f9;
+        color: #000;
+        text-decoration: none;
+        width: auto;
+        margin-bottom: 1px;
+    }
+
+    .right-submenu-items a:hover {
+        background: #e63c24;
+        color: #FFF;
+    }
+
+    .engineering-flex {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+    }
+
+    .engineering-flex a {
+        font-family: MontserratL;
+        font-size: 14px;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 7px 25px;
+        padding: 0px 160px 0px 25px;
+        text-decoration: none;
+        color: #000;
+        height: 108px;
+        background-position: top right;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .engineering-flex a:hover {
+        background-color: #e63c24;
+        color: #FFF;
+    }
+
+    .main-menu-portfolio-left {
+        padding: 25px;
+    }
+
+    .main-menu-portfolio-header {
+        font-family: MontserratL;
+        font-size: 24px;
+        color: #e63c24;
+        padding-bottom: 20px;
+    }
+
+    .main-menu-portfolio-intro {
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #000;
+        padding-bottom: 36px;
+    }
+
+    .main-menu-portfolio-link {
+        display: block;
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #e63c24;
+        text-decoration: none;
+        margin-bottom: 58px;
+    }
+
+    .main-menu-portfolio-link:hover {
+        text-decoration: underline;
+    }
+
+    .portfolio-cities {
+        overflow: auto;
+    }
+
+    .portfolio-cities li {
+        list-style: none;
+        font-family: MontserratL;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #000;
+        float: left;
+        width: 50%;
+    }
+
+    .main-menu-projects-block {
+        padding: 21px;
+    }
+
+    .main-menu-project-image {
+        padding: 4px;
+        opacity: 0.3;
+    }
+
+    .main-menu-project-image img {
+        width: 100%;
+    }
+
+    .main-menu-projects-link {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+
+    .main-menu-projects-link a {
+        display: inline-block;
+        font-family: Montserrat;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #FFF;
+        background: #e63c24;
+        padding: 20px 30px;
+        text-decoration: none;
+    }
+
+    .main-menu-projects-link a:hover {
+        background: #000;
+    }
+
+    .main-menu-company-block {
+        padding: 25px;
+    }
+
+    .main-menu-company-header {
+        font-family: MontserratL;
+        font-size: 24px;
+        color: #e63c24;
+        padding-bottom: 20px;
+    }
+
+    .main-menu-company-intro {
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #000;
+        padding-bottom: 36px;
+    }
+
+    .main-menu-company-link {
+        display: block;
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #e63c24;
+        text-decoration: none;
+        margin-bottom: 58px;
+    }
+
+    .main-menu-company-link:hover {
+        text-decoration: underline;
+    }
+
+    .main-menu-company-mini-header {
+        font-family: MontserratL;
+        font-size: 12px;
+        color: #7a7a7a;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+    }
+
+    .main-menu-sert {
+        height: 40px;
+        margin-bottom: 25px;
+    }
+
+    .main-menu-sert img {
+        height: 100%;
+    }
+
+    .main-menu-news, .main-menu-review {
+        display: flex;
+        padding-bottom: 16px;
+        height: 30px;
+    }
+
+    .main-menu-news-date, .main-menu-review-date {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Montserrat;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 500;
+        background: #d7d7d8;
+        padding: 0px 10px;
+    }
+
+    .main-menu-news-header, .main-menu-review-header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Montserrat;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 0px 10px;
+    }
+
+    .main-menu-subinfo {
+
+    }
+
+    .main-menu-subinfo a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: auto;
+        background: #f8f8f8;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 500;
+        text-decoration: none;
+        height: 103px;
+        margin-bottom: 4px;
+        padding: 0px 0px 0px 33px;
+        background-position: 90% center;
+        background-size: auto;
+        background-repeat: no-repeat;
+    }
+
+    .main-menu-exit-button {
+        position: absolute;
+        z-index: 110;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (min-width: 1500px) {
+    .main-menu {
+        height: 100%;
+        position: absolute;
+        top: 108px;
+        z-index: 102;
+        width: 100%;
+        background: #FFF;
+        padding-bottom: 100px;
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
+    }
+
+    .main-menu-catalog, .main-menu-engineering, .main-menu-portfolio, .main-menu-company {
+        padding: 54px 45px;
+        margin: 0 auto;
+    }
+    .left-submenu {
+        padding: 25px;
+    }
+
+    .right-submenu-flex {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+    }
+
+    .right-submenu {
+        display: flex;
+        padding: 25px;
+        width: 28.606%;
+        flex-direction: column;
+    }
+
+    .left-submenu a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: MontserratL;
+        font-size: 16px;
+        padding: 24px 35px 22px 35px;
+        background: #f9f9f9;
+        color: #000;
+        text-decoration: none;
+        width: auto;
+    }
+    .left-submenu a:hover {
+        background: #e63c24;
+        color: #FFF;
+    }
+
+    .right-submenu-header {
+        font-family: Montserrat;
+        font-size: 16px;
+        color:#7f7f7f;
+        text-transform: uppercase;
+        padding-bottom: 23px;
+        text-decoration: none;
+    }
+
+    .right-submenu-header:hover {
+        color: #000;
+    }
+
+    .right-submenu-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-submenu-items a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: MontserratL;
+        font-size: 16px;
+        padding: 24px 35px 22px 35px;
+        background: #f9f9f9;
+        color: #000;
+        text-decoration: none;
+        width: auto;
+        margin-bottom: 1px;
+    }
+
+    .right-submenu-items a:hover {
+        background: #e63c24;
+        color: #FFF;
+    }
+
+    .engineering-flex {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+    }
+
+    .engineering-flex a {
+        font-family: MontserratL;
+        font-size: 16px;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 7px 25px;
+        padding: 0px 160px 0px 35px;
+        text-decoration: none;
+        color: #000;
+        height: 108px;
+        background-position: top right;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .engineering-flex a:hover {
+        background-color: #e63c24;
+        color: #FFF;
+    }
+
+    .main-menu-portfolio-left {
+        padding: 25px;
+    }
+
+    .main-menu-portfolio-header {
+        font-family: MontserratL;
+        font-size: 24px;
+        color: #e63c24;
+        padding-bottom: 20px;
+    }
+
+    .main-menu-portfolio-intro {
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #000;
+        padding-bottom: 36px;
+    }
+
+    .main-menu-portfolio-link {
+        display: block;
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #e63c24;
+        text-decoration: none;
+        margin-bottom: 58px;
+    }
+
+    .main-menu-portfolio-link:hover {
+        text-decoration: underline;
+    }
+
+    .portfolio-cities {
+        overflow: auto;
+    }
+
+    .portfolio-cities li {
+        list-style: none;
+        font-family: MontserratL;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #000;
+        float: left;
+        width: 50%;
+    }
+
+    .main-menu-projects-block {
+        padding: 21px;
+    }
+
+    .main-menu-project-image {
+        padding: 4px;
+        opacity: 0.3;
+    }
+
+    .main-menu-project-image img {
+        width: 100%;
+    }
+
+    .main-menu-projects-link {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+
+    .main-menu-projects-link a {
+        display: inline-block;
+        font-family: Montserrat;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #FFF;
+        background: #e63c24;
+        padding: 20px 30px;
+        text-decoration: none;
+    }
+
+    .main-menu-projects-link a:hover {
+        background: #000;
+    }
+
+    .main-menu-company-block {
+        padding: 25px;
+    }
+
+    .main-menu-company-header {
+        font-family: MontserratL;
+        font-size: 24px;
+        color: #e63c24;
+        padding-bottom: 20px;
+    }
+
+    .main-menu-company-intro {
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #000;
+        padding-bottom: 36px;
+    }
+
+    .main-menu-company-link {
+        display: block;
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #e63c24;
+        text-decoration: none;
+        margin-bottom: 58px;
+    }
+
+    .main-menu-company-link:hover {
+        text-decoration: underline;
+    }
+
+    .main-menu-company-mini-header {
+        font-family: MontserratL;
+        font-size: 12px;
+        color: #7a7a7a;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+    }
+
+    .main-menu-sert {
+        height: 40px;
+        margin-bottom: 25px;
+    }
+
+    .main-menu-sert img {
+        height: 100%;
+    }
+
+    .main-menu-news, .main-menu-review {
+        display: flex;
+        padding-bottom: 16px;
+        height: 30px;
+    }
+
+    .main-menu-news-date, .main-menu-review-date {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Montserrat;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 500;
+        background: #d7d7d8;
+        padding: 0px 10px;
+    }
+
+    .main-menu-news-header, .main-menu-review-header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Montserrat;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 0px 10px;
+    }
+
+    .main-menu-subinfo {
+
+    }
+
+    .main-menu-subinfo a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: auto;
+        background: #f8f8f8;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 500;
+        text-decoration: none;
+        height: 103px;
+        margin-bottom: 4px;
+        padding: 0px 0px 0px 33px;
+        background-position: 90% center;
+        background-size: auto;
+        background-repeat: no-repeat;
+    }
+
+    .main-menu-exit-button {
+        position: absolute;
+        z-index: 110;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
 }

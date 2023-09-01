@@ -5,7 +5,7 @@
     <div class="web-page-block">
         <div class="container">
             <div class="row web-page-wrap">
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-md-12">
                     <div class="web-page-headers">
                         <h1>{{$title}}</h1>
                         @isset($params)
@@ -17,7 +17,7 @@
                         @endisset
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5 col-md-5">
                     @isset($introtext)
                         @foreach($introtext as $paragraph)
                             <p class="web-page-info">{{$paragraph}}</p>
@@ -27,9 +27,9 @@
                         <p>Отправить запрос</p>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 col-md-7">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 col-md-12">
                             <div class="web-page-image">
                                 @if(isset($images))
                                     @foreach($images as $image)

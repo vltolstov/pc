@@ -1,15 +1,15 @@
 <div class="advantages">
     <div class="container">
         <div class="row advantages-wrap">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12">
                 <div class="advantages-headers">
                     <h3>{{$advantagesHeader}}</h3>
                     <p>{{$advantagesIntro}}</p>
                 </div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12">
                 <div class="row advantages-flex">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <div class="advantage">
                             <div class="advantage-icon-wrap">
                                 <div class="advantage-icon">
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <div class="advantage">
                             <div class="advantage-icon-wrap">
                                 <div class="advantage-icon">
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <div class="advantage">
                             <div class="advantage-icon-wrap">
                                 <div class="advantage-icon">
