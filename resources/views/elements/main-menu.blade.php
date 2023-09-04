@@ -2,7 +2,7 @@
     <div class="container main-menu-container">
         <div class="main-menu-catalog hide">
             <div class="row">
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="left-submenu">
                         @foreach($mainMenu['catalog-items'] as $item)
                             @if($item->parent_id == 2)
@@ -15,7 +15,7 @@
                 @foreach($mainMenu['catalog-items'] as $item)
                     @if($item->parent_id == 2)
 
-                        <div class="col-lg-9 col-md-9 right-submenu-flex menu-id-{{$item->id}} hide">
+                        <div class="col-lg-9 col-md-9 col-sm-9 right-submenu-flex menu-id-{{$item->id}} hide">
                             @foreach($mainMenu['catalog-items'] as $subMenuItem)
                                 @if($subMenuItem->parent_id == $item->id)
                                     <div class="right-submenu">
@@ -40,7 +40,7 @@
         <div class="main-menu-engineering hide">
             <div class="row engineering-flex">
                 @foreach($mainMenu['menu-engineering'] as $item)
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <a href="{{$item->urn}}" style="background-image: url('/images/default-200x150.png')">{{$item->name}}</a>
                 </div>
                 @endforeach
@@ -48,7 +48,7 @@
         </div>
         <div class="main-menu-portfolio hide">
             <div class="row">
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="main-menu-portfolio-left">
                         <p class="main-menu-portfolio-header">Проекты и завершенные работы</p>
                         <p class="main-menu-portfolio-intro">Поставки и запуски оборудования, литейных комплексов, металлургических производств и линий. Более 500 проектов в стадии завершен на 100%.</p>
@@ -70,11 +70,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8">
+                <div class="col-lg-8 col-md-8 col-sm-8">
                     <div class="main-menu-projects-block">
                         <div class="row">
                             @foreach($mainMenu['menu-projects'] as $project)
-                                <div class="col-lg-3 col-md-3">
+                                <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="main-menu-project-image">
                                         @if(isset($project->image))
                                             <img src="{{json_decode($project->image, true)['image-1']['200x150']}}" alt="{{$project->name}}">
@@ -94,39 +94,39 @@
         </div>
         <div class="main-menu-company hide">
             <div class="row">
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="main-menu-company-block">
                         <p class="main-menu-company-header">{{$mainMenu['menu-about-company']->name}}</p>
                         <p class="main-menu-company-intro">{{$mainMenu['menu-about-company']->introtext}}</p>
                         <a href="{{$mainMenu['menu-about-company']->urn}}" class="main-menu-company-link">Подробнее</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="main-menu-company-block">
                         <p class="main-menu-company-header">{{$mainMenu['menu-serts']->name}}</p>
                         <p class="main-menu-company-mini-header">дилерство, качество и соответсвие</p>
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 main-menu-sert">
+                            <div class="col-lg-3 col-md-3 col-sm-3 main-menu-sert">
                                 <img src="/images/ros-test.png" alt=" ">
                             </div>
-                            <div class="col-lg-3 col-md-3 main-menu-sert">
+                            <div class="col-lg-3 col-md-3 col-sm-3 main-menu-sert">
                                 <img src="/images/eac.png" alt=" ">
                             </div>
-                            <div class="col-lg-3 col-md-3 main-menu-sert">
+                            <div class="col-lg-3 col-md-3 col-sm-3 main-menu-sert">
                                 <img src="/images/iso9001.png" alt=" ">
                             </div>
                         </div>
                         <a href="{{$mainMenu['menu-serts']->urn}}" class="main-menu-company-link">Подробнее</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="main-menu-company-block">
                         <p class="main-menu-company-header">{{$mainMenu['menu-manufacturers']->name}}</p>
                         <p class="main-menu-company-intro">{{$mainMenu['menu-manufacturers']->introtext}}</p>
                         <a href="{{$mainMenu['menu-manufacturers']->urn}}" class="main-menu-company-link">Подробнее</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="main-menu-company-block">
                         <p class="main-menu-company-header">Новости</p>
                         <div class="main-menu-news">
@@ -137,7 +137,7 @@
                         <a href="{{$mainMenu['last-news']->urn}}" class="main-menu-company-link">Подробнее</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="main-menu-company-block">
                         <p class="main-menu-company-header">Отзывы</p>
                         <div class="main-menu-review">
@@ -148,7 +148,7 @@
                         <a href="{{$mainMenu['last-review']->urn}}" class="main-menu-company-link">Подробнее</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="main-menu-company-block">
                         <div class="main-menu-subinfo">
                             <a href="#" style="background-image: url('/images/info.png')">Реквизиты</a>

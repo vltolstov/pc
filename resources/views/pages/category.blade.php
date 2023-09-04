@@ -6,7 +6,7 @@
         <div class="categories">
             <div class="container">
                 <div class="row categories-wrap">
-                    <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="category-headers">
                             <h1>{{$title}}</h1>
                             @isset($params)
@@ -18,7 +18,7 @@
                             @endisset
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         @isset($introtext)
                             @foreach($introtext as $paragraph)
                                 <p class="category-info">{{$paragraph}}</p>
@@ -28,11 +28,11 @@
                             <p>Отправить запрос</p>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-7">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
                         <div class="row">
                             @isset($categories)
                                 @foreach($categories as $category)
-                                    <div class="col-lg-4 col-md-4">
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
                                         <div class="catalog-item">
                                             @if(isset($category->images))
                                                 @foreach($category->images as $image)
@@ -57,7 +57,7 @@
                                 @endforeach
                             @endisset
                             @empty($categories)
-                                <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="category-image">
                                         @if(isset($images))
                                             @foreach($images as $image)
@@ -125,12 +125,12 @@
     <div class="category-complete-solution">
         <div class="container">
             <div class="row complete-solution-wrap">
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="solution-headers">
                         <h2>Комплексные решения</h2>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-5">
+                <div class="col-lg-5 col-md-5 col-sm-5">
                     <div class="solution-headers">
                         <p>Под ключ</p>
                     </div>
@@ -141,7 +141,7 @@
                         <p>Запросить комплексное решение</p>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7">
+                <div class="col-lg-7 col-md-7 col-sm-7">
                     <div class="solution-image">
                         <img src="{{ $solution_image }}" alt="{{$name}} - Комплексное решение">
                     </div>
@@ -155,10 +155,10 @@
         <div class="child-pages">
             <div class="container">
                 <div class="row child-pages-wrap">
-                    <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="row">
                             @foreach($pages as $item)
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="child-page-block">
                                         @if(isset($item->images))
                                             <div class="child-page-image" style="background-image: url('{{json_decode($item->images, true)['image-1']['400x300']}}')"></div>
@@ -201,12 +201,12 @@
     <div class="related-block">
         <div class="container">
             <div class="row related-block-wrap">
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="related-block-headers">
                         <h3>Сопутствующее оборудование</h3>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-5">
+                <div class="col-lg-5 col-md-5 col-sm-5">
                     <div class="related-block-headers">
                         <p>{{$related_page_name}}</p>
                     </div>
@@ -218,7 +218,7 @@
                         <a href="/{{$related_page_urn}}">Посмотреть</a>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7">
+                <div class="col-lg-7 col-md-7 col-sm-7">
                     <div class="related-page-image">
                         @if(isset($related_page_images))
                             @foreach($related_page_images as $image)

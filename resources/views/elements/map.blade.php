@@ -1,7 +1,7 @@
 <div class="map">
     <div class="container">
         <div class="row map-wrap">
-            <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
 
                 <div class="map-header">
                     <h3>География поставок и запусков</h3>
