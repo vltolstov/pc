@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row offers-wrap offers-wrap-close">
             @foreach($offers as $offer)
-                <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     @if(isset($offer->image))
                         <a href="{{$offer->urn}}" class="offer" style="background-image: url('{{json_decode($offer->image, true)['image-1']['200x150']}}')">
                     @else

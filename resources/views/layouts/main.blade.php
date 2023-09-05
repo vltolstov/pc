@@ -39,8 +39,6 @@
 </head>
 <body>
 
-@include('.elements.main-menu')
-
 <div class="body-flex">
     @include('.elements.header')
 
@@ -56,6 +54,7 @@
     @include('.elements.footer')
 </div>
 
+@include('.elements.main-menu')
 @include('.elements.modal-form')
 @include('.elements.counts')
 

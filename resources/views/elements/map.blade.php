@@ -6,7 +6,7 @@
                 <div class="map-header">
                     <h3>География поставок и запусков</h3>
                 </div>
-                <div class="map-block">
+                <div class="map-block hide-on-mobile">
                     <object class="map-svg" data="/images/map.svg" type="image/svg+xml"></object>
                 </div>
                 <div class="map-flex">

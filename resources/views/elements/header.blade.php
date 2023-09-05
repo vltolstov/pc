@@ -9,7 +9,7 @@
                         <a href="/"><img src="{{$companyLogo}}" height="43" alt="logo"></a>
                     @endif
                 </div>
-                <div class="head-menu">
+                <div class="head-menu hide-on-mobile">
                     <ul>
                         <li><a href="katalog" class="top-menu-catalog">Каталог</a></li>
                         <li><a href="proektirovanie-litejnyix-czexov" class="top-menu-engineering">Проектирование</a></li>
@@ -18,7 +18,7 @@
                         <li><a href="kontakty">Контакты</a></li>
                     </ul>
                 </div>
-                <div class="head-contacts">
+                <div class="head-contacts hide-on-mobile">
                     <div class="contacts-block">
                         <p><a class="main-tel" href="tel:{{Str::remove([' ', '-'], $phone)}}">{{$phone}}</a></p>
                         <p><a class="mobile-tel" href="tel:{{Str::remove([' ', '-'], $mobilePhone)}}">{{$mobilePhone}}</a></p>

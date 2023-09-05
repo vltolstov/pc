@@ -6,12 +6,12 @@
         <div class="categories">
             <div class="container">
                 <div class="row categories-wrap">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="category-headers">
                             <h1>{{$title}}</h1>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         @isset($introtext)
                             @foreach($introtext as $paragraph)
                                 <p class="category-info">{{$paragraph}}</p>
@@ -34,7 +34,7 @@
                                 <div class="row">
                                     @foreach($images as $image)
                                         @if (!$loop->first)
-                                            <div class="col-lg-3 col-md-6 col-sm-6 gallery-item">
+                                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 gallery-item">
                                                 <a href="{{$image['1200x900']}}" class="glightbox">
                                                     <img src="{{$image['200x150']}}" alt="{{$title}}">
                                                 </a>
@@ -45,10 +45,10 @@
                             </div>
                         @endisset
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="row">
                             @empty($categories)
-                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="category-image">
                                         @if(isset($images))
                                             @foreach($images as $image)
@@ -63,7 +63,7 @@
                             @endempty
                         </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="category-offer-button request-button" data-title="Запрос {{$title}}">
                             <p>Отправить запрос</p>
                         </div>
@@ -77,12 +77,12 @@
         <div class="category-complete-solution">
             <div class="container">
                 <div class="row complete-solution-wrap">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="solution-headers">
                             <h2>Комплексные решения</h2>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                         <div class="solution-headers">
                             <p>Под ключ</p>
                         </div>
@@ -93,7 +93,7 @@
                             <p>Запросить комплексное решение</p>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-7">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                         <div class="solution-image">
                             <img src="{{ $solution_image }}" alt="{{$name}} - Комплексное решение">
                         </div>
@@ -111,12 +111,12 @@
         <div class="related-block">
             <div class="container">
                 <div class="row related-block-wrap">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="related-block-headers">
                             <h3>Сопутствующее оборудование</h3>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                         <div class="related-block-headers">
                             <p>{{$related_page_name}}</p>
                         </div>
@@ -128,7 +128,7 @@
                             <a href="/{{$related_page_urn}}">Посмотреть</a>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-7">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                         <div class="related-page-image">
                             @if(isset($related_page_images))
                                 @foreach($related_page_images as $image)

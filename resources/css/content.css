@@ -1,8 +1,120 @@
 @media (min-width: 300px) {
+    .content {
+        padding: 50px 20px;
+        overflow: hidden;
+    }
+    .content h2 {
+        font-family: MontserratL;
+        font-size: 20px;
+        color: #000;
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
 
-}
-@media (min-width: 768px) {
+    .content h3 {
+        font-family: MontserratL;
+        font-size: 18px;
+        color: #000;
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
 
+    .content h4 {
+        font-family: MontserratL;
+        font-size: 16px;
+        color: #000;
+        padding-bottom: 15px;
+        padding-top: 20px;
+    }
+
+    .content p {
+        font-family: MontserratL;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: none;
+        padding-bottom: 20px;
+    }
+
+    .content ul, .content ol {
+        padding-bottom: 20px;
+    }
+
+    .content ol {
+        padding-left: 28px;
+    }
+
+    .content ul li {
+        list-style: none;
+        font-family: MontserratL;
+        font-size: 14px;
+        line-height: 22px;
+        padding: 0px 0px 16px 20px;
+        background: url(/images/li.png) 0px 5px no-repeat;
+    }
+
+    .content ol li {
+        font-family: MontserratL;
+        font-size: 14px;
+        line-height: 22px;
+        padding: 0px 0px 16px 20px;
+    }
+
+    .content img {
+        width: 100%;
+        display: block;
+        margin: 0px auto;
+        height: auto;
+    }
+
+    .justifyleft {
+        float: left;
+        padding: 5px 50px 50px 0px;
+    }
+
+    .justifyright {
+        float: right;
+        padding: 5px 0px 50px 50px;
+    }
+
+    .st {
+        width: 100%;
+    }
+
+    .st th {
+        text-align: center;
+        color: #505050;
+        font-size: 0.750em;
+        background: #dcdcdc;
+        font-weight: normal;
+        padding: 14px;
+        border-bottom: 1px solid #f9f9f9;
+        border-right: 1px solid #f9f9f9;
+    }
+
+    .st td {
+        text-align: center;
+        color: #505050;
+        font-size: 0.750em;
+        background: #ececec;
+        padding: 14px;
+        border-bottom: 1px solid #f9f9f9;
+        border-right: 1px solid #f9f9f9;
+    }
+
+    .content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+    }
+
+    .content table td {
+        background: #f9f9f9;
+        border-bottom: 1px solid #ececec;
+        font-family: MontserratL;
+        font-size: 14px;
+        color: #000;
+        padding: 7px 10px;
+    }
 }
 @media (min-width: 992px) {
     .content {

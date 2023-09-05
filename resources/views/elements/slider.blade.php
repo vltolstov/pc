@@ -1,4 +1,4 @@
-<div class="slider">
+<div class="slider hide-on-mobile">
     @foreach($slides as $slide)
         <div class="slider-wrap" style="background-image: url('{{json_decode($slide->images, true)['image-1']['1200x900']}}')">
             <div class="container">
