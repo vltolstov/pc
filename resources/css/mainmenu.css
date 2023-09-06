@@ -1,14 +1,11 @@
 @media (min-width: 300px) {
 
 }
-@media (min-width: 768px) {
-
-}
 @media (min-width: 992px) {
     .main-menu {
         height: 100%;
         position: absolute;
-        top: 108px;
+        top: 107px;
         z-index: 102;
         width: 100%;
         background: #FFF;

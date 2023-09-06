@@ -55,6 +55,7 @@
 </div>
 
 @include('.elements.main-menu')
+@include('.elements.mobile-menu')
 @include('.elements.modal-form')
 @include('.elements.counts')
 
