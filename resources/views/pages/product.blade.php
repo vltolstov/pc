@@ -34,7 +34,7 @@
                                 <div class="row">
                                     @foreach($images as $image)
                                         @if (!$loop->first)
-                                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 gallery-item">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery-item">
                                                 <a href="{{$image['1200x900']}}" class="glightbox">
                                                     <img src="{{$image['200x150']}}" alt="{{$title}}">
                                                 </a>

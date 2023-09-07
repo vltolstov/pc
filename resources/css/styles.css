@@ -238,7 +238,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background: url("/images/grey-point.gif") 80px 0px repeat-y;
+        background: none;
     }
     .special-offer-name {
         font-family: MontserratM;
@@ -1092,6 +1092,9 @@
     .gallery {
         padding: 20px 0px;
     }
+    .gallery-item {
+        text-align: center;
+    }
     .gallery-item a {
         display: inline-block;
         padding: 10px;
@@ -1124,7 +1127,7 @@
         z-index: 99999;
         bottom: 0;
         width: 100%;
-        background: #d7d7d8;
+        background: #e63c24;
         padding: 3px 0px;
         height: 42px;
     }
@@ -1140,12 +1143,13 @@
         padding: 12px 13px;
         font-family: MontserratR;
         font-size: 14px;
-        text-decoration: none;
+        text-decoration: underline;
         font-weight: 500;
+        color: #FFF;
     }
     .mobile-panel ul li a:hover {
-        background: #e63c24;
-        color: #FFF;
+        background: #FFF;
+        color: #000;
     }
     .mobile-menu {
         position: fixed;
@@ -1254,6 +1258,9 @@
     .special-offer-flex {
         display: flex;
         align-items: stretch;
+    }
+    .special-offer-info {
+        background: url("/images/grey-point.gif") 80px 0px repeat-y;
     }
     .special-offer-text p {
         padding: 0px 0px 0px 60px;
