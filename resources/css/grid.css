@@ -108,6 +108,9 @@
     .hide-on-mobile {
         display: none;
     }
+    .mobile-hide-cell {
+        display: none;
+    }
 }
 
 @media (min-width: 992px) {
@@ -164,7 +167,10 @@
     }
 
     .hide-on-mobile {
-        display: inline-block;
+        display: block;
+    }
+    .mobile-hide-cell {
+        display: table-cell;
     }
 }
 
@@ -221,9 +227,6 @@
         width: 8.33333333%
     }
 
-    .hide-on-mobile {
-        display: inline-block;
-    }
 }
 
 @media (min-width: 1500px) {
@@ -279,9 +282,6 @@
         width: 8.33333333%
     }
 
-    .hide-on-mobile {
-        display: inline-block;
-    }
 }
 
 .order-first {

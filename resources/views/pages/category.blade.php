@@ -88,7 +88,7 @@
                         @isset($products[0]->params)
                             @foreach($products[0]->params as $param)
                                 @if($param['active'] == true)
-                                    <th class="param-name-cell hide-on-mobile">{{$param['name']}}</th>
+                                    <th class="param-name-cell mobile-hide-cell">{{$param['name']}}</th>
                                 @endif
                             @endforeach
                         @endisset
@@ -106,7 +106,7 @@
                             @isset($product->params)
                                 @foreach($product->params as $param)
                                     @if($param['active'] == true)
-                                        <td class="hide-on-mobile">{{$param['value']}}</td>
+                                        <td class="mobile-hide-cell">{{$param['value']}}</td>
                                     @endif
                                 @endforeach
                             @endisset

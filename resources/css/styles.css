@@ -76,7 +76,7 @@
         background: #d7d7d8;
     }
     .offers-wrap {
-        padding: 10px 10px 10px 10px;
+        padding: 10px;
         position: relative;
     }
     .offers-wrap-close{
@@ -218,9 +218,7 @@
     .special-offer-wrap {
         padding: 0px 20px;
     }
-    .special-offer-flex {
-        /*display: block;*/
-    }
+
     .special-offer-image img {
         width: 100%;
     }
@@ -505,7 +503,7 @@
         text-decoration: none;
         text-align: center;
     }
-    .news-special {
+    .news-header {
         text-align: center;
     }
     .news-special a {
@@ -661,6 +659,10 @@
         text-transform: uppercase;
         padding: 0px 0px 25px 4px !important;
     }
+    .consultation-button {
+        width: 260px;
+        margin: 0 auto;
+    }
     .consultation-button p {
         display: inline-block;
         background: #e63c24;
@@ -718,6 +720,8 @@
         text-align: center;
     }
     .footer-button {
+        width: 260px;
+        margin:0 auto;
         padding: 25px 0px 25px 0px;
     }
     .footer-button p {
@@ -1025,9 +1029,7 @@
         padding: 15px 20px;
         background: #FFF;
     }
-    .slide-info {
 
-    }
     .slide-info p {
         display: inline-block;
         background: #FFF;
@@ -1193,210 +1195,58 @@
     }
 }
 @media (min-width: 992px) {
-    .head-flex{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
     .logo{
         padding: 30px 20px;
     }
     .logo img {
         width: 140px;
     }
-    .head-menu{
-        padding: 0px 15px;
-    }
-    .head-menu ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .head-menu ul li {
-        list-style: none;
-    }
-    .head-menu ul li a {
-        display: inline-block;
-        font-family: MontserratL;
-        font-size: 14px;
-        padding: 44px 20px 44px 20px;
-        text-decoration: none;
-    }
-    .head-menu ul li a:hover {
-        background: #FFF;
-    }
-
-    .head-contacts{
+    .head-contacts {
         padding: 17px 20px 17px 0px;
     }
-    .head-contacts p {
-        text-align: right;
-    }
-    .main-tel {
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        color:#e63c24;
-        text-decoration: none;
-    }
-    .mobile-tel {
-        font-family: MontserratM;
-        font-size: 12px;
-        text-decoration: none;
-    }
-    .head-mail {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 12px;
-        text-decoration: none;
-        padding: 5px 0px 0px 0px;
-    }
-    .head-city {
-        font-family: MontserratM;
-        font-size: 12px;
-    }
-    .offers {
-        background: #d7d7d8;
-    }
-    .offers-wrap {
-        padding: 10px 10px 10px 10px;
-        position: relative;
-    }
-    .offers-wrap-close{
-        height: 240px;
-    }
     .offer {
-        display: flex;
         justify-content: space-between;
-        flex-direction: column;
-        background-position: 0px 0px;
         background-size: 160px;
-        background-repeat: no-repeat;
-        text-decoration: none;
         padding: 0px 0px 0px 183px;
         height: 120px;
-        background-color: #FFF;
-        margin: 10px;
     }
     .offer-title {
-        font-family: MontserratM;
-        font-size: 10px;
-        text-transform: uppercase;
         padding: 20px 15px 0px 0px;
     }
     .offer-price {
-        font-family: MontserratM;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: #e63c24;
         padding-bottom: 20px;
-    }
-    .offers-open-button {
-        position: absolute;
-        width: 100%;
-        height: 50px;
-        bottom: 0;
-        z-index: 100;
-        padding: 30px 0px 20px 0px;
-        text-align: center;
-        background: url("/images/offers-bg.png") bottom left repeat-x;
-    }
-    .offers-open-button p {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .offers-open-button p:hover {
-        background: #e63c24;
-        cursor: pointer;
     }
     .map {
-        background: #d7d7d8;
         padding-bottom: 95px;
     }
-    .map-header {
-        padding-top: 60px;
-        padding: 60px 20px 0px 20px;
-    }
     .map-header h3 {
-        font-family: MontserratL;
         font-size: 36px;
-        color: #000;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .map-block {
-        margin: 0 auto;
-        padding: 0px 0px 40px 0px;
     }
     .map-flex {
         display: flex;
         justify-content: space-between;
-        padding: 0px 10px;
     }
     .map-project {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
         height: 100px;
-        flex-grow: 1;
+        background-color: unset;
         background-size: 140px;
-        background-position: 0px 0px;
-        background-repeat: no-repeat;
-        margin: 0px 10px;
         font-size: 10px;
-        font-family: MontserratR;
-        text-decoration: none;
-        -webkit-transition: all 0.3s ease;
     }
     .map-project p {
-        font-family: MontserratR;
         display: none;
-        position: absolute;
         left: 105px;
         text-align: center;
-        padding-right: 15px;
     }
     .map-project:hover {
         flex-grow: 2 !important;
         background-position: -50px 0px;
         background-color: #FFF;
-        -webkit-transition: all 0.3s ease;
-    }
-    .map-project:hover p {
-        display: inline;
-    }
-    .special-offer {
-        border-top:1px solid #f3f3f3;
-    }
-    .special-offer-headers {
-        background: #FFF;
-        padding-top: 65px;
     }
     .special-offer-headers h3 {
-        font-family: MontserratL;
         font-size: 36px;
-        color: #e63c24;
-        text-align: center;
-        padding-bottom: 20px;
     }
     .special-offer-headers p {
-        font-family: MontserratL;
         font-size: 14px;
-        color: #7a7a7a;
-        text-align: center;
-        text-transform: uppercase;
-        padding-bottom: 50px;
     }
     .special-offer-wrap {
         padding: 0px 20px;
@@ -1405,453 +1255,137 @@
         display: flex;
         align-items: stretch;
     }
-    .special-offer-image img {
-        width: 100%;
-    }
-    .special-offer-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
     .special-offer-text p {
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 22px;
         padding: 0px 0px 0px 60px;
         text-align: right;
     }
-    .special-offer-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: url("/images/grey-point.gif") 80px 0px repeat-y;
-    }
     .special-offer-name {
-        font-family: MontserratM;
         font-size: 18px;
         text-align: right;
-        padding: 25px 0px 50px 60px
+        padding: 25px 0px 50px 60px;
     }
     .special-offer-price {
-        font-family: MontserratM;
-        font-size: 24px;
         text-align: right;
-        padding-bottom: 25px;
-    }
-    .special-offer-price span {
-        font-size: 12px !important;
-        color: #7a7a7a;
-        text-transform: uppercase;
     }
     .special-offer-button {
         padding: 75px 0px 50px;
-        width: 100%;
-        text-align: center;
-    }
-    .special-offer-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        padding: 15px 45px;
-        cursor: pointer;
-    }
-    .special-offer-button p:hover {
-        background-color: #080808;
-    }
-    .catalog {
-        border-top:1px solid #f3f3f3;
-    }
-    .catalog-wrap {
-        padding: 50px 20px;
     }
     .categories, .web-page-block {
-        background: #d7d7d8;
         padding: 0px;
     }
     .categories-wrap, .web-page-wrap {
         padding: 0px 20px 100px 20px;
     }
-    .category-headers, .web-page-headers {
-        padding: 0px;
-    }
     .catalog-headers {
         padding: 0px 50px 0px 0px;
     }
-    .news-headers {
-        padding: 0px;
-    }
     .catalog-headers h3, .news-headers h3, .category-headers h1, .web-page-headers h1 {
         text-align: left;
-        font-family: MontserratL;
         font-size: 36px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
     }
     .catalog-headers p, .news-headers p, .category-headers p, .web-page-headers p {
         text-align: left;
-        font-family: MontserratL;
         font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 50px 0px;
     }
     .catalog-info, .category-info, .web-page-info {
         text-align: left;
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 24px;
         padding: 0px 50px 15px 0px;
     }
     .catalog-button {
         width: 150px;
-        margin: 0 auto;
         padding: 50px 0px 0px 0px;
     }
-    .catalog-button a {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .catalog-button a:hover {
-        background: #e63c24;
-    }
     .category-offer-button, .web-page-offer-button {
-        padding: 50px 50px 0px 0px;
+        padding: 50px 0px 0px 0px;
     }
     .category-offer-button p, .web-page-offer-button p {
-        display: block;
-        background: #e63c24;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
         padding: 16px 45px;
-        margin: 0 auto;
-    }
-    .category-offer-button p:hover, .web-page-offer-button p:hover {
-        background: #080808;
-        cursor: pointer;
     }
     .category-image, .web-page-image {
         float: right;
         width: 90%;
     }
-    .category-image img, .web-page-image img {
-        width: 100%;
-    }
-    .catalog-item {
-        text-align: center;
-        padding-top: 10px;
-    }
     .catalog-icon {
         width: 160px;
         height: 160px;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 50%;
-        background: #f3f3f3;
-    }
-    .catalog-icon img {
-        width: auto;
-        height: 100%;
-        -webkit-transition: all 0.3s ease;
-    }
-    .catalog-item a {
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .catalog-item a:hover {
-        text-decoration: underline;
-    }
-    .catalog-item p {
-        font-family: MontserratL;
-        font-size: 12px;
-        padding: 30px 0px 30px 0px;
-    }
-    .catalog-item a:hover img {
-        -webkit-transition: all 0.3s ease;
-        height: 103%;
-    }
-    .advantages {
-        border-top:1px solid #f3f3f3;
-    }
-    .advantages-flex {
-        display: flex;
-        align-items: stretch;
     }
     .advantages-wrap {
         padding: 0px 0px 100px 0px;
     }
-    .advantages-headers {
-        background: #FFF;
-        padding-top: 65px;
-    }
     .advantages-headers h3 {
-        font-family: MontserratL;
         font-size: 36px;
-        color: #000;
-        text-align: center;
-        padding-bottom: 20px;
     }
     .advantages-headers p {
-        font-family: MontserratL;
         font-size: 14px;
-        color: #7a7a7a;
-        text-align: center;
-        text-transform: uppercase;
-        padding-bottom: 50px;
-    }
-    .advantage {
-        height: 100%;
-        padding: 20px 20px 0px 20px;
-        position: relative;
-    }
-    .advantage-icon-wrap {
-        overflow: hidden;
-        position: absolute;
-        left: 30%;
-        width: 125px;
-        height: 125px;
-        margin: 0 auto;
-        border-radius: 50%;
-        border: 1px solid #e3e3e3;
-    }
-    .advantage-icon {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        margin-top: 12px;
-        background: #FFF;
-        border-radius: 50%;
-        border: 1px solid #e3e3e3;
-    }
-    .advantage-text-wrap {
-        height: 62%;
-        background: #f3f3f3;
-        border: 1px solid #e3e3e3;
-        margin: 63px 0px 20px 0px;
-        padding: 65px 0px 0px 0px;
-    }
-    .advantage-text-wrap h4 {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-align: center;
-        padding: 30px 30px 50px 30px;
-    }
-    .advantage-text-wrap p {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-align: center;
-        line-height: 24px;
-        padding: 0px 30px 80px 30px;
-    }
-    .news-flex {
-        display: flex;
-    }
-    .news {
-        border-top:1px solid #f3f3f3;
     }
     .news-headers-wrap {
         padding: 100px 20px 0px 20px;
     }
-    .news-wrap {
-        padding: 0px;
-    }
     .news-block {
-        display: flex;
-        flex-direction: column;
         height: 230px;
         padding: 0px 20px;
     }
-    .news-header a {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
+    .news-header {
         text-align: left;
     }
-    .news-special a {
-        color: #e63c24;
-    }
-    .news-header a:hover {
-        text-decoration: underline;
+    .news-header a {
+        text-align: left;
     }
     .news-text {
-        flex: 1 1 auto;
         padding: 30px 0px 0px 0px;
     }
     .news-text p {
         text-align: left;
-        padding: 0px 0px 0px 0px;
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 18px;
     }
     .news-date p {
         text-align: left;
-        bottom: 0px;
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #ababab;
-    }
-    .news-button {
-        margin: 75px 0px 50px 0px;
-        width: 100%;
-        text-align: center;
-    }
-    .news-button a {
-        display: inline-block;
-        background: #080808;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 15px 45px;
-    }
-    .news-button a:hover {
-        background: #e63c24;
-    }
-    .about {
-        border-top:1px solid #f3f3f3;
     }
     .about-headers-wrap {
         padding: 100px 20px 0px 20px;
     }
-    .about-headers {
-        padding: 0px;
-    }
     .about-headers h3 {
-        font-family: MontserratL;
         font-size: 36px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
         text-align: left;
     }
     .about-headers p {
-        font-family: MontserratL;
         font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 0px 4px;
         text-align: left;
     }
-    .about-wrap {
-        padding: 0px 20px 100px 20px;
-    }
     .about-wrap p {
-        font-family: MontserratL;
         font-size: 16px;
-        line-height: 24px;
-        padding: 10px 20px 30px 0px;
         text-align: left;
     }
     .about-wrap h5 {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-transform: uppercase;
-        color: #7a7a7a;
         text-align: left;
     }
-    .about-wrap a {
-        display: block;
-        width: 150px;
-        margin: 0 auto;
-        text-align: center;
-        background: #080808;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 15px 45px;
-    }
-    .about-wrap a:hover {
-        background: #e63c24;
-        color: #FFF;
-    }
-    .about-video {
-        padding: 30px 0px 0px 0px;
-    }
     .presentation {
-        margin: 20px 0px 50px 0px;
-        width: 100%;
         height: 400px;
-    }
-    .consultation {
-        background-color: #000;
-        background-image: url("/images/consultation-bg.jpg");
-        background-position: 0px 0px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top:1px solid #f3f3f3;
     }
     .consultation-wrap {
         padding: 60px 20px 60px 20px;
     }
     .consultation-flex {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
     }
     .consultation-headers {
         width: 60%;
         padding: 0px 0px 0px 6px;
     }
     .consultation-headers h3 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #FFF;
-        padding: 0px 0px 20px 0px;
         text-align: left;
     }
     .consultation-headers p {
-        font-family: MontserratL;
         font-size: 14px;
-        color: #FFF;
         padding:0px 50px 0px 4px;
         text-align: left;
     }
+    .consultation-button {
+        width: auto;
+        margin: 0px;
+    }
     .post-header {
-        font-family: MontserratL;
         font-size: 14px;
-        color: #FFF;
-        text-transform: uppercase;
-        padding: 0px 0px 25px 4px !important;
-    }
-    .consultation-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 15px 45px;
-        cursor: pointer;
-    }
-    .consultation-button p:hover {
-        background: #FFF;
-        color: #000;
-    }
-    .footer-flex {
-        display: flex;
-        flex-direction: row;
     }
     .footer-left {
         width: 460px;
@@ -1859,203 +1393,47 @@
         padding: 0px;
     }
     .footer-left h3 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #000;
-        padding: 50px 0px 20px 0px;
         text-align: left;
     }
     .footer-post-header {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
         padding: 0px 0px 50px 0px;
         margin: 0px 100px 50px 0px;
         border-bottom: 1px solid #f3f3f3;
         text-align: left;
     }
     .footer-mini-header {
-        font-family: MontserratL;
-        font-size: 10px;
-        text-transform: uppercase;
-        color: #070707;
-        padding:0px 0px 10px 0px;
         text-align: left;
     }
     .footer-info {
-        font-family: MontserratL;
-        font-size: 16px;
-        padding:0px 0px 25px 0px;
-        color: #000;
         text-align: left;
     }
     .footer-button {
+        width: auto;
+        margin:0px;
         padding: 90px 0px 80px 0px;
     }
     .footer-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-transform: uppercase;
-        padding: 15px 45px;
-        cursor: pointer;
-        text-align: left;
-    }
-    .footer-button p:hover {
-        background: #000;
-    }
-    .footer-map {
-        height: 100%;
-        width: 100%;
-    }
-    .footer-line {
-        background: #f3f3f3;
-        width: 100%;
-    }
-    .footer-line p {
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #878787;
-        width: 90%;
-        text-align: center;
-        margin: 0 auto;
-        padding: 40px 0px;
-    }
-    .send-form {
-        padding: 30px;
-        width: 500px;
-        margin: 0 auto;
-        background: #fff;
-    }
-    .breadcrumbs {
-        background: #d7d7d8;
-    }
-    .breadcrumbs-wrap {
-        padding: 34px 20px 34px 20px;
-    }
-    .breadcrumbs p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #404040;
-    }
-    .breadcrumbs p a {
-        font-family: MontserratL;
-        text-decoration: none;
-        color: #404040;
-    }
-    .breadcrumbs p a:hover {
-        text-decoration: underline;
-        color: #000;
-    }
-    .products {
-        background: #d7d7d8;
-    }
-    .products-wrap {
-        padding: 0px 20px 100px 20px;
-        position: relative;
-        overflow: hidden;
-    }
-    .products-wrap-close {
-        height: 280px;
-    }
-    .products-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .products-table th {
-        background: #d7d7d8;
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding-bottom: 10px;
         text-align: left;
     }
     .products-table td {
-        background: #e1e1e1;
-        border-bottom: 1px solid #d7d7d8;
-        font-family: MontserratL;
         font-size: 16px;
-        color: #000;
-    }
-    .products-table tr:hover td {
-        background: #e8e8e8;
-    }
-    .product-image-cell {
-        width: 120px;
-    }
-    .products-table img {
-        height: 70px;
-        vertical-align: middle;
     }
     .products-table a {
-        font-family: MontserratL;
-        text-decoration: none;
         padding: 0px;
-    }
-    .products-table a:hover {
-        text-decoration: underline;
-    }
-    .products-open-button {
-        position: absolute;
-        height: 50px;
-        bottom: 0;
-        z-index: 100;
-        padding: 30px 0px 20px 0px;
-        text-align: center;
-        background: url("/images/offers-bg.png") bottom left repeat-x;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-    }
-    .products-open-button p {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .products-open-button p:hover {
-        background: #e63c24;
-        cursor: pointer;
-    }
-
-    .category-complete-solution {
-        background: #d7d7d8;
     }
     .complete-solution-wrap {
         padding: 100px 20px 100px 20px;
     }
-    .solution-headers {
-        padding: 0px;
-    }
     .solution-headers h2 {
-        font-family: MontserratL;
         font-size: 36px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
         text-align: left;
     }
     .solution-headers p {
-        font-family: MontserratL;
         font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 25px 0px;
         text-align: left;
     }
     .solution-info {
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 22px;
         padding: 0px 50px 15px 0px;
         text-align: left;
     }
@@ -2065,28 +1443,7 @@
         margin: 0px;
     }
     .solution-button p {
-        background: #e63c24;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
         width: 100%;
-        text-align: center;
-        padding: 16px 20px;
-        cursor: pointer;
-    }
-    .solution-button p:hover {
-        background: #080808;
-    }
-    .solution-image {
-        width: 100%;
-        text-align: center;
-    }
-    .solution-image img {
-        width: 100%;
-    }
-    .related-block {
-        border-top:1px solid #f3f3f3;
     }
     .related-block-wrap {
         padding: 100px 20px 100px 20px;
@@ -2095,24 +1452,14 @@
         padding: 0px 0px 0px 6px;
     }
     .related-block-headers h3 {
-        font-family: MontserratL;
         font-size: 36px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
         text-align: left;
     }
     .related-block-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
         padding: 0px 0px 50px 4px;
         text-align: left;
     }
     .related-page-info {
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 22px;
         padding: 0px 50px 15px 10px;
         text-align: left;
     }
@@ -2120,453 +1467,83 @@
         padding: 50px 50px 0px 10px;
         margin: 0px;
     }
-    .related-block-button a {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%;
-        text-align: center;
-        padding: 16px 0px;
-        cursor: pointer;
-    }
-    .related-block-button a:hover {
-        background: #e63c24;
-    }
-    .related-page-image {
-        width: 100%;
-        text-align: center;
-    }
-    .related-page-image img {
-        width: 90%;
-    }
-    .slider {
-        height: 350px;
-    }
-    .slider-wrap {
-        width: 100%;
-        height: 350px;
-        background-size: cover;
-        background-position: center;
-        display: none;
-        -webkit-animation: fade-in 1s linear; /* Safari 4+ */
-        -moz-animation: fade-in 1s linear; /* Fx 5+ */
-        -o-animation: fade-in 1s linear; /* Opera 12+ */
-        animation: fade-in 1s linear; /* IE 10+, Fx 29+ */
-    }
-    .slide-top-right {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-end;
-        height: 100%;
-        text-align: right;
-    }
-    .slide-top-left {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        height: 100%;
-        text-align: left;
-    }
-    .slide-bottom-right {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        height: 100%;
-        text-align: right;
-    }
-    .slide-bottom-left {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        height: 100%;
-        text-align: left;
-    }
-    .slide-flex-item {
-        width: 50%;
-        padding: 20px 20px;
-    }
-    .slide-header {
-        display: inline-block;
-        font-family: Montserrat;
-        font-size: 18px;
-        color: #000;
-        text-transform: uppercase;
-        padding: 15px 20px;
-        background: #FFF;
-    }
-    .slide-info {
-
-    }
-    .slide-info p {
-        display: inline-block;
-        background: #FFF;
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #000;
-        padding: 10px 20px 10px 20px;
-        margin: 10px 0px;
-        line-height: 18px;
-    }
-
-    .child-pages {
-        border-top:1px solid #f3f3f3;
-    }
-    .child-pages-wrap {
-        padding: 0px;
-    }
     .child-page-block {
-        display: flex;
-        flex-direction: column;
         height: 400px;
         padding: 50px 20px;
         border: none;
     }
-    .child-page-image {
-        background-size: cover;
-        background-position: center;
-        height: 200px;
-        margin-bottom: 30px;
-    }
     .child-page-header a {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
         text-align: left;
     }
-    .child-page-header a:hover {
-        text-decoration: underline;
-    }
     .child-page-text {
-        flex: 1 1 auto;
         padding: 30px 0px 0px 0px;
         text-align: left;
     }
-    .child-page-text p {
-        padding: 0px;
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 18px;
-    }
     .child-page-date p {
-        bottom: 0px;
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #ababab;
         text-align: left;
     }
-    .gallery {
-        padding: 20px 0px;
-    }
-    .gallery-item a {
-        display: inline-block;
-        padding: 10px;
-    }
-    .gallery-item a img {
-        width: 100%;
-    }
-    .product-param-table {
-        padding: 20px 0px;
-    }
-    .product-param-table table {
-        width: 100%;
-        border-collapse: collapse;
-    }
     .product-param-name, .product-param-value {
-        background: #e1e1e1;
-        border-bottom: 1px solid #d7d7d8;
-        font-family: MontserratL;
         font-size: 14px;
-        color: #000;
         padding: 15px 20px;
-    }
-    .product-param-value {
-        text-align: center;
     }
     .mobile-panel {
         display: none;
     }
 }
 @media (min-width: 1200px) {
-    .head-flex{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .logo{
-        padding: 30px 20px;
-    }
     .logo img {
         width: 223px;
     }
-    .head-menu{
-        padding: 0px 15px;
-    }
-    .head-menu ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .head-menu ul li {
-        list-style: none;
-    }
     .head-menu ul li a {
-        display: inline-block;
-        font-family: MontserratL;
         font-size: 16px;
         padding: 44px 25px 45px 25px;
-        text-decoration: none;
     }
-    .head-menu ul li a:hover {
-        background: #FFF;
-    }
-
     .head-contacts{
         padding: 17px 10px;
     }
-    .head-contacts p {
-        text-align: right;
-    }
-    .main-tel {
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        color:#e63c24;
-        text-decoration: none;
-    }
-    .mobile-tel {
-        font-family: MontserratM;
-        font-size: 12px;
-        text-decoration: none;
-    }
-    .head-mail {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 12px;
-        text-decoration: none;
-        padding: 5px 0px 0px 0px;
-    }
-    .head-city {
-        font-family: MontserratM;
-        font-size: 12px;
-    }
-    .offers {
-        background: #d7d7d8;
-    }
-    .offers-wrap {
-        padding: 10px 10px 10px 10px;
-        position: relative;
-    }
-    .offers-wrap-close{
-        height: 240px;
-    }
-    .offer {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        background-position: 0px 0px;
-        background-size: 160px;
-        background-repeat: no-repeat;
-        text-decoration: none;
-        padding: 0px 0px 0px 183px;
-        height: 120px;
-        background-color: #FFF;
-        margin: 10px;
-    }
     .offer-title {
-        font-family: MontserratM;
         font-size: 12px;
-        text-transform: uppercase;
-        padding: 20px 15px 0px 0px;
     }
     .offer-price {
-        font-family: MontserratM;
         font-size: 14px;
-        text-transform: uppercase;
-        color: #e63c24;
-        padding-bottom: 20px;
-    }
-    .offers-open-button {
-        position: absolute;
-        width: 100%;
-        height: 50px;
-        bottom: 0;
-        z-index: 100;
-        padding: 30px 0px 20px 0px;
-        text-align: center;
-        background: url("/images/offers-bg.png") bottom left repeat-x;
-    }
-    .offers-open-button p {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .offers-open-button p:hover {
-        background: #e63c24;
-        cursor: pointer;
-    }
-    .map {
-        background: #d7d7d8;
-        padding-bottom: 95px;
-    }
-    .map-header {
-        padding-top: 60px;
-        padding: 60px 20px 0px 20px;
     }
     .map-header h3 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #000;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .map-block {
-        margin: 0 auto;
-        padding: 0px 0px 40px 0px;
-    }
-    .map-flex {
-        display: flex;
-        justify-content: space-between;
-        padding: 0px 10px;
     }
     .map-project {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
-        height: 100px;
-        flex-grow: 1;
-        background-size: 140px;
-        background-position: 0px 0px;
-        background-repeat: no-repeat;
         margin: 0px 10px;
         font-size: 12px;
-        font-family: MontserratR;
-        text-decoration: none;
-        -webkit-transition: all 0.3s ease;
     }
     .map-project p {
-        font-family: MontserratR;
-        display: none;
-        position: absolute;
         left: 125px;
-        text-align: center;
-        padding-right: 15px;
     }
     .map-project:hover {
-        flex-grow: 2 !important;
         background-position: -30px 0px;
-        background-color: #FFF;
-        -webkit-transition: all 0.3s ease;
-    }
-    .map-project:hover p {
-        display: inline;
-    }
-    .special-offer {
-        border-top:1px solid #f3f3f3;
-    }
-    .special-offer-headers {
-        background: #FFF;
-        padding-top: 65px;
     }
     .special-offer-headers h3 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #e63c24;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .special-offer-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-align: center;
-        text-transform: uppercase;
-        padding-bottom: 50px;
     }
     .special-offer-wrap {
         padding: 0px 50px;
     }
-    .special-offer-flex {
-        display: flex;
-        align-items: stretch;
-    }
-    .special-offer-image img {
-        width: 100%;
-    }
-    .special-offer-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
     .special-offer-text p {
-        font-family: MontserratL;
         font-size: 16px;
         line-height: 24px;
         padding: 15px 0px 15px 100px;
     }
-    .special-offer-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: url("/images/grey-point.gif") 80px 0px repeat-y;
-    }
     .special-offer-name {
-        font-family: MontserratM;
         font-size: 24px;
-        text-align: right;
-        padding: 25px 0px 50px 100px
+        padding: 25px 0px 50px 100px;
     }
     .special-offer-price {
-        font-family: MontserratM;
         font-size: 36px;
-        text-align: right;
         padding-bottom: 50px;
     }
     .special-offer-price span {
         font-size: 14px !important;
-        color: #7a7a7a;
-        text-transform: uppercase;
-    }
-    .special-offer-button {
-        padding: 75px 0px 50px;
-        width: 100%;
-        text-align: center;
-    }
-    .special-offer-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        padding: 15px 45px;
-        cursor: pointer;
-    }
-    .special-offer-button p:hover {
-        background-color: #080808;
-    }
-    .catalog {
-        border-top:1px solid #f3f3f3;
     }
     .catalog-wrap {
         padding: 100px 50px;
-    }
-    .categories, .web-page-block {
-        background: #d7d7d8;
     }
     .categories-wrap, .web-page-wrap {
         padding: 0px 50px 100px 50px;
@@ -2581,180 +1558,34 @@
         padding: 0px 0px 0px 6px;
     }
     .catalog-headers h3, .news-headers h3, .category-headers h1, .web-page-headers h1 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
     }
     .catalog-headers p, .news-headers p, .category-headers p, .web-page-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
         padding: 0px 0px 50px 4px;
     }
     .catalog-info, .category-info, .web-page-info {
-        font-family: MontserratL;
         font-size: 16px;
-        line-height: 24px;
         padding: 0px 50px 15px 10px;
     }
-    .catalog-button {
+        .catalog-button {
         width: auto;
         margin: 0px;
         padding: 50px 50px 0px 10px;
-    }
-    .catalog-button a {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .catalog-button a:hover {
-        background: #e63c24;
     }
     .category-offer-button, .web-page-offer-button {
         padding: 50px 50px 0px 10px;
     }
     .category-offer-button p, .web-page-offer-button p {
         display: inline-block;
-        background: #e63c24;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 45px;
-        margin: 0px;
-    }
-    .category-offer-button p:hover, .web-page-offer-button p:hover {
-        background: #080808;
-        cursor: pointer;
-    }
-    .category-image, .web-page-image {
-        float: right;
-        width: 90%;
-    }
-    .category-image img, .web-page-image img {
-        width: 100%;
-    }
-    .catalog-item {
-        text-align: center;
-        padding-top: 10px;
-    }
-    .catalog-icon {
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 50%;
-        background: #f3f3f3;
-    }
-    .catalog-icon img {
-        width: auto;
-        height: 100%;
-        -webkit-transition: all 0.3s ease;
-    }
-    .catalog-item a {
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .catalog-item a:hover {
-        text-decoration: underline;
-    }
-    .catalog-item p {
-        font-family: MontserratL;
-        font-size: 12px;
-        padding: 30px 0px 30px 0px;
-    }
-    .catalog-item a:hover img {
-        -webkit-transition: all 0.3s ease;
-        height: 103%;
-    }
-    .advantages {
-        border-top:1px solid #f3f3f3;
-    }
-    .advantages-flex {
-        display: flex;
-        align-items: stretch;
     }
     .advantages-wrap {
         padding: 0px 50px 100px 50px;
     }
-    .advantages-headers {
-        background: #FFF;
-        padding-top: 65px;
-    }
     .advantages-headers h3 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #000;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .advantages-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-align: center;
-        text-transform: uppercase;
-        padding-bottom: 50px;
-    }
-    .advantage {
-        height: 100%;
-        padding: 20px 20px 0px 20px;
-        position: relative;
     }
     .advantage-icon-wrap {
-        overflow: hidden;
-        position: absolute;
         left: 33.33%;
-        width: 125px;
-        height: 125px;
-        margin: 0 auto;
-        border-radius: 50%;
-        border: 1px solid #e3e3e3;
-    }
-    .advantage-icon {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        margin-top: 12px;
-        background: #FFF;
-        border-radius: 50%;
-        border: 1px solid #e3e3e3;
-    }
-    .advantage-text-wrap {
-        height: 62%;
-        background: #f3f3f3;
-        border: 1px solid #e3e3e3;
-        margin: 63px 0px 20px 0px;
-        padding: 65px 0px 0px 0px;
-    }
-    .advantage-text-wrap h4 {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-align: center;
-        padding: 30px 30px 50px 30px;
-    }
-    .advantage-text-wrap p {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-align: center;
-        line-height: 24px;
-        padding: 0px 30px 80px 30px;
-    }
-    .news {
-        border-top:1px solid #f3f3f3;
     }
     .news-headers-wrap {
         padding: 100px 50px 0px 50px;
@@ -2763,60 +1594,7 @@
         padding: 0px 26px 0px 26px;
     }
     .news-block {
-        display: flex;
-        flex-direction: column;
-        height: 230px;
         padding: 0px 30px;
-    }
-    .news-header a {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .news-special a {
-        color: #e63c24;
-    }
-    .news-header a:hover {
-        text-decoration: underline;
-    }
-    .news-text {
-        flex: 1 1 auto;
-        padding-top: 30px;
-    }
-    .news-text p {
-        padding: 0px 0px 0px 0px;
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 18px;
-    }
-    .news-date p {
-        bottom: 0px;
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #ababab;
-    }
-    .news-button {
-        margin: 75px 0px 50px 0px;
-        width: 100%;
-        text-align: center;
-    }
-    .news-button a {
-        display: inline-block;
-        background: #080808;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 15px 45px;
-    }
-    .news-button a:hover {
-        background: #e63c24;
-    }
-    .about {
-        border-top:1px solid #f3f3f3;
     }
     .about-headers-wrap {
         padding: 100px 50px 0px 50px;
@@ -2825,42 +1603,16 @@
         padding: 0px 0px 0px 6px;
     }
     .about-headers h3 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
-    }
-    .about-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 0px 4px;
     }
     .about-wrap {
         padding: 0px 56px 100px 56px;
     }
     .about-wrap p {
-        font-family: MontserratL;
-        font-size: 16px;
-        line-height: 24px;
         padding: 50px 20px 80px 0px;
-    }
-    .about-wrap h5 {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-transform: uppercase;
-        color: #7a7a7a;
     }
     .about-wrap a {
         display: inline-block;
-        background: #080808;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 15px 45px;
     }
     .about-wrap a:hover {
         background: #e63c24;
@@ -2871,238 +1623,36 @@
     }
     .presentation {
         margin: 50px 0px;
-        width: 100%;
-        height: 400px;
-    }
-    .consultation {
-        background-color: #000;
-        background-image: url("/images/consultation-bg.jpg");
-        background-position: 0px 0px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top:1px solid #f3f3f3;
     }
     .consultation-wrap {
         padding: 60px 50px 60px 50px;
     }
-    .consultation-flex {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .consultation-headers {
-        width: 60%;
-        padding: 0px 0px 0px 6px;
-    }
-    .consultation-headers h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #FFF;
-        padding: 0px 0px 20px 0px;
-    }
-    .consultation-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #FFF;
-        padding:0px 50px 0px 4px;
-    }
     .post-header {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #FFF;
-        text-transform: uppercase;
         padding: 0px 0px 50px 4px !important;
-    }
-    .consultation-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 15px 45px;
-        cursor: pointer;
     }
     .consultation-button p:hover {
         background: #FFF;
         color: #000;
     }
-    .footer-flex {
-        display: flex;
-        flex-direction: row;
-    }
     .footer-left {
         width: 535px;
-        float: right;
     }
     .footer-left h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #000;
         padding: 100px 0px 20px 0px;
     }
     .footer-post-header {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
         padding: 0px 0px 50px 4px;
-        margin: 0px 100px 50px 0px;
-        border-bottom: 1px solid #f3f3f3;
-    }
-    .footer-mini-header {
-        font-family: MontserratL;
-        font-size: 10px;
-        text-transform: uppercase;
-        color: #070707;
-        padding:0px 0px 10px 4px;
     }
     .footer-info {
         font-family: MontserratL;
         font-size: 16px;
         padding:0px 0px 25px 4px;
-        color: #000;
-    }
-    .footer-button {
-        padding: 90px 0px 80px 0px;
-    }
-    .footer-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-transform: uppercase;
-        padding: 15px 45px;
-        cursor: pointer;
-    }
-    .footer-button p:hover {
-        background: #000;
-    }
-    .footer-map {
-        height: 100%;
-        width: 100%;
-    }
-    .footer-line {
-        background: #f3f3f3;
-        width: 100%;
-    }
-    .footer-line p {
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #878787;
-        width: 90%;
-        text-align: center;
-        margin: 0 auto;
-        padding: 40px 0px;
-    }
-    .send-form {
-        padding: 30px;
-        width: 500px;
-        margin: 0 auto;
-        background: #fff;
-    }
-    .breadcrumbs {
-        background: #d7d7d8;
     }
     .breadcrumbs-wrap {
         padding: 64px 50px 64px 50px;
     }
-    .breadcrumbs p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #404040;
-    }
-    .breadcrumbs p a {
-        font-family: MontserratL;
-        text-decoration: none;
-        color: #404040;
-    }
-    .breadcrumbs p a:hover {
-        text-decoration: underline;
-        color: #000;
-    }
-    .products {
-        background: #d7d7d8;
-    }
     .products-wrap {
         padding: 0px 50px 100px 50px;
-        position: relative;
-        overflow: hidden;
-    }
-    .products-wrap-close {
-        height: 280px;
-    }
-    .products-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .products-table th {
-        background: #d7d7d8;
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding-bottom: 10px;
-        text-align: left;
-    }
-    .products-table td {
-        background: #e1e1e1;
-        border-bottom: 1px solid #d7d7d8;
-        font-family: MontserratL;
-        font-size: 16px;
-        color: #000;
-    }
-    .products-table tr:hover td {
-        background: #e8e8e8;
-    }
-    .product-image-cell {
-        width: 120px;
-    }
-    .products-table img {
-        height: 70px;
-        vertical-align: middle;
-    }
-    .products-table a {
-        font-family: MontserratL;
-        text-decoration: none;
-    }
-    .products-table a:hover {
-        text-decoration: underline;
-    }
-    .products-open-button {
-        position: absolute;
-        height: 50px;
-        bottom: 0;
-        z-index: 100;
-        padding: 30px 0px 20px 0px;
-        text-align: center;
-        background: url("/images/offers-bg.png") bottom left repeat-x;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-    }
-    .products-open-button p {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .products-open-button p:hover {
-        background: #e63c24;
-        cursor: pointer;
-    }
-
-    .category-complete-solution {
-        background: #d7d7d8;
     }
     .complete-solution-wrap {
         padding: 100px 50px 100px 50px;
@@ -3110,17 +1660,7 @@
     .solution-headers {
         padding: 0px 0px 0px 6px;
     }
-    .solution-headers h2 {
-        font-family: MontserratL;
-        font-size: 36px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
-    }
     .solution-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
         padding: 0px 0px 50px 4px;
     }
     .solution-info {
@@ -3133,220 +1673,49 @@
         padding: 50px 50px 0px 10px;
     }
     .solution-button p {
-        background: #e63c24;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        width: 100%;
-        text-align: center;
         padding: 16px 0px;
-        cursor: pointer;
-    }
-    .solution-button p:hover {
-        background: #080808;
-    }
-    .solution-image {
-        width: 100%;
-        text-align: center;
-    }
-    .solution-image img {
-        width: 100%;
-    }
-    .related-block {
-        border-top:1px solid #f3f3f3;
     }
     .related-block-wrap {
         padding: 100px 50px 100px 50px;
     }
-    .related-block-headers {
-        padding: 0px 0px 0px 6px;
-    }
     .related-block-headers h3 {
-        font-family: MontserratL;
         font-size: 48px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
-    }
-    .related-block-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 50px 4px;
     }
     .related-page-info {
         font-family: MontserratL;
         font-size: 16px;
         line-height: 24px;
-        padding: 0px 50px 15px 10px;
-    }
-    .related-block-button {
-        padding: 50px 50px 0px 10px;
-    }
-    .related-block-button a {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%;
-        text-align: center;
-        padding: 16px 0px;
-        cursor: pointer;
-    }
-    .related-block-button a:hover {
-        background: #e63c24;
-    }
-    .related-page-image {
-        width: 100%;
-        text-align: center;
-    }
-    .related-page-image img {
-        width: 90%;
     }
     .slider {
         height: 650px;
     }
     .slider-wrap {
-        width: 100%;
         height: 650px;
-        background-size: cover;
-        background-position: center;
-        display: none;
-        -webkit-animation: fade-in 1s linear; /* Safari 4+ */
-        -moz-animation: fade-in 1s linear; /* Fx 5+ */
-        -o-animation: fade-in 1s linear; /* Opera 12+ */
-        animation: fade-in 1s linear; /* IE 10+, Fx 29+ */
-    }
-    .slide-top-right {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-end;
-        height: 100%;
-        text-align: right;
-    }
-    .slide-top-left {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        height: 100%;
-        text-align: left;
-    }
-    .slide-bottom-right {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        height: 100%;
-        text-align: right;
-    }
-    .slide-bottom-left {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        height: 100%;
-        text-align: left;
     }
     .slide-flex-item {
-        width: 50%;
         padding: 100px 130px;
     }
     .slide-header {
-        display: inline-block;
-        font-family: Montserrat;
         font-size: 24px;
-        color: #000;
-        text-transform: uppercase;
         padding: 30px 40px;
-        background: #FFF;
     }
-    .slide-info {
 
-    }
     .slide-info p {
-        display: inline-block;
-        background: #FFF;
-        font-family: MontserratL;
         font-size: 16px;
-        color: #000;
         padding: 10px 40px 10px 40px;
-        margin: 10px 0px;
         line-height: 24px;
-    }
-
-    .child-pages {
-        border-top:1px solid #f3f3f3;
     }
     .child-pages-wrap {
         padding: 0px 95px 0px 95px;
     }
-    .child-page-block {
-        display: flex;
-        flex-direction: column;
-        height: 400px;
-        padding: 50px 30px;
-    }
-    .child-page-image {
-        background-size: cover;
-        background-position: center;
-        height: 200px;
-        margin-bottom: 30px;
-    }
-    .child-page-header a {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .child-page-header a:hover {
-        text-decoration: underline;
-    }
     .child-page-text {
-        flex: 1 1 auto;
         padding-top: 30px;
-    }
-    .child-page-text p {
-        padding: 0px;
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 18px;
-    }
-    .child-page-date p {
-        bottom: 0px;
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #ababab;
-    }
-    .gallery {
-        padding: 20px 0px;
-    }
-    .gallery-item a {
-        display: inline-block;
-        padding: 10px;
-    }
-    .gallery-item a img {
-        width: 100%;
     }
     .product-param-table {
         padding: 20px 10px;
     }
-    .product-param-table table {
-        width: 100%;
-        border-collapse: collapse;
-    }
     .product-param-name, .product-param-value {
-        background: #e1e1e1;
-        border-bottom: 1px solid #d7d7d8;
-        font-family: MontserratL;
         font-size: 16px;
-        color: #000;
-        padding: 15px 20px;
-    }
-    .product-param-value {
-        text-align: center;
     }
 }
 @media (min-width: 1500px) {
@@ -3356,451 +1725,50 @@
     .head-menu{
         padding: 0px 20px;
     }
-    .head-menu ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .head-menu ul li {
-        list-style: none;
-    }
     .head-menu ul li a {
-        display: inline-block;
-        font-family: MontserratL;
-        font-size: 16px;
         padding: 44px 35px 45px 35px;
-        text-decoration: none;
-    }
-    .head-menu ul li a:hover {
-        background: #FFF;
-    }
-
-    .head-contacts{
-        padding: 17px 20px;
-    }
-    .head-contacts p {
-        text-align: right;
-    }
-    .main-tel {
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        color:#e63c24;
-        text-decoration: none;
-    }
-    .mobile-tel {
-        font-family: MontserratM;
-        font-size: 12px;
-        text-decoration: none;
-    }
-    .head-mail {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 12px;
-        text-decoration: none;
-        padding: 5px 0px 0px 0px;
-    }
-    .head-city {
-        font-family: MontserratM;
-        font-size: 12px;
-    }
-    .offers {
-        background: #d7d7d8;
-    }
-    .offers-wrap {
-        padding: 10px 10px 10px 10px;
-        position: relative;
     }
     .offers-wrap-close{
         height: 280px;
     }
     .offer {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        background-position: 0px 0px;
         background-size: 220px;
-        background-repeat: no-repeat;
-        text-decoration: none;
         padding: 0px 0px 0px 253px;
         height: 165px;
-        background-color: #FFF;
-        margin: 10px;
     }
     .offer-title {
-        font-family: MontserratM;
         font-size: 16px;
-        text-transform: uppercase;
-        padding: 20px 15px 0px 0px;
     }
     .offer-price {
-        font-family: MontserratM;
         font-size: 16px;
-        text-transform: uppercase;
-        color: #e63c24;
-        padding-bottom: 20px;
-    }
-    .offers-open-button {
-        position: absolute;
-        width: 100%;
-        height: 50px;
-        bottom: 0;
-        z-index: 100;
-        padding: 30px 0px 20px 0px;
-        text-align: center;
-        background: url("/images/offers-bg.png") bottom left repeat-x;
-    }
-    .offers-open-button p {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .offers-open-button p:hover {
-        background: #e63c24;
-        cursor: pointer;
-    }
-    .map {
-        background: #d7d7d8;
-        padding-bottom: 95px;
-    }
-    .map-header {
-        padding-top: 60px;
-        padding: 60px 20px 0px 20px;
-    }
-    .map-header h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #000;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .map-block {
-        margin: 0 auto;
-        padding: 0px 0px 40px 0px;
-    }
-    .map-flex {
-        display: flex;
-        justify-content: space-between;
-        padding: 0px 10px;
     }
     .map-project {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
         height: 123px;
-        flex-grow: 1;
         background-size: 165px;
-        background-position: 0px 0px;
-        background-repeat: no-repeat;
-        margin: 0px 10px;
-        font-size: 12px;
-        font-family: MontserratR;
-        text-decoration: none;
-        -webkit-transition: all 0.3s ease;
     }
     .map-project p {
-        font-family: MontserratR;
-        display: none;
-        position: absolute;
         left: 185px;
-        text-align: center;
-        padding-right: 15px;
     }
     .map-project:hover {
-        flex-grow: 2 !important;
         background-position: 0px 0px;
-        background-color: #FFF;
-        -webkit-transition: all 0.3s ease;
-    }
-    .map-project:hover p {
-        display: inline;
-    }
-    .special-offer {
-        border-top:1px solid #f3f3f3;
-    }
-    .special-offer-headers {
-        background: #FFF;
-        padding-top: 65px;
-    }
-    .special-offer-headers h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #e63c24;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .special-offer-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-align: center;
-        text-transform: uppercase;
-        padding-bottom: 50px;
     }
     .special-offer-wrap {
         padding: 0px 20px;
     }
-    .special-offer-flex {
-        display: flex;
-        align-items: stretch;
-    }
-    .special-offer-image img {
-        width: 100%;
-    }
-    .special-offer-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .special-offer-text p {
-        font-family: MontserratL;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 15px 0px 15px 100px;
-    }
-    .special-offer-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: url("/images/grey-point.gif") 80px 0px repeat-y;
-    }
     .special-offer-name {
-        font-family: MontserratM;
-        font-size: 24px;
-        text-align: right;
         padding: 50px 0px 0px 100px;
-    }
-    .special-offer-price {
-        font-family: MontserratM;
-        font-size: 36px;
-        text-align: right;
-        padding-bottom: 50px;
-    }
-    .special-offer-price span {
-        font-size: 14px !important;
-        color: #7a7a7a;
-        text-transform: uppercase;
-    }
-    .special-offer-button {
-        padding: 75px 0px 50px;
-        width: 100%;
-        text-align: center;
-    }
-    .special-offer-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        padding: 15px 45px;
-        cursor: pointer;
-    }
-    .special-offer-button p:hover {
-        background-color: #080808;
-    }
-    .catalog {
-        border-top:1px solid #f3f3f3;
     }
     .catalog-wrap {
         padding: 100px 125px;
     }
-    .categories, .web-page-block {
-        background: #d7d7d8;
-    }
     .categories-wrap, .web-page-wrap {
         padding: 0px 125px 100px 125px;
     }
-    .category-headers, .web-page-headers {
-        padding: 0px 0px 0px 6px;
-    }
-    .catalog-headers {
-        padding: 0px 50px 0px 6px;
-    }
-    .news-headers {
-        padding: 0px 0px 0px 6px;
-    }
-    .catalog-headers h3, .news-headers h3, .category-headers h1, .web-page-headers h1 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
-    }
-    .catalog-headers p, .news-headers p, .category-headers p, .web-page-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 50px 4px;
-    }
-    .catalog-info, .category-info, .web-page-info {
-        font-family: MontserratL;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 0px 50px 15px 10px;
-    }
-    .catalog-button {
-        padding: 50px 50px 0px 10px;
-    }
-    .catalog-button a {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .catalog-button a:hover {
-        background: #e63c24;
-    }
-    .category-offer-button, .web-page-offer-button {
-        padding: 50px 50px 0px 10px;
-    }
-    .category-offer-button p, .web-page-offer-button p {
-        display: inline-block;
-        background: #e63c24;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 45px;
-    }
-    .category-offer-button p:hover, .web-page-offer-button p:hover {
-        background: #080808;
-        cursor: pointer;
-    }
-    .category-image, .web-page-image {
-        float: right;
-        width: 90%;
-    }
-    .category-image img, .web-page-image img {
-        width: 100%;
-    }
-    .catalog-item {
-        text-align: center;
-        padding-top: 10px;
-    }
-    .catalog-icon {
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 50%;
-        background: #f3f3f3;
-    }
-    .catalog-icon img {
-        width: auto;
-        height: 100%;
-        -webkit-transition: all 0.3s ease;
-    }
-    .catalog-item a {
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .catalog-item a:hover {
-        text-decoration: underline;
-    }
     .catalog-item p {
-        font-family: MontserratL;
         font-size: 14px;
-        padding: 30px 0px 30px 0px;
-    }
-    .catalog-item a:hover img {
-        -webkit-transition: all 0.3s ease;
-        height: 103%;
-    }
-    .advantages {
-        border-top:1px solid #f3f3f3;
-    }
-    .advantages-flex {
-        display: flex;
-        align-items: stretch;
     }
     .advantages-wrap {
         padding: 0px 125px 100px 125px;
-    }
-    .advantages-headers {
-        background: #FFF;
-        padding-top: 65px;
-    }
-    .advantages-headers h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #000;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .advantages-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-align: center;
-        text-transform: uppercase;
-        padding-bottom: 50px;
-    }
-    .advantage {
-        height: 100%;
-        padding: 20px 20px 0px 20px;
-        position: relative;
-    }
-    .advantage-icon-wrap {
-        overflow: hidden;
-        position: absolute;
-        left: 33.33%;
-        width: 125px;
-        height: 125px;
-        margin: 0 auto;
-        border-radius: 50%;
-        border: 1px solid #e3e3e3;
-    }
-    .advantage-icon {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        margin-top: 12px;
-        background: #FFF;
-        border-radius: 50%;
-        border: 1px solid #e3e3e3;
-    }
-    .advantage-text-wrap {
-        height: 62%;
-        background: #f3f3f3;
-        border: 1px solid #e3e3e3;
-        margin: 63px 0px 20px 0px;
-        padding: 65px 0px 0px 0px;
-    }
-    .advantage-text-wrap h4 {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-align: center;
-        padding: 30px 30px 50px 30px;
-    }
-    .advantage-text-wrap p {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-align: center;
-        line-height: 24px;
-        padding: 0px 30px 80px 30px;
-    }
-    .news {
-        border-top:1px solid #f3f3f3;
     }
     .news-headers-wrap {
         padding: 100px 115px 0px 115px;
@@ -3808,589 +1776,38 @@
     .news-wrap {
         padding: 0px 95px 0px 95px;
     }
-    .news-block {
-        display: flex;
-        flex-direction: column;
-        height: 230px;
-        padding: 0px 30px;
-    }
-    .news-header a {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .news-special a {
-        color: #e63c24;
-    }
-    .news-header a:hover {
-        text-decoration: underline;
-    }
-    .news-text {
-        flex: 1 1 auto;
-        padding-top: 30px;
-    }
-    .news-text p {
-        padding: 0px 0px 0px 0px;
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 18px;
-    }
-    .news-date p {
-        bottom: 0px;
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #ababab;
-    }
-    .news-button {
-        margin: 75px 0px 50px 0px;
-        width: 100%;
-        text-align: center;
-    }
-    .news-button a {
-        display: inline-block;
-        background: #080808;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 15px 45px;
-    }
-    .news-button a:hover {
-        background: #e63c24;
-    }
-    .about {
-        border-top:1px solid #f3f3f3;
-    }
     .about-headers-wrap {
         padding: 100px 115px 0px 115px;
-    }
-    .about-headers {
-        padding: 0px 0px 0px 6px;
-    }
-    .about-headers h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
-    }
-    .about-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 0px 4px;
     }
     .about-wrap {
         padding: 0px 125px 100px 125px;
     }
-    .about-wrap p {
-        font-family: MontserratL;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 50px 20px 80px 0px;
-    }
-    .about-wrap h5 {
-        font-family: MontserratL;
-        font-size: 14px;
-        text-transform: uppercase;
-        color: #7a7a7a;
-    }
-    .about-wrap a {
-        display: inline-block;
-        background: #080808;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 15px 45px;
-    }
-    .about-wrap a:hover {
-        background: #e63c24;
-        color: #FFF;
-    }
-    .about-video {
-        padding: 0px 0px 0px 100px;
-    }
-    .presentation {
-        margin: 50px 0px;
-        width: 100%;
-        height: 400px;
-    }
-    .consultation {
-        background-color: #000;
-        background-image: url("/images/consultation-bg.jpg");
-        background-position: 0px 0px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top:1px solid #f3f3f3;
-    }
     .consultation-wrap {
         padding: 60px 115px 60px 115px;
     }
-    .consultation-flex {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .consultation-headers {
-        width: 60%;
-        padding: 0px 0px 0px 6px;
-    }
-    .consultation-headers h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #FFF;
-        padding: 0px 0px 20px 0px;
-    }
-    .consultation-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #FFF;
-        padding:0px 50px 0px 4px;
-    }
-    .post-header {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #FFF;
-        text-transform: uppercase;
-        padding: 0px 0px 50px 4px !important;
-    }
-    .consultation-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 15px 45px;
-        cursor: pointer;
-    }
-    .consultation-button p:hover {
-        background: #FFF;
-        color: #000;
-    }
-    .footer-flex {
-        display: flex;
-        flex-direction: row;
-    }
     .footer-left {
         width: 635px;
-        float: right;
-    }
-    .footer-left h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #000;
-        padding: 100px 0px 20px 0px;
-    }
-    .footer-post-header {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 50px 4px;
-        margin: 0px 100px 50px 0px;
-        border-bottom: 1px solid #f3f3f3;
-    }
-    .footer-mini-header {
-        font-family: MontserratL;
-        font-size: 10px;
-        text-transform: uppercase;
-        color: #070707;
-        padding:0px 0px 10px 4px;
-    }
-    .footer-info {
-        font-family: MontserratL;
-        font-size: 16px;
-        padding:0px 0px 25px 4px;
-        color: #000;
-    }
-    .footer-button {
-        padding: 90px 0px 80px 0px;
-    }
-    .footer-button p {
-        display: inline-block;
-        background: #e63c24;
-        font-family: MontserratR;
-        font-size: 18px;
-        color: #FFF;
-        text-transform: uppercase;
-        padding: 15px 45px;
-        cursor: pointer;
-    }
-    .footer-button p:hover {
-        background: #000;
-    }
-    .footer-map {
-        height: 100%;
-        width: 100%;
-    }
-    .footer-line {
-        background: #f3f3f3;
-        width: 100%;
     }
     .footer-line p {
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #878787;
         width: 70%;
-        text-align: center;
-        margin: 0 auto;
-        padding: 40px 0px;
-    }
-    .send-form {
-        padding: 30px;
-        width: 500px;
-        margin: 0 auto;
-        background: #fff;
-    }
-    .breadcrumbs {
-        background: #d7d7d8;
     }
     .breadcrumbs-wrap {
         padding: 64px 125px 64px 131px;
     }
-    .breadcrumbs p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #404040;
-    }
-    .breadcrumbs p a {
-        font-family: MontserratL;
-        text-decoration: none;
-        color: #404040;
-    }
-    .breadcrumbs p a:hover {
-        text-decoration: underline;
-        color: #000;
-    }
-    .products {
-        background: #d7d7d8;
-    }
     .products-wrap {
         padding: 0px 125px 100px 125px;
-        position: relative;
-        overflow: hidden;
-    }
-    .products-wrap-close {
-        height: 280px;
-    }
-    .products-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .products-table th {
-        background: #d7d7d8;
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding-bottom: 10px;
-        text-align: left;
-    }
-    .products-table td {
-        background: #e1e1e1;
-        border-bottom: 1px solid #d7d7d8;
-        font-family: MontserratL;
-        font-size: 16px;
-        color: #000;
-    }
-    .products-table tr:hover td {
-        background: #e8e8e8;
-    }
-    .product-image-cell {
-        width: 120px;
-    }
-    .products-table img {
-        height: 70px;
-        vertical-align: middle;
-    }
-    .products-table a {
-        font-family: MontserratL;
-        text-decoration: none;
-    }
-    .products-table a:hover {
-        text-decoration: underline;
-    }
-    .products-open-button {
-        position: absolute;
-        height: 50px;
-        bottom: 0;
-        z-index: 100;
-        padding: 30px 0px 20px 0px;
-        text-align: center;
-        background: url("/images/offers-bg.png") bottom left repeat-x;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-    }
-    .products-open-button p {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        width: 195px;
-        text-align: center;
-        padding: 16px 0px;
-    }
-    .products-open-button p:hover {
-        background: #e63c24;
-        cursor: pointer;
-    }
-
-    .category-complete-solution {
-        background: #d7d7d8;
     }
     .complete-solution-wrap {
         padding: 100px 125px 100px 125px;
     }
-    .solution-headers {
-        padding: 0px 0px 0px 6px;
-    }
-    .solution-headers h2 {
-        font-family: MontserratL;
-        font-size: 36px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
-    }
-    .solution-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 50px 4px;
-    }
-    .solution-info {
-        font-family: MontserratL;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 0px 50px 15px 10px;
-    }
-    .solution-button {
-        padding: 50px 50px 0px 10px;
-    }
-    .solution-button p {
-        background: #e63c24;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-transform: uppercase;
-        width: 100%;
-        text-align: center;
-        padding: 16px 0px;
-        cursor: pointer;
-    }
-    .solution-button p:hover {
-        background: #080808;
-    }
-    .solution-image {
-        width: 100%;
-        text-align: center;
-    }
-    .solution-image img {
-        width: 100%;
-    }
-    .related-block {
-        border-top:1px solid #f3f3f3;
-    }
     .related-block-wrap {
         padding: 100px 125px 100px 125px;
     }
-    .related-block-headers {
-        padding: 0px 0px 0px 6px;
-    }
-    .related-block-headers h3 {
-        font-family: MontserratL;
-        font-size: 48px;
-        color: #080808;
-        padding: 0px 0px 20px 0px;
-    }
-    .related-block-headers p {
-        font-family: MontserratL;
-        font-size: 14px;
-        color: #7a7a7a;
-        text-transform: uppercase;
-        padding: 0px 0px 50px 4px;
-    }
-    .related-page-info {
-        font-family: MontserratL;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 0px 50px 15px 10px;
-    }
-    .related-block-button {
-        padding: 50px 50px 0px 10px;
-    }
-    .related-block-button a {
-        display: inline-block;
-        background: #080808;
-        color: #FFF;
-        font-family: MontserratM;
-        font-size: 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%;
-        text-align: center;
-        padding: 16px 0px;
-        cursor: pointer;
-    }
-    .related-block-button a:hover {
-        background: #e63c24;
-    }
-    .related-page-image {
-        width: 100%;
-        text-align: center;
-    }
-    .related-page-image img {
-        width: 90%;
-    }
-    .slider {
-        height: 650px;
-    }
-    .slider-wrap {
-        width: 100%;
-        height: 650px;
-        background-size: cover;
-        background-position: center;
-        display: none;
-        -webkit-animation: fade-in 1s linear; /* Safari 4+ */
-        -moz-animation: fade-in 1s linear; /* Fx 5+ */
-        -o-animation: fade-in 1s linear; /* Opera 12+ */
-        animation: fade-in 1s linear; /* IE 10+, Fx 29+ */
-    }
-    .slide-top-right {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-end;
-        height: 100%;
-        text-align: right;
-    }
-    .slide-top-left {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        height: 100%;
-        text-align: left;
-    }
-    .slide-bottom-right {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        height: 100%;
-        text-align: right;
-    }
-    .slide-bottom-left {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        height: 100%;
-        text-align: left;
-    }
-    .slide-flex-item {
-        width: 50%;
-        padding: 100px 130px;
-    }
     .slide-header {
-        display: inline-block;
-        font-family: Montserrat;
         font-size: 36px;
-        color: #000;
-        text-transform: uppercase;
-        padding: 30px 40px;
-        background: #FFF;
-    }
-    .slide-info {
-
     }
     .slide-info p {
-        display: inline-block;
-        background: #FFF;
-        font-family: MontserratL;
         font-size: 18px;
-        color: #000;
-        padding: 10px 40px 10px 40px;
-        margin: 10px 0px;
-    }
-
-    .child-pages {
-        border-top:1px solid #f3f3f3;
-    }
-    .child-pages-wrap {
-        padding: 0px 95px 0px 95px;
-    }
-    .child-page-block {
-        display: flex;
-        flex-direction: column;
-        height: 400px;
-        padding: 50px 30px;
-    }
-    .child-page-image {
-        background-size: cover;
-        background-position: center;
-        height: 200px;
-        margin-bottom: 30px;
-    }
-    .child-page-header a {
-        display: inline-block;
-        font-family: MontserratM;
-        font-size: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .child-page-header a:hover {
-        text-decoration: underline;
-    }
-    .child-page-text {
-        flex: 1 1 auto;
-        padding-top: 30px;
-    }
-    .child-page-text p {
-        padding: 0px;
-        font-family: MontserratL;
-        font-size: 14px;
-        line-height: 18px;
-    }
-    .child-page-date p {
-        bottom: 0px;
-        font-family: MontserratL;
-        font-size: 12px;
-        color: #ababab;
-    }
-    .gallery {
-        padding: 20px 0px;
-    }
-    .gallery-item a {
-        display: inline-block;
-        padding: 10px;
-    }
-    .gallery-item a img {
-        width: 100%;
-    }
-    .product-param-table {
-        padding: 20px 10px;
-    }
-    .product-param-table table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .product-param-name, .product-param-value {
-        background: #e1e1e1;
-        border-bottom: 1px solid #d7d7d8;
-        font-family: MontserratL;
-        font-size: 16px;
-        color: #000;
-        padding: 15px 20px;
-    }
-    .product-param-value {
-        text-align: center;
+        line-height: 26px;
     }
 }
