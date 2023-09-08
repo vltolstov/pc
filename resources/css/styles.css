@@ -439,10 +439,10 @@
     .advantage-icon-wrap {
         overflow: hidden;
         position: absolute;
-        left: 30%;
+        left: 50%;
+        margin-left: -63px;
         width: 125px;
         height: 125px;
-        margin: 0 auto;
         border-radius: 50%;
         border: 1px solid #e3e3e3;
     }
@@ -1590,9 +1590,6 @@
     }
     .advantages-headers h3 {
         font-size: 48px;
-    }
-    .advantage-icon-wrap {
-        left: 33.33%;
     }
     .news-headers-wrap {
         padding: 100px 50px 0px 50px;
