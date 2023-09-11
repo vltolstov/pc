@@ -27,7 +27,7 @@ class ClientFormSendController extends Controller
             ]);
         }
 
-        Mail::to('sumkiplus@sumkiplus.ru')
+        Mail::to('e@policast.ru')
             ->send(new RequestShipped(
                 $request->imfa,
                 $request->email,

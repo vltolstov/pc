@@ -44,7 +44,7 @@ class RequestShipped extends Mailable
     public function envelope()
     {
         return new Envelope(
-        from: new Address('noreply@test.test', 'Название компании'),
+        from: new Address('noreply@policast.ru', 'Policast'),
         replyTo: [
             new Address($this->clientEmail, $this->productName),
         ],
