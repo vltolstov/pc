@@ -26,7 +26,7 @@
                 <div class="bord">
                     <input name="сomment" type="text" value="" placeholder="Сообщение">
                 </div>
-                <button type="button" class="ajaxFormButton admin-button">Отправить</button>
+                <button type="button" onclick="ym(42811609,'reachGoal','vopros'); return true;" class="ajaxFormButton admin-button">Отправить</button>
             </form>
         </div>
     </div>
