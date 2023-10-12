@@ -10,8 +10,11 @@ class SiteMapController extends Controller
 
     public function sitemap()
     {
-        $pages = Page::all();
-        $pages = $pages->fresh('seoSet');
+
+        $pages = Page::select('*')
+            ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
+            ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->get();
 
         $actualDate = date('Y-m-d');
         $sitemapDate = new \DateTime($actualDate);
