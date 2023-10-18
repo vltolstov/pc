@@ -402,7 +402,7 @@ class PageController extends Controller
         $pages = Page::select('pages.id', 'pages.name', 'pages.active', 'images.image')
             ->join('images', 'pages.id','=','images.page_id')
             ->where('parent_id', '=', $page->id)
-            ->orderBy('pages.name', 'ASC')
+            ->orderBy('pages.id', 'ASC')
             ->get();
 
         $pageTypes = PageType::select('*')
