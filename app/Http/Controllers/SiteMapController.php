@@ -14,6 +14,7 @@ class SiteMapController extends Controller
         $pages = Page::select('*')
             ->leftJoin('seo_sets', 'pages.id', '=', 'seo_sets.page_id')
             ->leftJoin('slugs', 'pages.id', '=', 'slugs.page_id')
+            ->where('pages.id', '>', 1)
             ->get();
 
         $actualDate = date('Y-m-d');
