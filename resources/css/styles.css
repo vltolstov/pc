@@ -1316,6 +1316,9 @@
         width: 160px;
         height: 160px;
     }
+    .advantages-flex {
+        display: flex;
+    }
     .advantages-wrap {
         padding: 0px 0px 100px 0px;
     }
